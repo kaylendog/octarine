@@ -18,11 +18,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "dog.kaylen.octarine.OctarineMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "octarine.mixins.json"
   ],
 
   "depends": {
