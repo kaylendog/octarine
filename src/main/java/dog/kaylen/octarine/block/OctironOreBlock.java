@@ -12,7 +12,7 @@ import net.minecraft.item.ItemGroup;
 
 public class OctironOreBlock extends Block implements GenericBlock {
     public OctironOreBlock() {
-        super(FabricBlockSettings.of(Material.METAL).hardness(4.0f));
+        super(FabricBlockSettings.of(Material.METAL).hardness(4.0f).requiresTool());
     }
 
     @Override
