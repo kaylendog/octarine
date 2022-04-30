@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "dog.kaylen.octarine.OctarineMod"
+    ],
+    "client": [
+      "dog.kaylen.octarine.client.OctarineClientMod"
     ]
   },
   "mixins": [
@@ -30,8 +33,5 @@
     "fabric": "*",
     "minecraft": "~1.18.2",
     "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
