@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "octarine:block/octiron_ore"
+        "all": "octarine:block/deepslate_octiron_ore"
     }
 }

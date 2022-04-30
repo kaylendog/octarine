@@ -18,18 +18,18 @@ import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
-public class OctironOreVein implements GenericFeature {
+public class DeepslateOctironOreVein implements GenericFeature {
     @Override
     public String getKey() {
-        return "octiron_ore_vein";
+        return "deepslate_octiron_ore_vein";
     }
 
     private static final ConfiguredFeature<?, ?> configuredFeature =
             new ConfiguredFeature(
                     Feature.ORE,
                     new OreFeatureConfig(
-                            OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
-                            OctarineMod.OCTIRON_ORE_BLOCK.getDefaultState(),
+                            OreConfiguredFeatures.DEEPSLATE_ORE_REPLACEABLES,
+                            OctarineMod.DEEPSLATE_OCTIRON_ORE_BLOCK.getDefaultState(),
                             3));
 
     @Override
@@ -44,7 +44,7 @@ public class OctironOreVein implements GenericFeature {
                             CountPlacementModifier.of(6),
                             SquarePlacementModifier.of(),
                             HeightRangePlacementModifier.trapezoid(
-                                    YOffset.getBottom(), YOffset.belowTop(32))));
+                                    YOffset.aboveBottom(-64), YOffset.belowTop(0))));
 
     @Override
     public PlacedFeature getPlacedFeature() {
