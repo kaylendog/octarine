@@ -3,3 +3,5 @@
 *.wav filter=lfs diff=lfs merge=lfs -text
 *.xcf filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
+*.piskel filter=lfs diff=lfs merge=lfs -text
+

@@ -23,8 +23,8 @@ dependencies {
     // fabric Api
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     // crowdin translations
-    modImplementation "de.guntram.mcmod:crowdin-translate:1.2"
-    include "de.guntram.mcmod:crowdin-translate:1.2"
+    modImplementation "de.guntram.mcmod:crowdin-translate:1.4+1.18.2"
+    include "de.guntram.mcmod:crowdin-translate:1.4+1.18.2"
 }
 
 processResources {
