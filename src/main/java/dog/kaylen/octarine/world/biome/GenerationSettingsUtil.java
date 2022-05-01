@@ -6,7 +6,6 @@
 package dog.kaylen.octarine.world.biome;
 
 import dog.kaylen.octarine.mixin.GenerationSettingsAccessor;
-import dog.kaylen.octarine.mixin.GenerationSettingsBuilderAccessor;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -26,22 +25,35 @@ public class GenerationSettingsUtil {
      *     provided.
      */
     public static GenerationSettings.Builder from(GenerationSettings settings) {
-        GenerationSettingsBuilderAccessor builder =
-                (GenerationSettingsBuilderAccessor) new GenerationSettings.Builder();
+        GenerationSettings.Builder builder = new GenerationSettings.Builder();
         // set features
         List<RegistryEntryList<PlacedFeature>> features = settings.getFeatures();
         List<List<RegistryEntry<PlacedFeature>>> mappedFeatures =
                 features.stream()
                         .map(entryList -> entryList.stream().toList())
                         .collect(Collectors.toList());
-        builder.setFeatures(mappedFeatures);
+        mappedFeatures.forEach(
+                featureStep -> {
+                    int step = 0;
+                    for (RegistryEntry<PlacedFeature> feature : featureStep) {
+                        builder.feature(step, feature);
+                        step += 1;
+                    }
+                });
         // set carvers
         GenerationSettingsAccessor mixinSettings = (GenerationSettingsAccessor) settings;
         Map<GenerationStep.Carver, List<RegistryEntry<ConfiguredCarver<?>>>> mappedCarvers =
                 mixinSettings.getCarvers().entrySet().stream()
                         .map(entry -> Map.entry(entry.getKey(), entry.getValue().stream().toList()))
                         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-        builder.setCarvers(mappedCarvers);
+        // append carvers to builder
+        mappedCarvers.forEach(
+                (carver, registryEntries) -> {
+                    registryEntries.forEach(
+                            entry -> {
+                                builder.carver(carver, entry);
+                            });
+                });
         // return builder
         return (GenerationSettings.Builder) builder;
     }
