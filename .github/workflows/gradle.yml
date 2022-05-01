@@ -1,4 +1,4 @@
-name: Gradle CI
+name: Verify Java Build
 
 on:
   pull_request:
