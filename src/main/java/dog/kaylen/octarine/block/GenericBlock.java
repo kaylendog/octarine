@@ -5,30 +5,14 @@
  */
 package dog.kaylen.octarine.block;
 
+import dog.kaylen.octarine.util.Identifiable;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-interface GenericBlock {
-    /**
-     * Get the registry key of this block.
-     *
-     * @return The registry key of this block.
-     */
-    String getKey();
-
-    /**
-     * Get the identifier of this block.
-     *
-     * @return The identifier of this block.
-     */
-    default Identifier getIdentifier() {
-        return new Identifier("octarine", this.getKey());
-    }
-
+interface GenericBlock extends Identifiable {
     /**
      * Get the item group of this block.
      *

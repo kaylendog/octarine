@@ -5,10 +5,10 @@
  */
 package dog.kaylen.octarine.feature;
 
+import dog.kaylen.octarine.util.Identifiable;
 import java.util.function.Predicate;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -17,23 +17,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 
 /** A utility interface implemented by features for ease of use. */
-public interface GenericFeature {
-    /**
-     * Get the registry key of this block.
-     *
-     * @return The registry key of this block.
-     */
-    String getKey();
-
-    /**
-     * Get the identifier of this block.
-     *
-     * @return The identifier of this block.
-     */
-    default Identifier getIdentifier() {
-        return new Identifier("octarine", this.getKey());
-    }
-
+public interface GenericFeature extends Identifiable {
     /**
      * @return This feature's `ConfiguredFeature` configuration.
      */

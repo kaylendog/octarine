@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine;
 
+import dog.kaylen.octarine.biome.MagicalForest;
 import dog.kaylen.octarine.block.DeepslateOctironOreBlock;
 import dog.kaylen.octarine.block.OctironOreBlock;
 import dog.kaylen.octarine.feature.DeepslateOctironOreVein;
@@ -26,6 +27,9 @@ public class OctarineMod implements ModInitializer {
     public static final DeepslateOctironOreVein DEEPSLATE_OCTIRON_ORE_VEIN =
             new DeepslateOctironOreVein();
 
+    // biomes
+    public static final MagicalForest MAGICAL_FOREST = new MagicalForest();
+
     @Override
     public void onInitialize() {
         LOGGER.info("Initializing Octarine...");
@@ -35,5 +39,7 @@ public class OctarineMod implements ModInitializer {
         // add features to registry
         OCTIRON_ORE_VEIN.register();
         DEEPSLATE_OCTIRON_ORE_VEIN.register();
+        // register biomes
+        MAGICAL_FOREST.register();
     }
 }
