@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.biome;
 
-import dog.kaylen.octarine.world.generator.GenerationSettingsUtil;
+import dog.kaylen.octarine.world.biome.GenerationSettingsUtil;
 import java.util.Objects;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;

@@ -7,7 +7,7 @@ package dog.kaylen.octarine.biome;
 
 import dog.kaylen.octarine.OctarineMod;
 import dog.kaylen.octarine.util.Identifiable;
-import dog.kaylen.octarine.world.generator.GenerationSettingsUtil;
+import dog.kaylen.octarine.world.biome.GenerationSettingsUtil;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
