@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.item;
 
+import dog.kaylen.octarine.OctarineMod;
 import dog.kaylen.octarine.util.Identifiable;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
@@ -12,6 +13,7 @@ import net.minecraft.util.registry.Registry;
 public interface GenericItem extends Identifiable {
     /** Register this item with Minecraft's item registry. */
     default void register() {
+        OctarineMod.LOGGER.debug("Registering item 'octarine/item:{}'...", this.getKey());
         Registry.register(Registry.ITEM, this.getIdentifier(), (Item) this);
     }
 }

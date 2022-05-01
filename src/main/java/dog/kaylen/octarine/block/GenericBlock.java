@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.block;
 
+import dog.kaylen.octarine.OctarineMod;
 import dog.kaylen.octarine.util.Identifiable;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -22,6 +23,7 @@ interface GenericBlock extends Identifiable {
 
     /** Register this block with the Minecraft block and item registries. */
     default void register() {
+        OctarineMod.LOGGER.debug("Registering block 'octarine/block:{}'...", this.getKey());
         Registry.register(Registry.BLOCK, this.getIdentifier(), (Block) this);
         Registry.register(
                 Registry.ITEM,

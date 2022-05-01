@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.feature;
 
+import dog.kaylen.octarine.OctarineMod;
 import dog.kaylen.octarine.util.Identifiable;
 import java.util.function.Predicate;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -40,6 +41,7 @@ public interface GenericFeature extends Identifiable {
 
     /** Register this feature with Minecraft. */
     default void register() {
+        OctarineMod.LOGGER.debug("Registering feature 'octarine/feature:{}'...", this.getKey());
         Registry.register(
                 BuiltinRegistries.CONFIGURED_FEATURE,
                 this.getIdentifier(),

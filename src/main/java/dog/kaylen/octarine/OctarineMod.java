@@ -10,6 +10,7 @@ import dog.kaylen.octarine.block.DeepslateOctironOreBlock;
 import dog.kaylen.octarine.block.OctironOreBlock;
 import dog.kaylen.octarine.feature.DeepslateOctironOreVein;
 import dog.kaylen.octarine.feature.OctironOreVein;
+import dog.kaylen.octarine.item.RawOctironItem;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,9 @@ public class OctarineMod implements ModInitializer {
     public static final OctironOreBlock OCTIRON_ORE_BLOCK = new OctironOreBlock();
     public static final DeepslateOctironOreBlock DEEPSLATE_OCTIRON_ORE_BLOCK =
             new DeepslateOctironOreBlock();
+
+    // items
+    public static final RawOctironItem RAW_OCTIRON_ITEM = new RawOctironItem();
 
     // features
     public static final OctironOreVein OCTIRON_ORE_VEIN = new OctironOreVein();
