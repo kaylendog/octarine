@@ -5,7 +5,6 @@
  */
 package dog.kaylen.octarine.mixin;
 
-import dog.kaylen.octarine.impl.IGenerationSettingsBuilder;
 import java.util.List;
 import java.util.Map;
 import net.minecraft.util.registry.RegistryEntry;
@@ -17,11 +16,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(GenerationSettings.Builder.class)
-public abstract class MixinGenerationSettingsBuilder implements IGenerationSettingsBuilder {
+public interface GenerationSettingsBuilderAccessor {
     @Accessor("features")
-    public abstract void setFeatures(List<List<RegistryEntry<PlacedFeature>>> features);
+    void setFeatures(List<List<RegistryEntry<PlacedFeature>>> features);
 
     @Accessor("carvers")
-    public abstract void setCarvers(
-            Map<GenerationStep.Carver, List<RegistryEntry<ConfiguredCarver<?>>>> carvers);
+    void setCarvers(Map<GenerationStep.Carver, List<RegistryEntry<ConfiguredCarver<?>>>> carvers);
 }

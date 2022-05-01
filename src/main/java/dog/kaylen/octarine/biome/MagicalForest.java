@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.biome;
 
-import dog.kaylen.octarine.impl.IGenerationSettingsBuilder;
+import dog.kaylen.octarine.world.generator.GenerationSettingsUtil;
 import java.util.Objects;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -29,7 +29,7 @@ public class MagicalForest implements GenericBiome {
                         .build());
         // build
         builder.generationSettings(
-                IGenerationSettingsBuilder.from(forest.getGenerationSettings()).build());
+                GenerationSettingsUtil.from(forest.getGenerationSettings()).build());
         return builder.build();
     }
 

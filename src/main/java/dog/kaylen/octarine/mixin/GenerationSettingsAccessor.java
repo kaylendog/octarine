@@ -5,7 +5,6 @@
  */
 package dog.kaylen.octarine.mixin;
 
-import dog.kaylen.octarine.impl.IGenerationSettings;
 import java.util.Map;
 import net.minecraft.util.registry.RegistryEntryList;
 import net.minecraft.world.biome.GenerationSettings;
@@ -15,7 +14,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(GenerationSettings.class)
-public abstract class MixinGenerationSettings implements IGenerationSettings {
+public interface GenerationSettingsAccessor {
     @Accessor("carvers")
-    public abstract Map<GenerationStep.Carver, RegistryEntryList<ConfiguredCarver<?>>> getCarvers();
+    Map<GenerationStep.Carver, RegistryEntryList<ConfiguredCarver<?>>> getCarvers();
 }

@@ -6,8 +6,8 @@
 package dog.kaylen.octarine.biome;
 
 import dog.kaylen.octarine.OctarineMod;
-import dog.kaylen.octarine.impl.IGenerationSettingsBuilder;
 import dog.kaylen.octarine.util.Identifiable;
+import dog.kaylen.octarine.world.generator.GenerationSettingsUtil;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -54,7 +54,7 @@ public interface GenericBiome extends Identifiable {
      *     settings.
      */
     static GenerationSettings.Builder generationSettingsBuilderFromBiome(RegistryKey<Biome> key) {
-        return IGenerationSettingsBuilder.from(
+        return GenerationSettingsUtil.from(
                 BuiltinRegistries.BIOME.entryOf(key).value().getGenerationSettings());
     }
 

@@ -4,9 +4,9 @@
     "package": "dog.kaylen.octarine.mixin",
     "compatibilityLevel": "JAVA_17",
     "mixins": [
-        "MixinBiomeBuilder",
-        "MixinGenerationSettings",
-        "MixinGenerationSettingsBuilder"
+        "IGenerationSettings",
+        "GenerationSettingsBuilderAccessor",
+        "MixinBiomeBuilder"
     ],
     "client": [],
     "injectors": {
