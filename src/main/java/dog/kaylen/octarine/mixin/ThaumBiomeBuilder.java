@@ -1,10 +1,10 @@
-package dog.kaylen.octarine.world.biome;
+package dog.kaylen.octarine.mixin;
 
 import net.minecraft.world.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(Biome.Builder.class)
-public interface IBiomeBuilder {
+public interface ThaumBiomeBuilder {
     float getThaum();
-    IBiomeBuilder thaum(float value);
+    ThaumBiomeBuilder thaum(float value);
 }

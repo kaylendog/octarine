@@ -5,16 +5,15 @@
  */
 package dog.kaylen.octarine.mixin;
 
-import dog.kaylen.octarine.world.biome.IBiomeBuilder;
 import net.minecraft.world.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(Biome.Builder.class)
-public abstract class MixinBiomeBuilder implements IBiomeBuilder {
+public abstract class MixinBiomeBuilder implements ThaumBiomeBuilder {
     private float thaum;
 
     @Override
-    public IBiomeBuilder thaum(float value) {
+    public ThaumBiomeBuilder thaum(float value) {
         this.thaum = value;
         return this;
     }
