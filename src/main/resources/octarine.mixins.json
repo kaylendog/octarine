@@ -3,11 +3,7 @@
     "minVersion": "0.8",
     "package": "dog.kaylen.octarine.mixin",
     "compatibilityLevel": "JAVA_17",
-    "mixins": [
-        "IGenerationSettings",
-        "GenerationSettingsBuilderAccessor",
-        "MixinBiomeBuilder"
-    ],
+    "mixins": ["GenerationSettingsAccessor", "MixinBiomeBuilder"],
     "client": [],
     "injectors": {
         "defaultRequire": 1
