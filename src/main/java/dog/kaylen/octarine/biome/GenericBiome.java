@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.biome;
 
+import dog.kaylen.octarine.OctarineMod;
 import dog.kaylen.octarine.impl.IGenerationSettingsBuilder;
 import dog.kaylen.octarine.util.Identifiable;
 import net.minecraft.util.math.MathHelper;
@@ -64,6 +65,7 @@ public interface GenericBiome extends Identifiable {
 
     /** Register the biome with Minecraft's registries. */
     default void register() {
+        OctarineMod.LOGGER.debug("Registering biome 'octarine/biome:{}'...", this.getKey());
         RegistryKey<Biome> biomeKey = RegistryKey.of(Registry.BIOME_KEY, this.getIdentifier());
         Registry.register(BuiltinRegistries.BIOME, biomeKey, this.getBiome());
     }

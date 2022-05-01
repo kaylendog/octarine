@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.biome;
 
+import dog.kaylen.octarine.impl.IGenerationSettingsBuilder;
 import java.util.Objects;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -15,21 +16,20 @@ public class MagicalForest implements GenericBiome {
     @Override
     public Biome getBiome() {
         // copy defaults from forest
-        Biome.Builder builder =
-                Biome.Builder.copy(
-                        Objects.requireNonNull(
-                                BuiltinRegistries.BIOME.get(
-                                        new Identifier("minecraft", "forest"))));
+        Biome forest = BuiltinRegistries.BIOME.get(new Identifier("minecraft", "forest"));
+        Biome.Builder builder = Biome.Builder.copy(Objects.requireNonNull(forest));
         // setup biome effects
         builder.effects(
                 new BiomeEffects.Builder()
-                        .fogColor(0x65406b)
-                        .skyColor(0xc45fd4)
+                        .fogColor(0xc45fd4)
+                        .skyColor(0xfdbfff)
                         .grassColor(0x59c9b6)
                         .waterColor(0x7e59c9)
                         .waterFogColor(0x3f2770)
                         .build());
         // build
+        builder.generationSettings(
+                IGenerationSettingsBuilder.from(forest.getGenerationSettings()).build());
         return builder.build();
     }
 
