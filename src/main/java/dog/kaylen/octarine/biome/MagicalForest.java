@@ -12,7 +12,7 @@ import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 
-public class MagicalForest implements GenericBiome {
+public class MagicalForest extends OctarineBiome {
     @Override
     public Biome getBiome() {
         // copy defaults from forest

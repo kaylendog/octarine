@@ -5,9 +5,9 @@
  */
 package dog.kaylen.octarine.item.book;
 
-import dog.kaylen.octarine.item.GenericItem;
+import dog.kaylen.octarine.item.OctarineItem;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
@@ -19,9 +19,9 @@ import vazkii.patchouli.common.base.PatchouliSounds;
 import vazkii.patchouli.common.book.Book;
 import vazkii.patchouli.common.book.BookRegistry;
 
-public class WizardsGuideItem extends Item implements GenericItem {
-    public WizardsGuideItem(Settings settings) {
-        super(settings);
+public class WizardsGuideItem extends OctarineItem {
+    public WizardsGuideItem() {
+        super(new FabricItemSettings());
     }
 
     @Override

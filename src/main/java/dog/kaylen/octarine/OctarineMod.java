@@ -5,45 +5,26 @@
  */
 package dog.kaylen.octarine;
 
-import dog.kaylen.octarine.biome.MagicalForest;
-import dog.kaylen.octarine.block.DeepslateOctironOreBlock;
-import dog.kaylen.octarine.block.OctironOreBlock;
-import dog.kaylen.octarine.feature.DeepslateOctironOreVein;
-import dog.kaylen.octarine.feature.OctironOreVein;
-import dog.kaylen.octarine.item.RawOctironItem;
+import dog.kaylen.octarine.registry.OctarineRegistryContainer;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class OctarineMod implements ModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger("octarine");
+    /** The singleton instance of the mod. */
+    static OctarineMod INSTANCE;
 
-    // blocks
-    public static final OctironOreBlock OCTIRON_ORE_BLOCK = new OctironOreBlock();
-    public static final DeepslateOctironOreBlock DEEPSLATE_OCTIRON_ORE_BLOCK =
-            new DeepslateOctironOreBlock();
+    /** The plugin logger instance. */
+    final Logger LOGGER = LoggerFactory.getLogger("octarine");
 
-    // items
-    public static final RawOctironItem RAW_OCTIRON_ITEM = new RawOctironItem();
-
-    // features
-    public static final OctironOreVein OCTIRON_ORE_VEIN = new OctironOreVein();
-    public static final DeepslateOctironOreVein DEEPSLATE_OCTIRON_ORE_VEIN =
-            new DeepslateOctironOreVein();
-
-    // biomes
-    public static final MagicalForest MAGICAL_FOREST = new MagicalForest();
+    /** The plugin registries. */
+    public final OctarineRegistryContainer registries = new OctarineRegistryContainer();
 
     @Override
     public void onInitialize() {
         LOGGER.info("Initializing Octarine...");
-        // add blocks to registry
-        OCTIRON_ORE_BLOCK.register();
-        DEEPSLATE_OCTIRON_ORE_BLOCK.register();
-        // add features to registry
-        OCTIRON_ORE_VEIN.register();
-        DEEPSLATE_OCTIRON_ORE_VEIN.register();
-        // register biomes
-        MAGICAL_FOREST.register();
+        INSTANCE = this;
+        // register all
+        this.registries.registerAll();
     }
 }

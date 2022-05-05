@@ -18,7 +18,7 @@ import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 
-public class DeepslateOctironOreVein implements GenericFeature {
+public class DeepslateOctironOreVein extends OctarineFeature {
     @Override
     public String getKey() {
         return "deepslate_octiron_ore_vein";

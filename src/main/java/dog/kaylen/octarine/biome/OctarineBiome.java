@@ -5,19 +5,17 @@
  */
 package dog.kaylen.octarine.biome;
 
-import dog.kaylen.octarine.OctarineMod;
 import dog.kaylen.octarine.util.Identifiable;
 import dog.kaylen.octarine.world.biome.GenerationSettingsUtil;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 
 /** Utility interface providing methods to biome classes. */
-public interface GenericBiome extends Identifiable {
+public abstract class OctarineBiome implements Identifiable {
     //// Source method: TerrestriaBiomes.java
     //// Copyright (C) 2022 TerraformersMC and contributors.
     // Copied from Traverse
@@ -61,12 +59,5 @@ public interface GenericBiome extends Identifiable {
     /**
      * @return The constructed biome confiugration.
      */
-    Biome getBiome();
-
-    /** Register the biome with Minecraft's registries. */
-    default void register() {
-        OctarineMod.LOGGER.debug("Registering biome 'octarine/biome:{}'...", this.getKey());
-        RegistryKey<Biome> biomeKey = RegistryKey.of(Registry.BIOME_KEY, this.getIdentifier());
-        Registry.register(BuiltinRegistries.BIOME, biomeKey, this.getBiome());
-    }
+    public abstract Biome getBiome();
 }

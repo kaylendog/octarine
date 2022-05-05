@@ -1,0 +1,15 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": ["octarine:raw_octiron"]
+    },
+    "criteria": {
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "octarine:raw_octiron"
+            }
+        }
+    },
+    "requirements": [["has_the_recipe"]]
+}

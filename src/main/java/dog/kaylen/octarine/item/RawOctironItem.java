@@ -6,10 +6,9 @@
 package dog.kaylen.octarine.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 
-public class RawOctironItem extends Item implements GenericItem {
+public class RawOctironItem extends OctarineItem {
     public RawOctironItem() {
         super(new FabricItemSettings().group(ItemGroup.MATERIALS));
     }
