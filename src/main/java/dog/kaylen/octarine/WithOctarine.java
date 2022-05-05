@@ -5,20 +5,29 @@
  */
 package dog.kaylen.octarine;
 
+import dog.kaylen.octarine.registry.OctarineRegistryContainer;
 import org.slf4j.Logger;
 
+/** Utility interface to easily access octarine features. */
 public interface WithOctarine {
     /**
      * @return A reference to the plugin singleton.
      */
     default OctarineMod getInstance() {
-        return OctarineMod.INSTANCE;
+        return OctarineMod.getInstance();
     }
 
     /**
      * @return A reference to the plugin logger.
      */
     default Logger getLogger() {
-        return this.getInstance().LOGGER;
+        return this.getInstance().getLogger();
+    }
+
+    /**
+     * @return A reference to the plugin registries.
+     */
+    default OctarineRegistryContainer getRegistries() {
+        return this.getInstance().getRegistries();
     }
 }
