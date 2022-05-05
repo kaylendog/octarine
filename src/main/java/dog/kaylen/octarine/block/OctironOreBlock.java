@@ -6,13 +6,12 @@
 package dog.kaylen.octarine.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.ItemGroup;
 
-public class OctironOreBlock extends Block implements OctarineBlock {
+public class OctironOreBlock extends OctarineBlock {
     public OctironOreBlock() {
-        super(FabricBlockSettings.of(Material.METAL).hardness(4.0f).requiresTool().luminance(3));
+        super(FabricBlockSettings.of(Material.METAL).hardness(50.0f).requiresTool().luminance(3));
     }
 
     @Override

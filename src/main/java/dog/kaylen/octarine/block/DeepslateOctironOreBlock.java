@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 public class DeepslateOctironOreBlock extends OctarineBlock {
     public DeepslateOctironOreBlock() {
-        super(FabricBlockSettings.of(Material.METAL).hardness(4.0f).requiresTool().luminance(3));
+        super(FabricBlockSettings.of(Material.METAL).hardness(50.0f).requiresTool().luminance(3));
     }
 
     @Override

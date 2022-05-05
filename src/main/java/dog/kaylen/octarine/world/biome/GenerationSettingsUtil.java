@@ -9,6 +9,8 @@ import dog.kaylen.octarine.mixin.GenerationSettingsAccessor;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import lombok.experimental.UtilityClass;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryEntryList;
 import net.minecraft.world.biome.GenerationSettings;
@@ -16,6 +18,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.PlacedFeature;
 
+@UtilityClass
 public class GenerationSettingsUtil {
     /**
      * Create a `GenerationSettings.Builder` from an existing settings instance.
