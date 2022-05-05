@@ -6,6 +6,7 @@
 package dog.kaylen.octarine.feature;
 
 import dog.kaylen.octarine.OctarineMod;
+import dog.kaylen.octarine.util.OnceCell;
 import java.util.Arrays;
 import java.util.function.Predicate;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
@@ -17,38 +18,45 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
+import org.jetbrains.annotations.NotNull;
 
 public class OctironOreVein extends OctarineFeature {
     @Override
-    public String getKey() {
+    public @NotNull String getKey() {
         return "octiron_ore_vein";
     }
 
-    private static final ConfiguredFeature<?, ?> configuredFeature =
-            new ConfiguredFeature(
-                    Feature.ORE,
-                    new OreFeatureConfig(
-                            OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
-                            OctarineMod.OCTIRON_ORE_BLOCK.getDefaultState(),
-                            3));
+    private static final OnceCell<ConfiguredFeature<?, ?>> configuredFeature = new OnceCell<>();
 
     @Override
     public ConfiguredFeature<?, ?> getConfiguredFeature() {
-        return configuredFeature;
+        return configuredFeature.getOrInit(
+                () ->
+                        new ConfiguredFeature(
+                                Feature.ORE,
+                                new OreFeatureConfig(
+                                        OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
+                                        OctarineMod.getInstance()
+                                                .getRegistries()
+                                                .BLOCK
+                                                .OCTIRON_ORE_BLOCK
+                                                .getDefaultState(),
+                                        3)));
     }
 
-    private static final PlacedFeature placedFeature =
-            new PlacedFeature(
-                    RegistryEntry.of(configuredFeature),
-                    Arrays.asList(
-                            CountPlacementModifier.of(6),
-                            SquarePlacementModifier.of(),
-                            HeightRangePlacementModifier.trapezoid(
-                                    YOffset.getBottom(), YOffset.belowTop(32))));
+    private static final OnceCell<PlacedFeature> placedFeature = new OnceCell<>();
 
     @Override
     public PlacedFeature getPlacedFeature() {
-        return placedFeature;
+        return placedFeature.getOrInit(
+                () ->
+                        new PlacedFeature(
+                                RegistryEntry.of(configuredFeature.get()),
+                                Arrays.asList(
+                                        CountPlacementModifier.of(6),
+                                        SquarePlacementModifier.of(),
+                                        HeightRangePlacementModifier.trapezoid(
+                                                YOffset.aboveBottom(0), YOffset.belowTop(32)))));
     }
 
     @Override

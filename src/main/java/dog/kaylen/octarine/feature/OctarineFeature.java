@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.feature;
 
+import dog.kaylen.octarine.WithOctarine;
 import dog.kaylen.octarine.util.Identifiable;
 import java.util.function.Predicate;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
@@ -13,7 +14,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 
 /** A utility interface implemented by features for ease of use. */
-public abstract class OctarineFeature implements Identifiable {
+public abstract class OctarineFeature implements Identifiable, WithOctarine {
     /**
      * @return This feature's `ConfiguredFeature` configuration.
      */

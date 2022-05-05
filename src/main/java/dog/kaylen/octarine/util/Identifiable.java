@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.util;
 
+import lombok.NonNull;
 import net.minecraft.util.Identifier;
 
 /** Utility interface implementing `getKey` and `getIdentifier` methods. */
@@ -14,6 +15,7 @@ public interface Identifiable {
      *
      * @return The registry key of this object.
      */
+    @NonNull
     String getKey();
 
     /**

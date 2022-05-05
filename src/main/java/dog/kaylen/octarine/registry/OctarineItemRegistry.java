@@ -6,6 +6,7 @@
 package dog.kaylen.octarine.registry;
 
 import dog.kaylen.octarine.item.OctarineItem;
+import dog.kaylen.octarine.item.OctironScrapItem;
 import dog.kaylen.octarine.item.RawOctironItem;
 import dog.kaylen.octarine.item.book.WitchesGuideItem;
 import dog.kaylen.octarine.item.book.WizardsGuideItem;
@@ -14,7 +15,9 @@ import net.minecraft.util.registry.Registry;
 
 public class OctarineItemRegistry extends OctarineRegistry<OctarineItem> {
 
+    public final OctironScrapItem OCTIRON_SCRAP_ITEM = create(new OctironScrapItem());
     public final RawOctironItem RAW_OCTIRON_ITEM = create(new RawOctironItem());
+
     public final WitchesGuideItem WITCHES_GUIDE_ITEM = create(new WitchesGuideItem());
     public final WizardsGuideItem WIZARDS_GUIDE_ITEM = create(new WizardsGuideItem());
 

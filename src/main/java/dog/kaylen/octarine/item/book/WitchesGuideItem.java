@@ -14,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import vazkii.patchouli.api.PatchouliAPI;
 import vazkii.patchouli.common.base.PatchouliSounds;
 import vazkii.patchouli.common.book.Book;
@@ -25,7 +26,7 @@ public class WitchesGuideItem extends OctarineItem {
     }
 
     @Override
-    public String getKey() {
+    public @NotNull String getKey() {
         return "witches_guide";
     }
 

@@ -9,7 +9,6 @@ import dog.kaylen.octarine.mixin.GenerationSettingsAccessor;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import lombok.experimental.UtilityClass;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryEntryList;

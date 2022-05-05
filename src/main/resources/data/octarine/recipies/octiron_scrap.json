@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "octarine:raw_octiron"
+    },
+    "result": "octarine:octiron_scrap",
+    "experience": 0.2
+}

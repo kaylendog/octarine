@@ -12,6 +12,7 @@ import net.minecraft.block.Material;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 
 public class DeepslateOctironOreBlock extends OctarineBlock {
     public DeepslateOctironOreBlock() {
@@ -19,7 +20,7 @@ public class DeepslateOctironOreBlock extends OctarineBlock {
     }
 
     @Override
-    public String getKey() {
+    public @NotNull String getKey() {
         return "deepslate_octiron_ore";
     }
 

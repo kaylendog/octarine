@@ -1,15 +1,37 @@
 {
-    "parent": "minecraft:recipes/root",
-    "rewards": {
-        "recipes": ["octarine:raw_octiron"]
+    "display": {
+        "title": {
+            "text": "What's this?"
+        },
+        "description": {
+            "text": "Mine an Octiron Ore block to obtain Raw Octiron."
+        },
+        "icon": {
+            "item": "octarine:raw_octiron"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
     },
+
     "criteria": {
-        "has_the_recipe": {
-            "trigger": "minecraft:recipe_unlocked",
+        "has_octiron": {
+            "trigger": "minecraft:inventory_changed",
             "conditions": {
-                "recipe": "octarine:raw_octiron"
+                "items": [
+                    {
+                        "item": "minecraft:iron_ore",
+                        "count": {
+                            "min": 1
+                        }
+                    }
+                ]
             }
         }
     },
-    "requirements": [["has_the_recipe"]]
+    "rewards": {
+        "recipes": ["raw_octiron"]
+    }
 }

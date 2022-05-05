@@ -8,6 +8,7 @@ package dog.kaylen.octarine.block;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Material;
 import net.minecraft.item.ItemGroup;
+import org.jetbrains.annotations.NotNull;
 
 public class OctironOreBlock extends OctarineBlock {
     public OctironOreBlock() {
@@ -15,7 +16,7 @@ public class OctironOreBlock extends OctarineBlock {
     }
 
     @Override
-    public String getKey() {
+    public @NotNull String getKey() {
         return "octiron_ore";
     }
 

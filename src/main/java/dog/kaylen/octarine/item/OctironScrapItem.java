@@ -5,17 +5,17 @@
  */
 package dog.kaylen.octarine.item;
 
+import lombok.NonNull;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ItemGroup;
-import org.jetbrains.annotations.NotNull;
 
-public class RawOctironItem extends OctarineItem {
-    public RawOctironItem() {
+public class OctironScrapItem extends OctarineItem {
+    public OctironScrapItem() {
         super(new FabricItemSettings().group(ItemGroup.MATERIALS));
     }
 
     @Override
-    public @NotNull String getKey() {
-        return "raw_octiron";
+    public @NonNull String getKey() {
+        return "octiron_scrap";
     }
 }
