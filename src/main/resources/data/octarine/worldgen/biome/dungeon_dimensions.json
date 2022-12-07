@@ -1,0 +1,25 @@
+{
+    "precipitation": "none",
+    "temperature": 0.0,
+    "temperature_modifier": "frozen",
+    "effects": {
+        "fog_color": 1579809,
+        "sky_color": 1185564,
+        "water_color": 2699845,
+        "water_fog_color": 1579809,
+        "foliage_color": 3030090,
+        "grass_color": 3030090,
+        "particle": {
+            "probability": 0.8,
+            "options": {
+                "type": "dust",
+                "color": [0.18, 0.235, 0.29],
+                "scale": 0.5
+            }
+        }
+    },
+    "carvers": {},
+    "features": [],
+    "spawners": {},
+    "spawn_costs": {}
+}

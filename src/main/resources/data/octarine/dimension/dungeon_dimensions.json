@@ -1,0 +1,14 @@
+{
+    "type": "octarine:dungeon_dimensions",
+    "generator": {
+        "biome_source": {
+            "type": "multi_noise",
+            "biomes": [
+                {
+                    "biome": "octarine:dungeon_dimensions",
+                    "parameters": {}
+                }
+            ]
+        }
+    }
+}
