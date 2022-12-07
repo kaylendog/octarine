@@ -1,19 +1,11 @@
 {
-    "type": "minecraft:block",
-    "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "octarine:raw_octiron"
-                }
-            ],
-            "conditions": [
-                {
-                    "condition": "minecraft:survives_explosion"
-                }
-            ]
-        }
-    ]
+    "pools": [{
+        "entries": [{
+            "name": "octarine:raw_octiron",
+            "type": "minecraft:item"
+        }],
+        "rolls": 1,
+        "conditions": [{"condition": "minecraft:survives_explosion"}]
+    }],
+    "type": "minecraft:block"
 }

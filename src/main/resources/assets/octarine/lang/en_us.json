@@ -1,12 +1,12 @@
 {
-    "block.octarine.octiron_ore": "Octiron Ore",
-    "item.octarine.octiron_ore": "Octiron Ore",
     "block.octarine.deepslate_octiron_ore": "Deepslate Octiron Ore",
-    "item.octarine.deepslate_octiron_ore": "Deepslate Octiron Ore",
+    "block.octarine.octiron_ore": "Octiron Ore",
     "item.octarine.raw_octiron": "Raw Octiron",
-    "item.octarine.octiron_scrap": "Octiron Scrap",
-    "item.octarine.wizards_guide": "Ye Wyzrd's Guide to Magick",
-    "item.octarine.wizards_guide.landing_text": "Wrytten by Skrelt Changebasket, founder of Ye Ancient and Truly Origynal Brothrs of Ye Silver Star",
+    "item.octarine.witches_guide.landing_text": "Wrytten by Esmerelder Weatherwaxe (Mss) Wytch",
+    "item.octarine.octiron_ore": "Octiron Ore",
     "item.octarine.witches_guide": "Headology 'n othr Sundry Wytch Trickes",
-    "item.octarine.witches_guide.landing_text": "Wrytten by Esmerelder Weatherwaxe (Mss) Wytch"
+    "item.octarine.deepslate_octiron_ore": "Deepslate Octiron Ore",
+    "item.octarine.wizards_guide.landing_text": "Wrytten by Skrelt Changebasket, founder of Ye Ancient and Truly Origynal Brothrs of Ye Silver Star",
+    "item.octarine.wizards_guide": "Ye Wyzrd's Guide to Magick",
+    "item.octarine.octiron_scrap": "Octiron Scrap"
 }

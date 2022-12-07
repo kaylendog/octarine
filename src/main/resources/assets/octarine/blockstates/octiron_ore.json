@@ -1,5 +1,1 @@
-{
-    "variants": {
-        "": { "model": "octarine:block/octiron_ore" }
-    }
-}
+{"variants": {"": {"model": "octarine:block/octiron_ore"}}}

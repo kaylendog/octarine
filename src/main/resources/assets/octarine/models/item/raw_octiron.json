@@ -1,6 +1,4 @@
 {
     "parent": "item/generated",
-    "textures": {
-        "layer0": "octarine:item/raw_octiron"
-    }
+    "textures": {"layer0": "octarine:item/raw_octiron"}
 }

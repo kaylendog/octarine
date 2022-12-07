@@ -1,9 +1,9 @@
 {
-    "name": "item.octarine.witches_guide",
-    "landing_text": "item.octarine.witches_guide.landing_text",
-    "book_texture": "patchouli:textures/gui/book_purple.png",
-    "model": "patchouli:book_purple",
     "dont_generate_book": true,
-    "custom_book_item": "octarine:witches_guide",
-    "version": 1
+    "landing_text": "item.octarine.witches_guide.landing_text",
+    "name": "item.octarine.witches_guide",
+    "model": "patchouli:book_purple",
+    "version": 1,
+    "book_texture": "patchouli:textures/gui/book_purple.png",
+    "custom_book_item": "octarine:witches_guide"
 }

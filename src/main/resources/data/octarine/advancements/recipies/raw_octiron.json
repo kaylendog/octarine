@@ -1,35 +1,19 @@
 {
-    "display": {
-        "title": {
-            "text": "What's this?"
-        },
-        "description": {
-            "text": "Mine an Octiron Ore block to obtain Raw Octiron."
-        },
-        "icon": {
-            "item": "octarine:raw_octiron"
-        },
-        "frame": "task",
-        "show_toast": true,
-        "announce_to_chat": true,
-        "hidden": false,
-        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
-    },
-    "criteria": {
-        "has_octiron": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "item": "octarine:raw_octiron"
-                    }
-                ]
-            }
-        }
-    },
-    "rewards": {
-        "recipes": ["octiron_scrap"]
-    },
     "parent": "octarine:root",
-    "requirements": [["has_octiron"]]
+    "requirements": [["has_octiron"]],
+    "criteria": {"has_octiron": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {"items": [{"item": "octarine:raw_octiron"}]}
+    }},
+    "display": {
+        "show_toast": true,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+        "icon": {"item": "octarine:raw_octiron"},
+        "description": {"text": "Mine an Octiron Ore block to obtain Raw Octiron."},
+        "title": {"text": "What's this?"},
+        "announce_to_chat": true,
+        "frame": "task"
+    },
+    "rewards": {"recipes": ["octiron_scrap"]}
 }

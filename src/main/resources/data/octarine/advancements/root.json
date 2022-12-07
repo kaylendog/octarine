@@ -1,33 +1,21 @@
 {
+    "requirements": [["has_octiron"]],
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "criteria": {"has_octiron": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {"items": [{"item": "octarine:raw_octiron"}]}
+    }},
     "display": {
-        "title": {
-            "text": "Octarine",
-            "color": "light_purple"
-        },
-        "description": {
-            "text": "Magic mod for Minecraft inspired by Terry Pratchett's \"Discworld\" series."
-        },
-        "icon": {
-            "item": "minecraft:nether_star"
-        },
-        "frame": "task",
         "show_toast": false,
-        "announce_to_chat": false,
         "hidden": false,
-        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
-    },
-    "criteria": {
-        "has_octiron": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-                "items": [
-                    {
-                        "item": "octarine:raw_octiron"
-                    }
-                ]
-            }
-        }
-    },
-    "requirements": [["has_octiron"]]
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+        "icon": {"item": "minecraft:nether_star"},
+        "description": {"text": "Magic mod for Minecraft inspired by Terry Pratchett's \"Discworld\" series."},
+        "title": {
+            "color": "light_purple",
+            "text": "Octarine"
+        },
+        "announce_to_chat": false,
+        "frame": "task"
+    }
 }
