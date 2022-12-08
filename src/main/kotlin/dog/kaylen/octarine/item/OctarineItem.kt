@@ -5,8 +5,16 @@
  */
 package dog.kaylen.octarine.item
 
-import dog.kaylen.octarine.util.Identifiable
+import dog.kaylen.octarine.registry.Identifiable
+import dog.kaylen.octarine.util.identifierOf
 import net.minecraft.item.Item
 
-/** A generic item placeholder class.  */
-abstract class OctarineItem(settings: Settings?) : Item(settings), Identifiable
+/**
+ * A wrapper around the Minecraft item type.
+ */
+abstract class OctarineItem(private val key: String, settings: Settings) : Item(settings), Identifiable {
+    /**
+     * This item's identifier.
+     */
+    override val identifier get() = identifierOf(this.key)
+}

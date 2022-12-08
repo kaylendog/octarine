@@ -2,6 +2,7 @@
     "piglin_safe": false,
     "natural": false,
     "ambient_light": 0.5,
+    "monster_spawn_block_light_limit": 0,
     "infiniburn": "#infiniburn_overworld",
     "respawn_anchor_works": false,
     "has_skylight": true,
@@ -12,6 +13,7 @@
     "coordinate_scale": 1,
     "logical_height": 256,
     "min_y": 0,
+    "monster_spawn_light_level": 0,
     "ultrawarm": false,
     "has_ceiling": false,
     "height": 256

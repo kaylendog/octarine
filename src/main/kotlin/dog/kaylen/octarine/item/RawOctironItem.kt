@@ -7,8 +7,4 @@ package dog.kaylen.octarine.item
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.ItemGroup
-
-class RawOctironItem : OctarineItem(FabricItemSettings().group(ItemGroup.MATERIALS)) {
-    override val key: String?
-        get() = "raw_octiron"
-}
+object RawOctironItem : OctarineItem("raw_octiron", FabricItemSettings().group(ItemGroup.MATERIALS))

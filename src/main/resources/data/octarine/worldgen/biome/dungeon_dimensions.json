@@ -1,5 +1,6 @@
 {
     "precipitation": "none",
+    "features": [],
     "effects": {
         "sky_color": 1185564,
         "grass_color": 3030090,
@@ -22,6 +23,7 @@
     },
     "temperature": 0,
     "carvers": {},
+    "downfall": 0,
     "spawn_costs": {},
     "spawners": {},
     "temperature_modifier": "frozen"

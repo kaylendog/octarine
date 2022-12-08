@@ -11,17 +11,16 @@ import dog.kaylen.octarine.item.RawOctironItem
 import dog.kaylen.octarine.item.book.WitchesGuideItem
 import dog.kaylen.octarine.item.book.WizardsGuideItem
 import net.minecraft.item.Item
+import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
-import java.util.function.Consumer
 
-class OctarineItemRegistry : OctarineRegistry<OctarineItem?>() {
-    val OCTIRON_SCRAP_ITEM = create(OctironScrapItem())
-    val RAW_OCTIRON_ITEM = create(RawOctironItem())
-    val WITCHES_GUIDE_ITEM = create(WitchesGuideItem())
-    val WIZARDS_GUIDE_ITEM = create(WizardsGuideItem())
-    override fun registerAllInternal() {
-        entries.forEach(
-            Consumer { entry: OctarineItem -> Registry.register(Registry.ITEM, entry.identifier, entry as Item) }
-        )
+object OctarineItemRegistry : OctarineRegistry<OctarineItem, Item>(Registry.ITEM) {
+    val RAW_OCTIRON = create(RawOctironItem)
+    val OCTIRON_SCRAP = create(OctironScrapItem)
+
+    val WITCHES_GUIDE_ITEM = create(WitchesGuideItem)
+    val WIZARDS_GUIDE_ITEM = create(WizardsGuideItem)
+    override fun identifierOf(element: OctarineItem): Identifier {
+        return element.identifier
     }
 }

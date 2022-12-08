@@ -4,17 +4,11 @@
  * See the LICENSE file in the project root for more information.
  */
 package dog.kaylen.octarine.client
-
-import org.slf4j.LoggerFactory
+import dog.kaylen.octarine.LOGGER
+import net.fabricmc.api.ClientModInitializer
 
 class OctarineClientMod : ClientModInitializer {
     override fun onInitializeClient() {
         LOGGER.info("Initializing clientside features...")
-        CrowdinTranslate.downloadTranslations("dog/kaylen/octarine", "dog/kaylen/octarine")
-    }
-
-    companion object {
-        @JvmField
-        val LOGGER = LoggerFactory.getLogger("dog/kaylen/octarine")
     }
 }

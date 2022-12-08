@@ -8,8 +8,4 @@ package dog.kaylen.octarine.item
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.ItemGroup
 
-class OctironScrapItem : OctarineItem(FabricItemSettings().group(ItemGroup.MATERIALS)) {
-    @get:NonNull
-    override val key: String?
-        get() = "octiron_scrap"
-}
+object OctironScrapItem : OctarineItem("octiron_scrap", FabricItemSettings().group(ItemGroup.MATERIALS))

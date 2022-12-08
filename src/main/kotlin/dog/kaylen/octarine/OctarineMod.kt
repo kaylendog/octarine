@@ -5,28 +5,20 @@
  */
 package dog.kaylen.octarine
 
-import dog.kaylen.octarine.registry.OctarineRegistryContainer
+import dog.kaylen.octarine.registry.Registries
 import net.fabricmc.api.ModInitializer
-import org.slf4j.LoggerFactory
 
 class OctarineMod : ModInitializer {
-    /** The plugin logger instance.  */
-    @Getter
-    private val logger = LoggerFactory.getLogger("octarine")
-
-    /** The plugin registries.  */
-    @Getter
-    private val registries = OctarineRegistryContainer()
     override fun onInitialize() {
-        logger.info("Initializing Octarine...")
+        LOGGER.info("Initializing Octarine...")
+        // setup singleton instance
         instance = this
-        // register all
-        registries.registerAll()
+        // initialize registries
+        Registries.registerAll()
     }
 
     companion object {
         /** The singleton instance of the mod.  */
-        @Getter
-        private var instance: OctarineMod? = null
+        lateinit var instance: OctarineMod
     }
 }

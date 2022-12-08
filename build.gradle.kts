@@ -23,9 +23,6 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api", "fabric-api", project.extra["fabric_version"] as String)
     modImplementation("net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String)
 
-    // crowdin translations
-    modImplementation("de.guntram.mcmod:crowdin-translate:1.4+1.18.2")
-    include("de.guntram.mcmod:crowdin-translate:1.4+1.18.2")
     // patchouli docs
     modImplementation("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")
     include("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")
@@ -41,7 +38,7 @@ tasks {
         options.release.set(javaVersion.toString().toInt())
     }
 
-    jar { from("LICENSE") { rename { "${it}_${base.archivesName}" } } }
+    jar { from("LICENSE") }
 
     processResources {
         filesMatching("fabric.mod.json") {

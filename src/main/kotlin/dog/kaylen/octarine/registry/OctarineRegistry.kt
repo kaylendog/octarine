@@ -5,41 +5,43 @@
  */
 package dog.kaylen.octarine.registry
 
-import dog.kaylen.octarine.WithOctarine
+import dog.kaylen.octarine.util.identifierOf
+import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
+import net.minecraft.util.Identifier
+import net.minecraft.util.registry.Registry
 
 /**
- * Generic registry class.
- *
- * @param <T> The type stored in the registry.
-</T> */
-abstract class OctarineRegistry<T> : WithOctarine {
-    /** List of entries in this registry.  */
-    @JvmField
-    protected val entries: MutableList<T> = ArrayList()
-
-    /** Internal boolean to prevent double registration.  */
-    @JvmField
-    protected var hasRegistered = false
+ * A wrapper around a registry allowing the specified types.
+ */
+abstract class OctarineRegistry<T : U, U>(val internal: Registry<U>) {
+    private val preinitializedStore = hashMapOf<Identifier, U>()
 
     /**
-     * Create an entry in this registry.
-     *
-     * @param entry The entry to create.
-     * @return The entry that was created.
+     * Create a new registry for a specific class type.
      */
-    protected fun <U : T?> create(entry: U): U {
-        entries.add(entry)
-        return entry
+    constructor(key: String, clazz: Class<U>) : this(
+        FabricRegistryBuilder.createSimple(clazz, identifierOf(key)).buildAndRegister()
+    )
+
+    /**
+     * Create a new entry in this registry and return it.
+     */
+    fun create(element: T): T {
+        this.preinitializedStore[this.identifierOf(element)] = element
+        return element
     }
 
-    /** Register all entries in this registry with minecraft.  */
+    /**
+     * Register all elements declared to this registry.
+     */
     fun registerAll() {
-        if (hasRegistered) {
-            this.logger.warn("OctarineRegistry.registerAll() called more than once!")
+        preinitializedStore.entries.forEach {
+            Registry.register(this.internal, it.key, it.value)
         }
-        registerAllInternal()
     }
 
-    /** Internal `registerAll` implementation.  */
-    protected abstract fun registerAllInternal()
+    /**
+     * Get the element's identifier.
+     */
+    protected abstract fun identifierOf(element: T): Identifier
 }

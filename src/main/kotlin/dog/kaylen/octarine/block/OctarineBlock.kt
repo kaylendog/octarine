@@ -5,15 +5,16 @@
  */
 package dog.kaylen.octarine.block
 
-import dog.kaylen.octarine.util.Identifiable
+import dog.kaylen.octarine.registry.Identifiable
+import dog.kaylen.octarine.util.identifierOf
 import net.minecraft.block.Block
-import net.minecraft.item.ItemGroup
 
-abstract class OctarineBlock(settings: Settings?) : Block(settings), Identifiable {
+/**
+ * A wrapper around the Minecraft block type.
+ */
+abstract class OctarineBlock(private val key: String, settings: Settings) : Block(settings), Identifiable {
     /**
-     * Get the item group of this block.
-     *
-     * @return The item group of this block
+     * This block's identifier.
      */
-    abstract val itemGroup: ItemGroup?
+    override val identifier get() = identifierOf(this.key)
 }

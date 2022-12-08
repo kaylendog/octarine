@@ -1,8 +1,5 @@
 {
-    "mixins": [
-        "GenerationSettingsAccessor",
-        "MixinBiomeBuilder"
-    ],
+    "mixins": [],
     "minVersion": "0.8",
     "package": "dog.kaylen.octarine.mixin",
     "injectors": {"defaultRequire": 1},

@@ -8,4 +8,4 @@ package dog.kaylen.octarine.block
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.Material
 
-object OctironOreBlock : OctarineBlock("octiron_ore", FabricBlockSettings.of(Material.STONE))
+object DeepslateOctironOre : OctarineBlock("deepslate_octiron_ore", FabricBlockSettings.of(Material.STONE))
