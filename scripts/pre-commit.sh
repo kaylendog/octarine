@@ -5,4 +5,4 @@ cd "$SCRIPT_DIR"/../../ || exit
 
 ./gradlew spotlessApply
 
-git add $(git diff --name-only --cached)
+git add $(git diff --diff-filter=ACMR --name-only --cached)
