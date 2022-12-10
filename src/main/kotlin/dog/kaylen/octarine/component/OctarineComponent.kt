@@ -5,13 +5,13 @@
  */
 package dog.kaylen.octarine.component
 
-import dev.onyxstudios.cca.api.v3.component.ComponentV3
+// import dev.onyxstudios.cca.api.v3.component.ComponentV3
 import dog.kaylen.octarine.registry.Identifiable
 import dog.kaylen.octarine.util.identifierOf
 
 /**
  * A component.
  */
-abstract class OctarineComponent(key: String) : ComponentV3, Identifiable {
+abstract class OctarineComponent(key: String) : /* ComponentV3, */ Identifiable {
     override val identifier = identifierOf(key)
 }
