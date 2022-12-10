@@ -25,10 +25,10 @@ dependencies {
     modImplementation("net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String)
 
     // Cardinal Components
-    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.2")
-    include("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.2")
-    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:5.0.2")
-    include("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:5.0.2")
+     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.0")
+     include("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.0")
+     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:5.0.0")
+     include("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:5.0.0")
 
     // Patchouli Docs
     modImplementation("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")

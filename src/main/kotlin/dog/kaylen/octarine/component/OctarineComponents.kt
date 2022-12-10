@@ -17,19 +17,16 @@ import kotlin.reflect.KClass
 /**
  * Entrypoint for creating components.
  */
-object OctarineComponents : ChunkComponentInitializer {
-    // TODO: Make this work.
-    // private val chunkComponents = mutableListOf<ComponentKey<*>>()
+class OctarineComponents : ChunkComponentInitializer {
+    companion object {
+        val THAUM = declareChunkComponent("thaum", ThaumChunkComponent::class)
 
-    val THAUM = declareChunkComponent("thaum", ThaumChunkComponent::class)
-
-    /**
-     * Create a chunk component
-     */
-    private fun <T : ChunkComponent> declareChunkComponent(key: String, component: KClass<T>): ComponentKey<T> {
-        return ComponentRegistryV3.INSTANCE.getOrCreate(identifierOf(key), component.java)
-        // chunkComponents.add(componentKey)
-        // return componentKey
+        /**
+         * Create a chunk component
+         */
+        private fun <T : ChunkComponent> declareChunkComponent(key: String, component: KClass<T>): ComponentKey<T> {
+            return ComponentRegistryV3.INSTANCE.getOrCreate(identifierOf(key), component.java)
+        }
     }
 
     override fun registerChunkComponentFactories(registry: ChunkComponentFactoryRegistry) {

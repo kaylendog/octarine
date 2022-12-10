@@ -18,7 +18,7 @@
     },
     "name": "Octarine",
     "entrypoints": {
-        "cardinal-components": ["dog.kaylen.octarine.OctarineComponentInitializer"],
+        "cardinal-components": ["dog.kaylen.octarine.component.OctarineComponents"],
         "client": ["dog.kaylen.octarine.client.OctarineClientMod"],
         "main": ["dog.kaylen.octarine.OctarineMod"]
     },
