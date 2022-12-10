@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.registry
 
+import dog.kaylen.octarine.LOGGER
 import dog.kaylen.octarine.util.identifierOf
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
 import net.minecraft.util.Identifier
@@ -13,8 +14,8 @@ import net.minecraft.util.registry.Registry
 /**
  * A wrapper around a registry allowing the specified types.
  */
-abstract class OctarineRegistry<T : U, U>(val internal: Registry<U>) {
-    private val preinitializedStore = hashMapOf<Identifier, U>()
+abstract class OctarineRegistry<T : U, U>(protected val internal: Registry<U>) {
+    protected val preinitializedStore = hashMapOf<Identifier, U>()
 
     /**
      * Create a new registry for a specific class type.
@@ -27,6 +28,8 @@ abstract class OctarineRegistry<T : U, U>(val internal: Registry<U>) {
      * Create a new entry in this registry and return it.
      */
     fun create(element: T): T {
+        LOGGER.info("Registering ${this.identifierOf(element)} in registry ${this.internal.key.value}...")
+
         this.preinitializedStore[this.identifierOf(element)] = element
         return element
     }

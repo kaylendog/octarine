@@ -1,7 +1,4 @@
 {
-    "license": "GPL-v3-or-higher",
-    "environment": "*",
-    "mixins": ["octarine.mixins.json"],
     "schemaVersion": 1,
     "depends": {
         "minecraft": "~1.19",
@@ -9,17 +6,28 @@
         "fabric": "*",
         "fabricloader": ">=0.14"
     },
+    "custom": {"cardinal-components": ["octarine:thaum"]},
+    "description": "Magic mod for Minecraft inspired by Terry Pratchett's \"Discworld\" series.",
+    "version": "${version}",
+    "license": "GPL-v3-or-higher",
+    "environment": "*",
+    "mixins": ["octarine.mixins.json"],
     "contact": {
         "sources": "https://github.com/kaylendog/octarine",
         "homepage": "https://github.com/kaylendog/octarine"
     },
     "name": "Octarine",
-    "description": "Magic mod for Minecraft inspired by Terry Pratchett's \"Discworld\" series.",
     "entrypoints": {
+        "cardinal-components": ["dog.kaylen.octarine.OctarineComponentInitializer"],
         "client": ["dog.kaylen.octarine.client.OctarineClientMod"],
         "main": ["dog.kaylen.octarine.OctarineMod"]
     },
     "id": "octarine",
-    "version": "${version}",
-    "authors": ["kaylendog (Kaylen)"]
+    "authors": [{
+        "contact": {
+            "email": "actuallyori@gmail.com",
+            "homepage": "https://kaylen.dog"
+        },
+        "name": "Kaylen Dart"
+    }]
 }

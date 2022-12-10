@@ -6,6 +6,7 @@
 package dog.kaylen.octarine
 
 import net.fabricmc.loader.api.FabricLoader
+import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 /**
@@ -16,7 +17,7 @@ val OCTARINE_MOD_ID = "octarine"
 /**
  * Global logging instance.
  */
-val LOGGER get() = LoggerFactory.getLogger("octarine")
+val LOGGER: Logger get() = LoggerFactory.getLogger("octarine")
 
 /**
  * The Fabric loader instance

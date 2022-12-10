@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier
 
 object OctarineSpellRegistry : OctarineRegistry<Spell, Spell>("spell", Spell::class.java) {
     val FIREBALL_SPELL = create(FireballSpell)
+
     override fun identifierOf(element: Spell): Identifier {
         return element.identifier
     }

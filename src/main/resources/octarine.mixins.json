@@ -1,9 +1,9 @@
 {
-    "mixins": [],
+    "mixins": ["WorldChunkMixin"],
     "minVersion": "0.8",
     "package": "dog.kaylen.octarine.mixin",
     "injectors": {"defaultRequire": 1},
     "compatibilityLevel": "JAVA_17",
-    "client": [],
+    "client": ["DebugHudMixin"],
     "required": true
 }

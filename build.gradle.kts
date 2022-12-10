@@ -11,6 +11,7 @@ group = "dog.kaylen"
 repositories {
     maven("https://minecraft.guntram.de/maven/")
     maven("https://maven.blamejared.com")
+    maven("https://ladysnake.jfrog.io/artifactory/mods")
 }
 
 dependencies {
@@ -23,7 +24,13 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api", "fabric-api", project.extra["fabric_version"] as String)
     modImplementation("net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String)
 
-    // patchouli docs
+    // Cardinal Components
+    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.2")
+    include("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.2")
+    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:5.0.2")
+    include("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:5.0.2")
+
+    // Patchouli Docs
     modImplementation("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")
     include("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")
 }
@@ -76,6 +83,8 @@ spotless {
     }
     json {
         target("src/**/*.json")
+        // ignore fabric.mod.json
+        targetExclude("fabric.mod.json")
         simple().indentWithSpaces(4)
     }
 }
