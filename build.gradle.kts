@@ -1,12 +1,16 @@
 plugins {
     java
-    kotlin("jvm") version "1.7.20"
-    id("fabric-loom")
-    id("com.diffplug.spotless") version "6.12.0"
+    kotlin("jvm") version "1.8.22"
+    id("fabric-loom") version "1.2-SNAPSHOT"
+    id("com.diffplug.spotless") version "6.19.0"
 }
 
-version = "0.1.0"
-group = "dog.kaylen"
+version = project.extra["mod_version"] as String
+group = project.extra["maven_group"] as String
+
+base {
+    archivesName.set(project.extra["archives_base_name"] as String)
+}
 
 repositories {
     maven("https://minecraft.guntram.de/maven/")
@@ -14,55 +18,83 @@ repositories {
     maven("https://ladysnake.jfrog.io/artifactory/mods")
 }
 
+loom {
+    runs {
+        register("datagen") {
+            server()
+            vmArg("-Dfabric-api.datagen")
+            vmArg("-Dfabric-api.datagen.output-dir=${file("src/main/generated")}")
+            vmArg("-Dfabric-api.datagen.modid=octarine")
+            runDir = "build/datagen"
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs("src/main/generated")
+        }
+    }
+}
+
 dependencies {
-    // Minecraft
+    // To change the versions see the gradle.properties file
     minecraft("com.mojang", "minecraft", project.extra["minecraft_version"] as String)
     mappings("net.fabricmc", "yarn", project.extra["yarn_mappings"] as String, null, "v2")
     modImplementation("net.fabricmc", "fabric-loader", project.extra["loader_version"] as String)
 
     // Fabric
     modImplementation("net.fabricmc.fabric-api", "fabric-api", project.extra["fabric_version"] as String)
-    modImplementation("net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String)
+    modImplementation("net.fabricmc", "fabric-language-kotlin", project.extra["fabric_kotlin_version"] as String)
 
     // Cardinal Components
-     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.0")
-     include("dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.0.0")
-     modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:5.0.0")
-     include("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:5.0.0")
+    modImplementation("dev.onyxstudios.cardinal-components-api", "cardinal-components-base", project.extra["cardinal_components_version"] as String)
+    include("dev.onyxstudios.cardinal-components-api", "cardinal-components-base", project.extra["cardinal_components_version"] as String)
+    modImplementation("dev.onyxstudios.cardinal-components-api", "cardinal-components-chunk", project.extra["cardinal_components_version"] as String)
+    include("dev.onyxstudios.cardinal-components-api", "cardinal-components-chunk", project.extra["cardinal_components_version"] as String)
 
     // Patchouli Docs
     modImplementation("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")
     include("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")
 }
 
-tasks {
-    val javaVersion = JavaVersion.toVersion((project.extra["java_version"] as String).toInt())
-
-    compileJava {
-        options.encoding = "UTF-8"
-        sourceCompatibility = javaVersion.toString()
-        targetCompatibility = javaVersion.toString()
-        options.release.set(javaVersion.toString().toInt())
+tasks.processResources {
+    filesMatching("fabric.mod.json") {
+        expand(
+            mutableMapOf(
+                "minecraft_version" to project.extra["minecraft_version"] as String,
+                "loader_version" to project.extra["loader_version"] as String,
+                "mod_version" to project.extra["mod_version"] as String,
+                "fabric_version" to project.extra["fabric_version"] as String,
+                "fabric_kotlin_version" to project.extra["fabric_kotlin_version"] as String,
+            ),
+        )
     }
+}
 
-    jar { from("LICENSE") }
+tasks.compileJava {
+    options.encoding = "UTF-8"
+    sourceCompatibility = JavaVersion.VERSION_17.toString()
+    targetCompatibility = JavaVersion.VERSION_17.toString()
+    options.release.set(JavaVersion.VERSION_17.toString().toInt())
+}
 
-    processResources {
-        filesMatching("fabric.mod.json") {
-            expand(
-                mutableMapOf(
-                    "version" to project.extra["mod_version"] as String,
-                    "fabricloader" to project.extra["loader_version"] as String,
-                    "fabric_api" to project.extra["fabric_version"] as String,
-                    "fabric_language_kotlin" to project.extra["fabric_language_kotlin_version"] as String,
-                    "minecraft" to project.extra["minecraft_version"] as String,
-                    "java" to project.extra["java_version"] as String
-                )
-            )
-        }
-        filesMatching("*.mixins.json") {
-            expand(mutableMapOf("java" to project.extra["java_version"] as String))
-        }
+tasks.compileKotlin {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.jar {
+    from("license") {
+        rename { "${it}_${project.extra["archives_base_name"]}" }
     }
 }
 
@@ -83,8 +115,6 @@ spotless {
     }
     json {
         target("src/**/*.json")
-        // ignore fabric.mod.json
-        targetExclude("fabric.mod.json")
-        simple().indentWithSpaces(4)
+        prettier().nodeExecutable(File("${System.getenv("NVM_BIN")}/node"))
     }
 }
