@@ -9,9 +9,7 @@ import net.fabricmc.api.ModInitializer
 
 class Octarine : ModInitializer {
     override fun onInitialize() {
-        // setup singleton instance
         instance = this
-        // initialize registries
         OctarineRegistries.registerAll()
     }
 

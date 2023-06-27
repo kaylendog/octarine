@@ -14,9 +14,10 @@ object OctarineRegistries {
     private val registries = mutableListOf<OctarineRegistry<*, *>>()
 
     val BLOCKS = include(OctarineBlocks)
+    val BLOCK_ENTITY_TYPES = include(OctarineBlockEntityTypes)
     val ITEMS = include(OctarineItems)
 
-    val SPELLS = include(OctarineSpellRegistry)
+    val SPELLS = include(OctarineSpells)
 
     /**
      * Include this registry in the registry object.

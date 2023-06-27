@@ -10,10 +10,10 @@ import dog.kaylen.octarine.spell.FireballSpell
 import dog.kaylen.octarine.spell.Spell
 import net.minecraft.util.Identifier
 
-object OctarineSpellRegistry : OctarineRegistry<Spell, Spell>("spell", Spell::class.java) {
+object OctarineSpells : OctarineRegistry<Spell, Spell>("spell", Spell::class.java) {
     val FIREBALL_SPELL = register(FireballSpell)
 
-    override fun identifierOf(element: Spell): Identifier {
+    override fun identifierOfElement(element: Spell): Identifier {
         return element.identifier
     }
 }

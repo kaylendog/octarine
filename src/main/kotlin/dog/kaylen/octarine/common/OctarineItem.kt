@@ -3,10 +3,10 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine.content.world.item
+package dog.kaylen.octarine.common
 
 import dog.kaylen.octarine.common.Identifiable
-import dog.kaylen.octarine.common.identifierOf
+import dog.kaylen.octarine.common.identifierOfElement
 import net.minecraft.item.Item
 
 /**
@@ -16,5 +16,5 @@ abstract class OctarineItem(private val key: String, settings: Settings) : Item(
     /**
      * This item's identifier.
      */
-    override val identifier get() = identifierOf(this.key)
+    override val identifier get() = identifierOfElement(this.key)
 }

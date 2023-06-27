@@ -12,7 +12,7 @@ import net.minecraft.util.registry.Registry
 /**
  * A wrapper around a registry allowing the specified types.
  */
-abstract class OctarineRegistry<T : U, U>(private val internal: Registry<U>) {
+abstract class OctarineRegistry<T : U, U>(private val internal: Registry<in U>) {
     protected val store = hashMapOf<Identifier, U>()
 
     /**
@@ -26,7 +26,7 @@ abstract class OctarineRegistry<T : U, U>(private val internal: Registry<U>) {
      * Create a new entry in this registry and return it.
      */
     fun register(element: T): T {
-        this.store[this.identifierOf(element)] = element
+        this.store[this.identifierOfElement(element)] = element
         return element
     }
 
@@ -42,5 +42,5 @@ abstract class OctarineRegistry<T : U, U>(private val internal: Registry<U>) {
     /**
      * Get the element's identifier.
      */
-    protected abstract fun identifierOf(element: T): Identifier
+    protected abstract fun identifierOfElement(element: T): Identifier
 }

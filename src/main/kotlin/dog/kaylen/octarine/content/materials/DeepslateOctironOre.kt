@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.content.materials
 
-import dog.kaylen.octarine.content.world.block.OctarineBlock
+import dog.kaylen.octarine.common.OctarineBlock
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.BlockState
 import net.minecraft.block.Material
