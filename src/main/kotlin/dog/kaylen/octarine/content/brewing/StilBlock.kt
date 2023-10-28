@@ -5,8 +5,14 @@
  */
 package dog.kaylen.octarine.content.brewing
 
-import dog.kaylen.octarine.common.OctarineBlock
+import dog.kaylen.octarine.common.OctarineBlockWithEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
+import net.minecraft.block.BlockState
 import net.minecraft.block.Material
+import net.minecraft.util.math.BlockPos
 
-object StilBlock : OctarineBlock("stil", FabricBlockSettings.of(Material.REPAIR_STATION))
+object StilBlock : OctarineBlockWithEntity("stil", FabricBlockSettings.of(Material.REPAIR_STATION)) {
+    override fun createBlockEntity(pos: BlockPos, state: BlockState): StilBlockEntity {
+        return StilBlockEntity(pos, state)
+    }
+}

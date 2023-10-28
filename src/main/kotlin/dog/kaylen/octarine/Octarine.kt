@@ -6,15 +6,23 @@
 package dog.kaylen.octarine
 
 import net.fabricmc.api.ModInitializer
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 class Octarine : ModInitializer {
     override fun onInitialize() {
-        instance = this
+        INSTANCE = this
         OctarineRegistries.registerAll()
     }
 
     companion object {
         /** The singleton instance of the mod.  */
-        lateinit var instance: Octarine
+        lateinit var INSTANCE: Octarine
+
+        /** The mod ID **/
+        const val MOD_ID = "octarine"
+
+        /** The Octarine logger. */
+        val LOGGER: Logger = LoggerFactory.getLogger(MOD_ID)
     }
 }

@@ -8,45 +8,12 @@ package dog.kaylen.octarine.content.brewing
 import dog.kaylen.octarine.OctarineBlockEntityTypes
 import dog.kaylen.octarine.common.OctarineBlockEntity
 import net.minecraft.block.BlockState
-import net.minecraft.entity.player.PlayerEntity
-import net.minecraft.inventory.Inventory
-import net.minecraft.item.ItemStack
 import net.minecraft.util.math.BlockPos
 
 class StilBlockEntity(pos: BlockPos, state: BlockState) : OctarineBlockEntity(
     OctarineBlockEntityTypes.STIL,
     pos,
-    state
-), Inventory {
-    override fun clear() {
-        TODO("Not yet implemented")
-    }
-
-    override fun size(): Int {
-        TODO("Not yet implemented")
-    }
-
-    override fun isEmpty(): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun getStack(slot: Int): ItemStack {
-        TODO("Not yet implemented")
-    }
-
-    override fun removeStack(slot: Int, amount: Int): ItemStack {
-        TODO("Not yet implemented")
-    }
-
-    override fun removeStack(slot: Int): ItemStack {
-        TODO("Not yet implemented")
-    }
-
-    override fun setStack(slot: Int, stack: ItemStack?) {
-        TODO("Not yet implemented")
-    }
-
-    override fun canPlayerUse(player: PlayerEntity?): Boolean {
-        TODO("Not yet implemented")
-    }
+    state,
+) {
+    val inventory = StilBlockInventory()
 }

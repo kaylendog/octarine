@@ -5,8 +5,6 @@
  */
 package dog.kaylen.octarine.common
 
-import dog.kaylen.octarine.common.Identifiable
-import dog.kaylen.octarine.common.identifierOfElement
 import net.minecraft.item.Item
 
 /**
@@ -16,5 +14,5 @@ abstract class OctarineItem(private val key: String, settings: Settings) : Item(
     /**
      * This item's identifier.
      */
-    override val identifier get() = identifierOfElement(this.key)
+    override val identifier get() = identifierOf(this.key)
 }

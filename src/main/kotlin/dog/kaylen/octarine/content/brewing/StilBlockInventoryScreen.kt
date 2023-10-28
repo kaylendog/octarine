@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.content.brewing
 
-import net.minecraft.recipe.Recipe
+import net.minecraft.client.gui.screen.ingame.InventoryScreen
+import net.minecraft.entity.player.PlayerEntity
 
-abstract class StilRecipe : Recipe<StilBlockInventory>
+class StilBlockInventoryScreen(player: PlayerEntity) : InventoryScreen(player)

@@ -20,7 +20,7 @@ object OctironOreBlock : OctarineBlock("octiron_ore", FabricBlockSettings.of(Mat
 
     override fun randomDisplayTick(state: BlockState, world: World, pos: BlockPos, random: Random) {
         // spawn particles with a probability of 0.1
-        if (!random.nextBoolean(PARTICLE_PROBABILITY)) {
+        if (random.nextFloat() < PARTICLE_PROBABILITY) {
             return
         }
         // add particle

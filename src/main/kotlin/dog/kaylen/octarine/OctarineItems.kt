@@ -6,12 +6,12 @@
 package dog.kaylen.octarine
 
 import dog.kaylen.octarine.common.OctarineBlock
-import dog.kaylen.octarine.common.OctarineRegistry
-import dog.kaylen.octarine.content.witchery.WitchesGuideItem
-import dog.kaylen.octarine.content.wizardry.WizardsGuideItem
 import dog.kaylen.octarine.common.OctarineItem
+import dog.kaylen.octarine.common.OctarineRegistry
 import dog.kaylen.octarine.content.materials.OctironScrapItem
 import dog.kaylen.octarine.content.materials.RawOctironItem
+import dog.kaylen.octarine.content.witchery.WitchesGuideItem
+import dog.kaylen.octarine.content.wizardry.WizardsGuideItem
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
@@ -19,7 +19,7 @@ import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
-object xOctarineItems : OctarineRegistry<OctarineItem, Item>(Registry.ITEM) {
+object OctarineItems : OctarineRegistry<OctarineItem, Item>(Registry.ITEM) {
     val RAW_OCTIRON = register(RawOctironItem)
     val OCTIRON_SCRAP = register(OctironScrapItem)
 

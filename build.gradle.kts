@@ -113,8 +113,8 @@ spotless {
     kotlinGradle {
         ktlint()
     }
-    json {
-        target("src/**/*.json")
-        prettier().nodeExecutable(File("${System.getenv("NVM_BIN")}/node"))
-    }
+//    json {
+//        target("src/**/*.json")
+//        prettier().nodeExecutable(File("${System.getenv("NVM_BIN")}/node"))
+//    }
 }

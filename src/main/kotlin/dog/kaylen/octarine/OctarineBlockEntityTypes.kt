@@ -5,8 +5,8 @@
  */
 package dog.kaylen.octarine
 
-import dog.kaylen.octarine.common.OctarineBlock
 import dog.kaylen.octarine.common.OctarineBlockEntity
+import dog.kaylen.octarine.common.OctarineBlockWithEntity
 import dog.kaylen.octarine.common.OctarineRegistry
 import dog.kaylen.octarine.common.identifierOf
 import dog.kaylen.octarine.content.brewing.StilBlockEntity
@@ -16,20 +16,20 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
 object OctarineBlockEntityTypes : OctarineRegistry<
-        BlockEntityType<OctarineBlockEntity>,
-        BlockEntityType<OctarineBlockEntity>
->(
-    Registry.BLOCK_ENTITY_TYPE
+    BlockEntityType<OctarineBlockEntity>,
+    BlockEntityType<OctarineBlockEntity>,
+    >(
+    Registry.BLOCK_ENTITY_TYPE,
 ) {
     // brewing
-    val STIL = register("stil", ::StilBlockEntity, OctarineBlocks.STIL)
+    val STIL = register("stil", ::StilBlockEntity, OctarineBlockWithEntities.STIL)
 
     private val identifiers = mutableMapOf<BlockEntityType<OctarineBlockEntity>, Identifier>()
 
     private fun register(
         name: String,
         blockEntity: FabricBlockEntityTypeBuilder.Factory<OctarineBlockEntity>,
-        block: OctarineBlock
+        block: OctarineBlockWithEntity,
     ): BlockEntityType<OctarineBlockEntity> {
         val type = FabricBlockEntityTypeBuilder.create(blockEntity, block).build()
         identifiers[type] = identifierOf(name)

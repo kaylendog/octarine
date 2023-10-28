@@ -18,11 +18,13 @@ object OctarineRegistries {
     val ITEMS = include(OctarineItems)
 
     val SPELLS = include(OctarineSpells)
+    val SIGILS = include(OctarineSigils)
+    val RUNES = include(OctarineRunes)
 
     /**
      * Include this registry in the registry object.
      */
-    fun <T : OctarineRegistry<*, *>> include(registry: T): T {
+    private fun <T : OctarineRegistry<*, *>> include(registry: T): T {
         registries.add(registry)
         return registry
     }
