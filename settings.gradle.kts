@@ -2,6 +2,7 @@ rootProject.name = "octarine"
 
 include("octarine-core")
 include("octarine-proxy")
+include("octarine-1.19.2")
 
 pluginManagement {
     repositories {

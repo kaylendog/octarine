@@ -6,3 +6,7 @@ plugins {
 
 version = project.extra["modVersion"] as String
 group = "dog.kaylen"
+
+dependencies {
+    implementation(project(":octarine-proxy"))
+}

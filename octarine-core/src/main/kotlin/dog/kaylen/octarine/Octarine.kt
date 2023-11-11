@@ -5,24 +5,16 @@
  */
 package dog.kaylen.octarine
 
-import net.fabricmc.api.ModInitializer
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
+import dog.kaylen.octarine.proxy.Proxy
 
-class Octarine : ModInitializer {
-    override fun onInitialize() {
+class Octarine(private val proxy: Proxy) {
+    init {
         INSTANCE = this
-        OctarineRegistries.registerAll()
     }
 
     companion object {
-        /** The singleton instance of the mod.  */
         lateinit var INSTANCE: Octarine
-
-        /** The mod ID **/
-        const val MOD_ID = "octarine"
-
-        /** The Octarine logger. */
-        val LOGGER: Logger = LoggerFactory.getLogger(MOD_ID)
+        val PROXY: Proxy
+            get() = INSTANCE.proxy
     }
 }
