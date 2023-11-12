@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2023 Kaylen Dart (https://kaylen.dog) and others.
+ * (C) Copyright 2023 Kaylen Dart (https://www.kaylen.dog) and others.
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
@@ -15,7 +15,7 @@ import net.minecraft.util.registry.Registry
 
 object OctarineRecipeTypes : OctarineRegistry<OctarineRecipeType<out Recipe<*>>, RecipeType<out Recipe<*>>>(Registry.RECIPE_TYPE) {
     // brewing
-    val STIL = register(StilRecipeType)
+    val STIL_RECIPE = register(StilRecipeType)
 
     override fun identifierOfElement(element: OctarineRecipeType<out Recipe<*>>): Identifier {
         return element.identifier

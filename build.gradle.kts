@@ -1,8 +1,8 @@
 plugins {
     java
-    kotlin("jvm") version "1.8.22"
-    id("fabric-loom") version "1.2-SNAPSHOT"
-    id("com.diffplug.spotless") version "6.19.0"
+    kotlin("jvm") version "1.9.20"
+    id("fabric-loom") version "1.4-SNAPSHOT"
+    id("com.diffplug.spotless") version "6.22.0"
 }
 
 version = project.extra["mod_version"] as String
@@ -15,7 +15,7 @@ base {
 repositories {
     maven("https://minecraft.guntram.de/maven/")
     maven("https://maven.blamejared.com")
-    maven("https://ladysnake.jfrog.io/artifactory/mods")
+    maven("https://maven.ladysnake.org/releases")
 }
 
 loom {
@@ -49,9 +49,17 @@ dependencies {
     modImplementation("net.fabricmc", "fabric-language-kotlin", project.extra["fabric_kotlin_version"] as String)
 
     // Cardinal Components
-    modImplementation("dev.onyxstudios.cardinal-components-api", "cardinal-components-base", project.extra["cardinal_components_version"] as String)
+    modImplementation(
+        "dev.onyxstudios.cardinal-components-api",
+        "cardinal-components-base",
+        project.extra["cardinal_components_version"] as String,
+    )
     include("dev.onyxstudios.cardinal-components-api", "cardinal-components-base", project.extra["cardinal_components_version"] as String)
-    modImplementation("dev.onyxstudios.cardinal-components-api", "cardinal-components-chunk", project.extra["cardinal_components_version"] as String)
+    modImplementation(
+        "dev.onyxstudios.cardinal-components-api",
+        "cardinal-components-chunk",
+        project.extra["cardinal_components_version"] as String,
+    )
     include("dev.onyxstudios.cardinal-components-api", "cardinal-components-chunk", project.extra["cardinal_components_version"] as String)
 
     // Patchouli Docs

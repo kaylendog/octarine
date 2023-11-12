@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2022-2023 Kaylen Dart (https://kaylen.dog) and others.
+ * (C) Copyright 2022-2023 Kaylen Dart (https://www.kaylen.dog) and others.
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
@@ -27,13 +27,17 @@ object OctarineItems : OctarineRegistry<OctarineItem, Item>(Registry.ITEM) {
     val WIZARDS_GUIDE_ITEM = register(WizardsGuideItem)
 
     val OCTIRON_ORE_BLOCK = registerBlockItem(OctarineBlocks.OCTIRON_ORE, FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS))
-    val DEEPSLATE_OCTIRON_ORE_BLOCK = registerBlockItem(OctarineBlocks.DEEPSLATE_OCTIRON_ORE, FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS))
+    val DEEPSLATE_OCTIRON_ORE_BLOCK =
+        registerBlockItem(OctarineBlocks.DEEPSLATE_OCTIRON_ORE, FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS))
 
     override fun identifierOfElement(element: OctarineItem): Identifier {
         return element.identifier
     }
 
-    fun registerBlockItem(block: OctarineBlock, settings: FabricItemSettings) {
+    private fun registerBlockItem(
+        block: OctarineBlock,
+        settings: FabricItemSettings,
+    ) {
         this.store[block.identifier] = BlockItem(block, settings)
     }
 }
