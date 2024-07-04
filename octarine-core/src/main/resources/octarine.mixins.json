@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dog.kaylen.octarine.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": ["OctarineChunkMixin"],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

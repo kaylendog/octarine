@@ -28,6 +28,15 @@ loom {
             runDir = "build/datagen"
         }
     }
+
+    splitEnvironmentSourceSets()
+
+    mods {
+        create("octarine") {
+            sourceSet("main")
+            sourceSet("client")
+        }
+    }
 }
 
 sourceSets {
