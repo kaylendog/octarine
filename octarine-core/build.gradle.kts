@@ -19,4 +19,8 @@ dependencies {
     // veil
     include(libs.veil)
     modApi(libs.veil)
+
+    // patchouli
+    modImplementation(libs.patchouli)
+    include(libs.patchouli)
 }
