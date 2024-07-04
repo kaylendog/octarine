@@ -1,19 +1,20 @@
-# The latest versions are available at https://quiltmc.org/en/usage/latest-versions
 [versions]
 # plugins
 spotless = "6.25.0"
 kotlin = "2.0.0"
+quilt_loom = "1.7.3"
 
-# minecraft
+# minecraft and quilt
 minecraft = "1.20.1"
+quilt_loader = "0.26.1-beta.1"
 quilt_mappings = "1.20.1+build.23"
 
-# quilt
-quilt_loom = "1.7.3"
-quilt_loader = "0.26.1-beta.1"
-
-# mods
+# quilt api
 quilted_fabric_api = "7.5.0+0.92.2-1.20.1"
+
+# mod dependencies
+lodestone = "1.4.45-1.20.1"
+veil = "1.0.0.256"
 
 [libraries]
 # minecraft and quilt
@@ -25,7 +26,10 @@ quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loade
 quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted_fabric_api" }
 quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api-deprecated", version.ref = "quilted_fabric_api" }
 
-# If you have multiple similar dependencies, you can declare a dependency bundle and reference it on the build script with "libs.bundles.example".
+# mod dependencies
+lodestone = { module = "com.github.LodestarMC:Lodestone", version.ref = "lodestone" }
+veil = { module = "foundry.veil:Veil-fabric-1.20.1", version.ref = "veil" }
+
 [bundles]
 quilted_fabric_api = ["quilted_fabric_api", "quilted_fabric_api_deprecated"]
 

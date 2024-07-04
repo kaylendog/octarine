@@ -6,3 +6,17 @@ loom {
         }
     }
 }
+
+repositories {
+    jitpack()
+}
+
+dependencies {
+    // lodestone
+    include(libs.lodestone)
+    modApi(libs.lodestone)
+
+    // veil
+    include(libs.veil)
+    modApi(libs.veil)
+}
