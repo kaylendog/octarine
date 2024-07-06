@@ -1,5 +1,6 @@
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.maven
 
 class OctarineModPlugin : Plugin<Project> {
@@ -9,6 +10,9 @@ class OctarineModPlugin : Plugin<Project> {
             pluginManager.apply("org.jetbrains.kotlin.jvm")
             pluginManager.apply("org.quiltmc.loom")
             pluginManager.apply("com.diffplug.spotless")
+
+            // TODO: figure out if we can create custom configuration for sub-modules
+            // https://fabricmc.net/wiki/documentation:fabric_loom#depending_on_sub_projects
 
             // apply all repositories
             repositories.apply {

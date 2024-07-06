@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.content.brewing
 
-import dog.kaylen.octarine.content.brewing.block.StilBlockInventory
+import dog.kaylen.octarine.brewing.block.StilBlockInventory
 import net.minecraft.recipe.Recipe
 
 abstract class StilRecipe : Recipe<StilBlockInventory>

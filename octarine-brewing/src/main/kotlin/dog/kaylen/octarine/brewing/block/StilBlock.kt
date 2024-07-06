@@ -5,13 +5,14 @@
  */
 package dog.kaylen.octarine.content.brewing.block
 
+import dog.kaylen.octarine.brewing.block.StilBlockEntity
 import dog.kaylen.octarine.core.OctarineBlockWithEntity
-import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.BlockState
-import net.minecraft.block.Material
+import net.minecraft.block.Blocks
 import net.minecraft.util.math.BlockPos
+import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
 
-object StilBlock : OctarineBlockWithEntity("stil", FabricBlockSettings.of(Material.REPAIR_STATION)) {
+object StilBlock : OctarineBlockWithEntity("stil", QuiltBlockSettings.copy(Blocks.BREWING_STAND)) {
     override fun createBlockEntity(pos: BlockPos, state: BlockState): StilBlockEntity {
         return StilBlockEntity(pos, state)
     }

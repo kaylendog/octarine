@@ -9,7 +9,7 @@ import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.content.magic.Spell
 import net.minecraft.util.Identifier
 
-object OctarineSpells : OctarineRegistry<Spell, Spell>("spell", Spell::class.java) {
+object OctarineSpells : OctarineRegistry<Spell, Spell>("spell") {
     override fun identifierOfElement(element: Spell): Identifier {
         return element.identifier
     }

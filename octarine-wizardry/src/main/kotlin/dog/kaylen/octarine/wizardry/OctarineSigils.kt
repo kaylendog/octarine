@@ -9,7 +9,7 @@ import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.content.magic.Sigil
 import net.minecraft.util.Identifier
 
-object OctarineSigils : OctarineRegistry<Sigil, Sigil>("sigils", Sigil::class.java) {
+object OctarineSigils : OctarineRegistry<Sigil, Sigil>("sigils") {
     override fun identifierOfElement(element: Sigil): Identifier {
         return element.identifier
     }

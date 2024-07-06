@@ -31,11 +31,11 @@ dependencies {
     modImplementation(libs.quilt.loader)
 
     // bundle mods
-    include(project(":octarine-core"))
-    include(project(":octarine-brewing"))
-    include(project(":octarine-food"))
-    include(project(":octarine-witchery"))
-    include(project(":octarine-wizardry"))
+    implementation(project(":octarine-core", configuration = "namedElements"))
+    implementation(project(":octarine-brewing", configuration = "namedElements"))
+    implementation(project(":octarine-food", configuration = "namedElements"))
+    implementation(project(":octarine-witchery", configuration = "namedElements"))
+    implementation(project(":octarine-wizardry", configuration = "namedElements"))
 }
 
 loom {

@@ -13,5 +13,5 @@ include(
     "octarine-brewing",
     "octarine-food",
     "octarine-witchery",
-    "octarine-wizardry"
+    "octarine-wizardry",
 )

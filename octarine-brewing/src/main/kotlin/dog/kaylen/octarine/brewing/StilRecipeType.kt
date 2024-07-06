@@ -5,6 +5,6 @@
  */
 package dog.kaylen.octarine.content.brewing
 
-import dog.kaylen.octarine.core.OctarineRecipeType
+import dog.kaylen.octarine.core.recipe.OctarineRecipeType
 
 object StilRecipeType : OctarineRecipeType<StilRecipe>("stil")

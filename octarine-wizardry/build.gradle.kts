@@ -15,7 +15,7 @@ dependencies {
     modImplementation(rootProject.libs.quilted.fabric.api)
 
     // octarine core
-    modImplementation(project(":octarine-core"))
+    implementation(project(":octarine-core", configuration = "namedElements"))
 }
 
 loom {

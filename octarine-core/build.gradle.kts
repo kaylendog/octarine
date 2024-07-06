@@ -19,8 +19,8 @@ dependencies {
     modApi(rootProject.libs.lodestone)
 
     // patchouli
-    modImplementation(libs.patchouli)
     include(libs.patchouli)
+    modApi(libs.patchouli)
 
     // cardinal components
     include(libs.cca.base)
