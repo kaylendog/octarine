@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "dog.kaylen.octarine",
+    "id": "octarine-brewing",
+    "version": "${version}",
+    "metadata": {
+      "name": "Octarine Brewing",
+      "description": "Brewing and alcohol"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {},
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": ">=0.19.1"
+      },
+      {
+        "id": "quilted_fabric_api",
+        "versions": ">=7.0.2"
+      },
+      {
+        "id": "minecraft",
+        "versions": ">=1.20"
+      }
+    ]
+  },
+  "mixins": ["octarine.mixins.json"]
+}

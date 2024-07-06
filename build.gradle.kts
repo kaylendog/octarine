@@ -5,8 +5,8 @@ plugins {
     alias(libs.plugins.spotless)
 }
 
+group = "dog.kaylen"
 version = "${rootProject.extra["mod_version"]}+${rootProject.libs.versions.minecraft}"
-group = "${rootProject.extra["maven_group"]}"
 
 spotless {
     ratchetFrom("origin/main")
@@ -32,11 +32,10 @@ dependencies {
 
     // bundle mods
     include(project(":octarine-core"))
-
-//    include(project(":octarine-brewing"))
-//    include(project(":octarine-food"))
-//    include(project(":octarine-witchery"))
-//    include(project(":octarine-wizardry"))
+    include(project(":octarine-brewing"))
+    include(project(":octarine-food"))
+    include(project(":octarine-witchery"))
+    include(project(":octarine-wizardry"))
 }
 
 loom {

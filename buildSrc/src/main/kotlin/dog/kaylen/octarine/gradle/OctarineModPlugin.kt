@@ -5,9 +5,10 @@ import org.gradle.kotlin.dsl.maven
 class OctarineModPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply("com.diffplug.spotless")
+            pluginManager.apply("java")
             pluginManager.apply("org.jetbrains.kotlin.jvm")
             pluginManager.apply("org.quiltmc.loom")
+            pluginManager.apply("com.diffplug.spotless")
 
             // apply all repositories
             repositories.apply {

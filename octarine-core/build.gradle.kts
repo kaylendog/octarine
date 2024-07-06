@@ -2,16 +2,8 @@ plugins {
     id("dog.kaylen.octarine.gradle")
 }
 
-loom {
-    splitEnvironmentSourceSets()
-
-    mods {
-        create("octarine-core") {
-            sourceSet("main")
-            sourceSet("client")
-        }
-    }
-}
+group = "dog.kaylen.octarine"
+version = "${rootProject.extra["mod_version"]}+${rootProject.libs.versions.minecraft.get()}"
 
 dependencies {
     // minecraft
@@ -35,4 +27,15 @@ dependencies {
     include(libs.cca.chunk)
     modImplementation(libs.cca.base)
     modImplementation(libs.cca.chunk)
+}
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        create("octarine-core") {
+            sourceSet("main")
+            sourceSet("client")
+        }
+    }
 }

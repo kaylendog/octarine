@@ -2,15 +2,8 @@ plugins {
     id("dog.kaylen.octarine.gradle")
 }
 
-loom {
-    splitEnvironmentSourceSets()
-    mods {
-        create("octarine-witchery") {
-            sourceSet("main")
-            sourceSet("client")
-        }
-    }
-}
+group = "dog.kaylen.octarine"
+version = "${rootProject.extra["mod_version"]}+${rootProject.libs.versions.minecraft.get()}"
 
 dependencies {
     // minecraft
@@ -23,4 +16,14 @@ dependencies {
 
     // octarine core
     modImplementation(project(":octarine-core"))
+}
+
+loom {
+    splitEnvironmentSourceSets()
+    mods {
+        create("octarine-witchery") {
+            sourceSet("main")
+            sourceSet("client")
+        }
+    }
 }
