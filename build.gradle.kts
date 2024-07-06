@@ -31,8 +31,9 @@ dependencies {
     modImplementation(libs.quilt.loader)
 
     // bundle mods
+    include(project(":octarine-core"))
+
 //    include(project(":octarine-brewing"))
-//    include(project(":octarine-core"))
 //    include(project(":octarine-food"))
 //    include(project(":octarine-witchery"))
 //    include(project(":octarine-wizardry"))

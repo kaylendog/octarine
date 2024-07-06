@@ -8,6 +8,7 @@ package dog.kaylen.octarine.content.world.block
 import dog.kaylen.octarine.core.item.OctarineItem
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.ItemGroup
+import net.minecraft.item.ItemGroups
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings
 
-object RawOctironItem : OctarineItem("raw_octiron", QuiltItemSettings().group(ItemGroup.MATERIALS))
+object RawOctironItem : OctarineItem("raw_octiron", QuiltItemSettings())

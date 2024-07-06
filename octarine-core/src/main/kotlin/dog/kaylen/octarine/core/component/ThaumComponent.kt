@@ -7,6 +7,7 @@ package dog.kaylen.octarine.core.component
 
 import dev.onyxstudios.cca.api.v3.component.Component
 import dev.onyxstudios.cca.api.v3.component.tick.ServerTickingComponent
+import dog.kaylen.octarine.content.world.chunk.octarine
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.chunk.Chunk
 import net.minecraft.world.chunk.WorldChunk

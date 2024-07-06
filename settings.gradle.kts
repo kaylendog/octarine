@@ -10,8 +10,8 @@ rootProject.name = "octarine"
 
 include(
     "octarine-core",
-//    "octarine-brewing",
-//    "octarine-food",
-//    "octarine-witchery",
-//    "octarine-wizardry"
+    "octarine-brewing",
+    "octarine-food",
+    "octarine-witchery",
+    "octarine-wizardry"
 )

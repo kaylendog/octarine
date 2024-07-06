@@ -13,15 +13,6 @@ loom {
     }
 }
 
-repositories {
-    maven("https://maven.blamejared.com")
-    maven("https://maven.ladysnake.org/releases")
-    exclusiveContent {
-        forRepository { maven("https://api.modrinth.com/maven") }
-        filter { includeGroup("maven.modrinth") }
-    }
-}
-
 dependencies {
     // minecraft
     minecraft(rootProject.libs.minecraft)
@@ -40,8 +31,8 @@ dependencies {
     include(libs.patchouli)
 
     // cardinal components
-    include(libs.cardinalcomponents.base)
-    include(libs.cardinalcomponents.chunk)
-    modImplementation(libs.cardinalcomponents.base)
-    modImplementation(libs.cardinalcomponents.chunk)
+    include(libs.cca.base)
+    include(libs.cca.chunk)
+    modImplementation(libs.cca.base)
+    modImplementation(libs.cca.chunk)
 }

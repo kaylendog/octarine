@@ -7,7 +7,9 @@ package dog.kaylen.octarine.core
 
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
 import net.minecraft.registry.Registry
+import net.minecraft.registry.RegistryKey
 import net.minecraft.util.Identifier
+import org.quiltmc.qsl.registry.attachment.impl.QuiltRegistryInternals
 
 /**
  * A wrapper around a registry allowing the specified types.
@@ -18,8 +20,8 @@ abstract class OctarineRegistry<T : U, U>(private val internal: Registry<in U>) 
     /**
      * Create a new registry for a specific class type.
      */
-    constructor(key: String, clazz: Class<U>) : this(
-        FabricRegistryBuilder.createSimple(clazz, identifierOf(key)).buildAndRegister(),
+    constructor(key: String) : this(
+        FabricRegistryBuilder.createSimple<U>(RegistryKey.ofRegistry(identifierOf(key))).buildAndRegister(),
     )
 
     /**

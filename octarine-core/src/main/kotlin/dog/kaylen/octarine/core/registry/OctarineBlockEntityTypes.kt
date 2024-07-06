@@ -9,10 +9,10 @@ import dog.kaylen.octarine.core.OctarineBlockEntity
 import dog.kaylen.octarine.core.OctarineBlockWithEntity
 import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.core.identifierOf
-import net.fabricmc.fabric.api.`object`.builder.v1.block.entity.FabricBlockEntityTypeBuilder
 import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.registry.Registries
 import net.minecraft.util.Identifier
+import org.quiltmc.qsl.block.entity.api.QuiltBlockEntityTypeBuilder
 
 object OctarineBlockEntityTypes : OctarineRegistry<
     BlockEntityType<OctarineBlockEntity>,
@@ -24,10 +24,10 @@ object OctarineBlockEntityTypes : OctarineRegistry<
 
     private fun register(
         name: String,
-        blockEntity: FabricBlockEntityTypeBuilder.Factory<OctarineBlockEntity>,
+        blockEntity: QuiltBlockEntityTypeBuilder<OctarineBlockEntity>,
         block: OctarineBlockWithEntity,
     ): BlockEntityType<OctarineBlockEntity> {
-        val type = FabricBlockEntityTypeBuilder.create(blockEntity, block).build()
+        val type = blockEntity.addBlocks(block).build()
         identifiers[type] = identifierOf(name)
         return register(type)
     }

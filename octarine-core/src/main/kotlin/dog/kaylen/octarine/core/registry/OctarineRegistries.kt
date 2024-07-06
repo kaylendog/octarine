@@ -17,10 +17,6 @@ object OctarineRegistries {
     val BLOCK_ENTITY_TYPES = include(OctarineBlockEntityTypes)
     val ITEMS = include(OctarineItems)
 
-    val SPELLS = include(OctarineSpells)
-    val SIGILS = include(OctarineSigils)
-    val RUNES = include(OctarineRunes)
-
     /**
      * Include this registry in the registry object.
      */
@@ -30,7 +26,7 @@ object OctarineRegistries {
     }
 
     /**
-     * Register all objectsd declared to every registry.
+     * Register all objects declared to every registry.
      */
     fun registerAll() {
         registries.forEach { it.registerAll() }

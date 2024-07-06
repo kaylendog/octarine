@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "dog.kaylen",
+    "id": "octarine",
+    "version": "${version}",
+    "metadata": {
+      "name": "Octarine",
+      "description": "Magic mod based on Terry Pratchett's 'Discword' novel series."
+    }
+  }
+}
