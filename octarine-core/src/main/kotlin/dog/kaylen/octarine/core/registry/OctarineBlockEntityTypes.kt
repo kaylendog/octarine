@@ -3,27 +3,23 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine
+package dog.kaylen.octarine.core.registry
 
 import dog.kaylen.octarine.core.OctarineBlockEntity
 import dog.kaylen.octarine.core.OctarineBlockWithEntity
 import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.core.identifierOf
-import dog.kaylen.octarine.content.brewing.block.StilBlockEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.block.entity.FabricBlockEntityTypeBuilder
 import net.minecraft.block.entity.BlockEntityType
+import net.minecraft.registry.Registries
 import net.minecraft.util.Identifier
-import net.minecraft.util.registry.Registry
 
 object OctarineBlockEntityTypes : OctarineRegistry<
     BlockEntityType<OctarineBlockEntity>,
     BlockEntityType<OctarineBlockEntity>,
     >(
-    Registry.BLOCK_ENTITY_TYPE,
+    Registries.BLOCK_ENTITY_TYPE,
 ) {
-    // brewing
-    val STIL = register("stil", ::StilBlockEntity, OctarineBlockWithEntities.STIL)
-
     private val identifiers = mutableMapOf<BlockEntityType<OctarineBlockEntity>, Identifier>()
 
     private fun register(

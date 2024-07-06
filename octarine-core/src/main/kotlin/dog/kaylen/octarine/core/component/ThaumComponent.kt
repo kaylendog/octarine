@@ -10,7 +10,6 @@ import dev.onyxstudios.cca.api.v3.component.tick.ServerTickingComponent
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.chunk.Chunk
 import net.minecraft.world.chunk.WorldChunk
-import dog.kaylen.octarine.extension.octarine
 import kotlin.math.pow
 import kotlin.random.Random
 

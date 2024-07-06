@@ -6,7 +6,6 @@
 package dog.kaylen.octarine.content.world.block
 
 import dog.kaylen.octarine.core.item.OctarineItem
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.minecraft.item.ItemGroup
+import org.quiltmc.qsl.item.setting.api.QuiltItemSettings
 
-object OctironScrapItem : OctarineItem("octiron_scrap", FabricItemSettings().group(ItemGroup.MATERIALS))
+object OctironScrapItem : OctarineItem("octiron_scrap", QuiltItemSettings())

@@ -9,14 +9,16 @@ import dog.kaylen.octarine.core.OctarineBlock
 import net.minecraft.block.BlockState
 import net.minecraft.particle.DustParticleEffect
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.random.RandomGenerator
 import net.minecraft.world.World
 import org.joml.Vector3f
+import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
 import java.util.*
 
-object DeepslateOctironOre : OctarineBlock("deepslate_octiron_ore", FabricBlockSettings.of(Material.STONE)) {
+object DeepslateOctironOre : OctarineBlock("deepslate_octiron_ore", QuiltBlockSettings.create()) {
     private const val PARTICLE_PROBABILITY = 0.1
 
-    override fun randomDisplayTick(state: BlockState, world: World, pos: BlockPos, random: Random) {
+    override fun randomDisplayTick(state: BlockState, world: World, pos: BlockPos, random: RandomGenerator) {
         // spawn particles with a probability of 0.1
         if (random.nextFloat() < PARTICLE_PROBABILITY) {
             return

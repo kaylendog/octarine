@@ -5,6 +5,7 @@
  */
 package dog.kaylen.octarine.core
 
+import dog.kaylen.octarine.core.registry.OctarineRegistries
 import net.fabricmc.api.ModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

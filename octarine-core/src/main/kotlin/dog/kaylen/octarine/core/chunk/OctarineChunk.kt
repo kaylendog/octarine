@@ -1,6 +1,6 @@
 package dog.kaylen.octarine.content.world.chunk
 
-import dog.kaylen.octarine.OctarineComponents
+import dog.kaylen.octarine.core.registry.OctarineComponents
 import dog.kaylen.octarine.core.component.ThaumComponent
 
 interface OctarineChunk {

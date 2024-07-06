@@ -3,7 +3,7 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine
+package dog.kaylen.octarine.core.registry
 
 import dog.kaylen.octarine.core.OctarineBlock
 import dog.kaylen.octarine.core.item.OctarineItem
@@ -16,19 +16,20 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
+import net.minecraft.item.ItemGroups
+import net.minecraft.registry.Registries
+import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
+import org.quiltmc.qsl.item.setting.api.QuiltItemSettings
 
-object OctarineItems : OctarineRegistry<OctarineItem, Item>(Registry.ITEM) {
+object OctarineItems : OctarineRegistry<OctarineItem, Item>(Registries.ITEM) {
     val RAW_OCTIRON = register(RawOctironItem)
     val OCTIRON_SCRAP = register(OctironScrapItem)
 
-    val WITCHES_GUIDE_ITEM = register(WitchesGuideItem)
-    val WIZARDS_GUIDE_ITEM = register(WizardsGuideItem)
-
-    val OCTIRON_ORE_BLOCK = registerBlockItem(OctarineBlocks.OCTIRON_ORE, FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS))
+    val OCTIRON_ORE_BLOCK = registerBlockItem(OctarineBlocks.OCTIRON_ORE, QuiltItemSettings().group(ItemGroups.BUILDING_BLOCKS))
     val DEEPSLATE_OCTIRON_ORE_BLOCK =
-        registerBlockItem(OctarineBlocks.DEEPSLATE_OCTIRON_ORE, FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS))
+        registerBlockItem(OctarineBlocks.DEEPSLATE_OCTIRON_ORE, QuiltItemSettings().group(ItemGroups.BUILDING_BLOCKS))
 
     override fun identifierOfElement(element: OctarineItem): Identifier {
         return element.identifier
