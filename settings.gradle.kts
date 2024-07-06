@@ -5,11 +5,13 @@ pluginManagement {
         maven("https://maven.fabricmc.net")
     }
 }
-//
-//include(
-//    "octarine-core",
+
+rootProject.name = "octarine"
+
+include(
+    "octarine-core",
 //    "octarine-brewing",
 //    "octarine-food",
 //    "octarine-witchery",
 //    "octarine-wizardry"
-//)
+)

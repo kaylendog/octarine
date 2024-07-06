@@ -4,7 +4,6 @@ spotless = "6.25.0"
 kotlin = "2.0.0"
 quilt_loom = "1.7.3"
 
-
 # minecraft and quilt
 minecraft = "1.20.1"
 quilt_loader = "0.26.1-beta.1"
@@ -16,10 +15,13 @@ quilted_fabric_api = "7.5.0+0.92.2-1.20.1"
 # mod dependencies
 lodestone = "1.4.45-1.20.1"
 veil = "1.0.0.256"
+patchouli = "1.20.1-84"
 
 [libraries]
-# build dependencies
+# build dependencies - used for convention plugin
 kotlin_gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+spotless_gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
+quilt_loom_gradlePlugin = { group = "org.quiltmc.loom", name = "org.quiltmc.loom.gradle.plugin", version.ref = "quilt_loom" }
 
 # minecraft and quilt
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -33,7 +35,7 @@ quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilt
 # mod dependencies
 lodestone = { module = "com.github.LodestarMC:Lodestone", version.ref = "lodestone" }
 veil = { module = "foundry.veil:Veil-fabric-1.20.1", version.ref = "veil" }
-
+patchouli = { module = "vazkii.patchouli:Patchouli", version.ref = "patchouli" }
 
 [bundles]
 quilted_fabric_api = ["quilted_fabric_api", "quilted_fabric_api_deprecated"]

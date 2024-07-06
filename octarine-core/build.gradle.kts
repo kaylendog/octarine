@@ -1,6 +1,12 @@
+plugins {
+    id("dog.kaylen.octarine.gradle")
+}
+
 loom {
+    splitEnvironmentSourceSets()
+
     mods {
-        "octarine-core" {
+        create("octarine-core") {
             sourceSet("main")
             sourceSet("client")
         }
@@ -8,17 +14,20 @@ loom {
 }
 
 repositories {
-    jitpack()
+    maven("https://jitpack.io")
+    maven("https://api.modrinth.com/maven")
+    maven("https://maven.blamejared.com")
 }
 
 dependencies {
+    // minecraft
+    minecraft(rootProject.libs.minecraft)
+    mappings(variantOf(rootProject.libs.quilt.mappings) { classifier("intermediary-v2") })
+    modImplementation(rootProject.libs.quilt.loader)
+
     // lodestone
     include(libs.lodestone)
     modApi(libs.lodestone)
-
-    // veil
-    include(libs.veil)
-    modApi(libs.veil)
 
     // patchouli
     modImplementation(libs.patchouli)

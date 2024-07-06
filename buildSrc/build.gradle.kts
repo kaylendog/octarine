@@ -4,16 +4,17 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "dog.kaylen.octarine.build"
+group = "dog.kaylen.octarine"
 
 repositories {
     mavenCentral()
+    maven("https://maven.quiltmc.org/repository/release")
 }
 
 dependencies {
-    compileOnly(libs.plugins.kotlin.gradlePlugin)
-//    compileOnly(libs.plugins.quilt.loom.gradlePlugin)
-//    compileOnly(libs.plugins.spotless.gradlePlugin)
+    compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.quilt.loom.gradlePlugin)
+    compileOnly(libs.spotless.gradlePlugin)
 }
 
 java {
@@ -30,7 +31,7 @@ tasks.withType<KotlinCompile>().configureEach {
 gradlePlugin {
     plugins {
         register("mod") {
-            id = "octarine.mod"
+            id = "dog.kaylen.octarine.gradle"
             implementationClass = "OctarineModPlugin"
         }
     }

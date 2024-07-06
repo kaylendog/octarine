@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     java
-    alias(libs.plugins.kotlin)
+    alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.quilt.loom)
     alias(libs.plugins.spotless)
 }
