@@ -3,16 +3,14 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine.content.world.block
+package dog.kaylen.octarine.core.block
 
-import dog.kaylen.octarine.common.OctarineBlock
-import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
+import dog.kaylen.octarine.core.OctarineBlock
 import net.minecraft.block.BlockState
-import net.minecraft.block.Material
 import net.minecraft.particle.DustParticleEffect
 import net.minecraft.util.math.BlockPos
-import net.minecraft.util.math.Vec3f
 import net.minecraft.world.World
+import org.joml.Vector3f
 import java.util.*
 
 object DeepslateOctironOre : OctarineBlock("deepslate_octiron_ore", FabricBlockSettings.of(Material.STONE)) {
@@ -26,7 +24,7 @@ object DeepslateOctironOre : OctarineBlock("deepslate_octiron_ore", FabricBlockS
 
         // add particle
         world.addParticle(
-            DustParticleEffect(Vec3f(1F, 1F, 1F), 1F),
+            DustParticleEffect(Vector3f(1.0F, 1.0F, 1.0F), 1F),
             pos.x.toDouble(),
             pos.y.toDouble() + 2.0,
             pos.z.toDouble(),

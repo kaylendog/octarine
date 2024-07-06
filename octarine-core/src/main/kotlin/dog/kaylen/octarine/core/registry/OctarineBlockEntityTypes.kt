@@ -5,10 +5,10 @@
  */
 package dog.kaylen.octarine
 
-import dog.kaylen.octarine.common.OctarineBlockEntity
-import dog.kaylen.octarine.common.OctarineBlockWithEntity
-import dog.kaylen.octarine.common.OctarineRegistry
-import dog.kaylen.octarine.common.identifierOf
+import dog.kaylen.octarine.core.OctarineBlockEntity
+import dog.kaylen.octarine.core.OctarineBlockWithEntity
+import dog.kaylen.octarine.core.OctarineRegistry
+import dog.kaylen.octarine.core.identifierOf
 import dog.kaylen.octarine.content.brewing.block.StilBlockEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.block.entity.FabricBlockEntityTypeBuilder
 import net.minecraft.block.entity.BlockEntityType

@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.content.wizardry
 
-import dog.kaylen.octarine.common.OctarineItem
+import dog.kaylen.octarine.core.OctarineItem
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack

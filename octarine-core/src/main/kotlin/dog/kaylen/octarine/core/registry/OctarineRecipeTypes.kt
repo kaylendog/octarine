@@ -5,8 +5,8 @@
  */
 package dog.kaylen.octarine
 
-import dog.kaylen.octarine.common.OctarineRecipeType
-import dog.kaylen.octarine.common.OctarineRegistry
+import dog.kaylen.octarine.core.recipe.OctarineRecipeType
+import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.content.brewing.StilRecipeType
 import net.minecraft.recipe.Recipe
 import net.minecraft.recipe.RecipeType

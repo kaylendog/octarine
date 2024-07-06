@@ -5,9 +5,9 @@
  */
 package dog.kaylen.octarine
 
-import dog.kaylen.octarine.common.OctarineBlock
-import dog.kaylen.octarine.common.OctarineItem
-import dog.kaylen.octarine.common.OctarineRegistry
+import dog.kaylen.octarine.core.OctarineBlock
+import dog.kaylen.octarine.core.item.OctarineItem
+import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.content.world.block.OctironScrapItem
 import dog.kaylen.octarine.content.world.block.RawOctironItem
 import dog.kaylen.octarine.content.witchery.WitchesGuideItem

@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.content.magic
 
-import dog.kaylen.octarine.common.Identifiable
+import dog.kaylen.octarine.core.Identifiable
 import net.minecraft.util.Identifier
 
 class Spell(override val identifier: Identifier) : Identifiable

@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.content.witchery
 
-import dog.kaylen.octarine.common.identifierOf
+import dog.kaylen.octarine.core.identifierOf
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
 import net.minecraft.entity.EntityType

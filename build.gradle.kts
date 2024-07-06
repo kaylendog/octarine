@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.spotless)
 }
 
-version = "${rootProject.extra["mod_version"]}+${rootProject.extra["minecraft_version"]}"
+version = "${rootProject.extra["mod_version"]}+${rootProject.libs.versions.minecraft}"
 group = "${rootProject.extra["maven_group"]}"
 
 spotless {

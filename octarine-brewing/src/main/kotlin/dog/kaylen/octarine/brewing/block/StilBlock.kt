@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.content.brewing.block
 
-import dog.kaylen.octarine.common.OctarineBlockWithEntity
+import dog.kaylen.octarine.core.OctarineBlockWithEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.BlockState
 import net.minecraft.block.Material

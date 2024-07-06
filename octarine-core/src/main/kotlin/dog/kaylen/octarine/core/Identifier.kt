@@ -3,12 +3,12 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine.common
+package dog.kaylen.octarine.core
 
-import dog.kaylen.octarine.Octarine
+import dog.kaylen.octarine.core.Octarine
 import net.minecraft.util.Identifier
-import net.minecraft.util.registry.Registry
-import net.minecraft.util.registry.RegistryKey
+import net.minecraft.registry.Registry
+import net.minecraft.registry.RegistryKey
 
 /**
  * Create an identifier with the given key.

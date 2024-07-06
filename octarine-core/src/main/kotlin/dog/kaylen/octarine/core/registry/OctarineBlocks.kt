@@ -5,8 +5,8 @@
  */
 package dog.kaylen.octarine
 
-import dog.kaylen.octarine.common.OctarineBlock
-import dog.kaylen.octarine.common.OctarineRegistry
+import dog.kaylen.octarine.core.OctarineBlock
+import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.content.world.block.DeepslateOctironOre
 import dog.kaylen.octarine.content.world.block.OctironOreBlock
 import net.minecraft.block.Block

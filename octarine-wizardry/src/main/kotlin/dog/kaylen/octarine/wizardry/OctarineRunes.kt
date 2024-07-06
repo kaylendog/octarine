@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine
 
-import dog.kaylen.octarine.common.OctarineRegistry
+import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.content.magic.Rune
 import net.minecraft.util.Identifier
 

@@ -11,8 +11,8 @@ import dev.onyxstudios.cca.api.v3.component.Component
 import dev.onyxstudios.cca.api.v3.component.ComponentFactory
 import dev.onyxstudios.cca.api.v3.component.ComponentKey
 import dev.onyxstudios.cca.api.v3.component.ComponentRegistry
-import dog.kaylen.octarine.common.identifierOf
-import dog.kaylen.octarine.component.ThaumComponent
+import dog.kaylen.octarine.core.identifierOf
+import dog.kaylen.octarine.core.component.ThaumComponent
 import net.minecraft.world.chunk.Chunk
 
 object OctarineComponents : ChunkComponentInitializer {

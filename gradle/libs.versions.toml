@@ -13,9 +13,10 @@ quilt_mappings = "1.20.1+build.23"
 quilted_fabric_api = "7.5.0+0.92.2-1.20.1"
 
 # mod dependencies
-lodestone = "1.4.45-1.20.1"
+cardinalcomponents = "5.2.2"
+lodestone = "1.20.1-1.6.1h"
+patchouli = "1.20.1-84-FABRIC"
 veil = "1.0.0.256"
-patchouli = "1.20.1-84"
 
 [libraries]
 # build dependencies - used for convention plugin
@@ -33,9 +34,11 @@ quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-a
 quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api-deprecated", version.ref = "quilted_fabric_api" }
 
 # mod dependencies
-lodestone = { module = "com.github.LodestarMC:Lodestone", version.ref = "lodestone" }
-veil = { module = "foundry.veil:Veil-fabric-1.20.1", version.ref = "veil" }
+cardinalcomponents_base = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-base", version.ref = "cardinalcomponents" }
+cardinalcomponents_chunk = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-chunk", version.ref = "cardinalcomponents" }
+lodestone = { module = "maven.modrinth:lodestonelib", version.ref = "lodestone" }
 patchouli = { module = "vazkii.patchouli:Patchouli", version.ref = "patchouli" }
+veil = { module = "foundry.veil:Veil-fabric-1.20.1", version.ref = "veil" }
 
 [bundles]
 quilted_fabric_api = ["quilted_fabric_api", "quilted_fabric_api_deprecated"]

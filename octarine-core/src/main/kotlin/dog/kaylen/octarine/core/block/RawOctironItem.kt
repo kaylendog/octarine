@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.content.world.block
 
-import dog.kaylen.octarine.common.OctarineItem
+import dog.kaylen.octarine.core.item.OctarineItem
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.ItemGroup
 object RawOctironItem : OctarineItem("raw_octiron", FabricItemSettings().group(ItemGroup.MATERIALS))
