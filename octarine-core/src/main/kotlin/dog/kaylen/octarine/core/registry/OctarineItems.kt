@@ -5,10 +5,9 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.OctarineBlock
+import dog.kaylen.octarine.core.block.OctarineBlock
 import dog.kaylen.octarine.core.item.OctarineItem
-import dog.kaylen.octarine.core.OctarineRegistry
-import dog.kaylen.octarine.content.world.block.OctironScrapItem
+import dog.kaylen.octarine.core.block.OctironScrapItem
 import dog.kaylen.octarine.core.block.RawOctironItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.BlockItem

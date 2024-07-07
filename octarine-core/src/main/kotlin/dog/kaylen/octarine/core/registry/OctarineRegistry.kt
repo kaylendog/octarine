@@ -3,13 +3,14 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine.core
+package dog.kaylen.octarine.core.registry
 
+import dog.kaylen.octarine.core.Octarine
+import dog.kaylen.octarine.core.util.identifierOf
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
 import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
 import net.minecraft.util.Identifier
-import org.quiltmc.qsl.registry.attachment.impl.QuiltRegistryInternals
 
 /**
  * A wrapper around a registry allowing the specified types.
@@ -39,6 +40,7 @@ abstract class OctarineRegistry<T : U, U>(private val internal: Registry<in U>) 
         store.entries.forEach {
             Registry.register(this.internal, it.key, it.value)
         }
+        Octarine.LOGGER.info("Registered ${this.store.size} items in registry (${this.javaClass.name})")
     }
 
     /**

@@ -5,8 +5,6 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.OctarineRegistry
-
 /**
  * Utility object to mitigate runtime registry initialization issues.
  */
@@ -16,6 +14,7 @@ object OctarineRegistries {
     val BLOCKS = include(OctarineBlocks)
     val BLOCK_ENTITY_TYPES = include(OctarineBlockEntityTypes)
     val ITEMS = include(OctarineItems)
+    val RECIPE_TYPES = include(OctarineRecipeTypes)
 
     /**
      * Include this registry in the registry object.

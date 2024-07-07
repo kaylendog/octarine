@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.content.magic
 
-import dog.kaylen.octarine.core.Identifiable
+import dog.kaylen.octarine.core.util.Identifiable
 import net.minecraft.util.Identifier
 
 class Rune(override val identifier: Identifier) : Identifiable

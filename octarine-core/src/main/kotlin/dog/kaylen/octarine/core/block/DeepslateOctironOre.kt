@@ -5,7 +5,6 @@
  */
 package dog.kaylen.octarine.core.block
 
-import dog.kaylen.octarine.core.OctarineBlock
 import net.minecraft.block.BlockState
 import net.minecraft.particle.DustParticleEffect
 import net.minecraft.util.math.BlockPos
@@ -13,7 +12,6 @@ import net.minecraft.util.random.RandomGenerator
 import net.minecraft.world.World
 import org.joml.Vector3f
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
-import java.util.*
 
 object DeepslateOctironOre : OctarineBlock("deepslate_octiron_ore", QuiltBlockSettings.create()) {
     private const val PARTICLE_PROBABILITY = 0.1

@@ -5,8 +5,7 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.OctarineBlockWithEntity
-import dog.kaylen.octarine.core.OctarineRegistry
+import dog.kaylen.octarine.core.block.OctarineBlockWithEntity
 import net.minecraft.block.BlockWithEntity
 import net.minecraft.registry.Registries
 import net.minecraft.util.Identifier

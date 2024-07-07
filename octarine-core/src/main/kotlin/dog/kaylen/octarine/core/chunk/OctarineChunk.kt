@@ -1,4 +1,4 @@
-package dog.kaylen.octarine.content.world.chunk
+package dog.kaylen.octarine.core.chunk
 
 import dog.kaylen.octarine.core.registry.OctarineComponents
 import dog.kaylen.octarine.core.component.ThaumComponent

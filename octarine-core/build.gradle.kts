@@ -2,20 +2,19 @@ plugins {
     id("dog.kaylen.octarine.gradle")
 }
 
-group = "dog.kaylen.octarine"
-version = "${rootProject.extra["mod_version"]}+${rootProject.libs.versions.minecraft.get()}"
-
 dependencies {
     // minecraft
     minecraft(rootProject.libs.minecraft)
     mappings(variantOf(rootProject.libs.quilt.mappings) { classifier("intermediary-v2") })
     modImplementation(rootProject.libs.quilt.loader)
 
+    // kotlin
+    modImplementation(rootProject.libs.fabric.language.kotlin)
+
     // quilted fabric api
     modImplementation(rootProject.libs.quilted.fabric.api)
 
     // lodestone
-    include(rootProject.libs.lodestone)
     modApi(rootProject.libs.lodestone)
 
     // patchouli

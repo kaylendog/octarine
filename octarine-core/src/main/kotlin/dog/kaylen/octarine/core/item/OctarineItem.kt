@@ -5,8 +5,8 @@
  */
 package dog.kaylen.octarine.core.item
 
-import dog.kaylen.octarine.core.Identifiable
-import dog.kaylen.octarine.core.identifierOf
+import dog.kaylen.octarine.core.util.Identifiable
+import dog.kaylen.octarine.core.util.identifierOf
 import net.minecraft.item.Item
 
 /**

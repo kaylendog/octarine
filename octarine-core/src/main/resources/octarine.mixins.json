@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dog.kaylen.octarine.core.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [""],
+  "mixins": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1

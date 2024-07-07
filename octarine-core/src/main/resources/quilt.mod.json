@@ -10,7 +10,18 @@
     },
     "intermediate_mappings": "net.fabricmc:intermediary",
     "entrypoints": {
-      "init": "dog.kaylen.octarine.core.Octarine"
+      "init": [
+        {
+          "adapter": "kotlin",
+          "value": "dog.kaylen.octarine.core.Octarine"
+        }
+      ],
+      "client_init": [
+        {
+          "adapter": "kotlin",
+          "value": "dog.kaylen.octarine.core.client.OctarineClient"
+        }
+      ]
     },
     "depends": [
       {
@@ -24,6 +35,10 @@
       {
         "id": "minecraft",
         "versions": ">=1.20"
+      },
+      {
+        "id": "fabric-language-kotlin",
+        "versions": "${flk_version}"
       }
     ]
   },

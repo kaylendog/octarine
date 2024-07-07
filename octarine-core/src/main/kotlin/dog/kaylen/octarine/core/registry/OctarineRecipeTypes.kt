@@ -6,7 +6,6 @@
 package dog.kaylen.octarine.core.registry
 
 import dog.kaylen.octarine.core.recipe.OctarineRecipeType
-import dog.kaylen.octarine.core.OctarineRegistry
 import net.minecraft.recipe.Recipe
 import net.minecraft.recipe.RecipeType
 import net.minecraft.registry.Registries

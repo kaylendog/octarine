@@ -2,9 +2,6 @@ plugins {
     id("dog.kaylen.octarine.gradle")
 }
 
-group = "dog.kaylen.octarine"
-version = "${rootProject.extra["mod_version"]}+${rootProject.libs.versions.minecraft.get()}"
-
 dependencies {
     // minecraft
     minecraft(rootProject.libs.minecraft)

@@ -6,9 +6,8 @@
 package dog.kaylen.octarine.core.registry
 
 import dog.kaylen.octarine.core.block.OctarineBlockEntity
-import dog.kaylen.octarine.core.OctarineBlockWithEntity
-import dog.kaylen.octarine.core.OctarineRegistry
-import dog.kaylen.octarine.core.identifierOf
+import dog.kaylen.octarine.core.block.OctarineBlockWithEntity
+import dog.kaylen.octarine.core.util.identifierOf
 import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.block.entity.BlockEntityType.BlockEntityFactory
 import net.minecraft.registry.Registries
@@ -16,9 +15,9 @@ import net.minecraft.util.Identifier
 import org.quiltmc.qsl.block.entity.api.QuiltBlockEntityTypeBuilder
 
 object OctarineBlockEntityTypes : OctarineRegistry<
-    BlockEntityType<OctarineBlockEntity>,
-    BlockEntityType<OctarineBlockEntity>,
-    >(
+        BlockEntityType<OctarineBlockEntity>,
+        BlockEntityType<OctarineBlockEntity>,
+        >(
     Registries.BLOCK_ENTITY_TYPE,
 ) {
     private val identifiers = mutableMapOf<BlockEntityType<OctarineBlockEntity>, Identifier>()

@@ -3,9 +3,9 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine.wizardry
+package dog.kaylen.octarine.wizardry.registry
 
-import dog.kaylen.octarine.core.OctarineRegistry
+import dog.kaylen.octarine.core.registry.OctarineRegistry
 import dog.kaylen.octarine.content.magic.Rune
 import net.minecraft.util.Identifier
 

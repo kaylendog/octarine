@@ -17,6 +17,7 @@ cca = "5.2.2"
 lodestone = "1.20.1-1.6.1h"
 patchouli = "1.20.1-84-FABRIC"
 veil = "1.0.0.256"
+fabric-language-kotlin = "1.11.0+kotlin.2.0.0"
 
 [libraries]
 # build dependencies - used for convention plugin
@@ -39,6 +40,7 @@ cca_chunk = { module = "dev.onyxstudios.cardinal-components-api:cardinal-compone
 lodestone = { module = "maven.modrinth:lodestonelib", version.ref = "lodestone" }
 patchouli = { module = "vazkii.patchouli:Patchouli", version.ref = "patchouli" }
 veil = { module = "foundry.veil:Veil-fabric-1.20.1", version.ref = "veil" }
+fabric-language-kotlin = {module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric-language-kotlin" }
 
 [bundles]
 quilted_fabric_api = ["quilted_fabric_api", "quilted_fabric_api_deprecated"]
