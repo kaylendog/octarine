@@ -3,12 +3,9 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine.content.world.block
+package dog.kaylen.octarine.core.block
 
 import dog.kaylen.octarine.core.item.OctarineItem
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.minecraft.item.ItemGroup
-import net.minecraft.item.ItemGroups
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings
 
 object RawOctironItem : OctarineItem("raw_octiron", QuiltItemSettings())

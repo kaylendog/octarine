@@ -5,11 +5,12 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.OctarineBlockEntity
+import dog.kaylen.octarine.core.block.OctarineBlockEntity
 import dog.kaylen.octarine.core.OctarineBlockWithEntity
 import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.core.identifierOf
 import net.minecraft.block.entity.BlockEntityType
+import net.minecraft.block.entity.BlockEntityType.BlockEntityFactory
 import net.minecraft.registry.Registries
 import net.minecraft.util.Identifier
 import org.quiltmc.qsl.block.entity.api.QuiltBlockEntityTypeBuilder
@@ -22,12 +23,12 @@ object OctarineBlockEntityTypes : OctarineRegistry<
 ) {
     private val identifiers = mutableMapOf<BlockEntityType<OctarineBlockEntity>, Identifier>()
 
-    private fun register(
+    fun register(
         name: String,
-        blockEntity: QuiltBlockEntityTypeBuilder<OctarineBlockEntity>,
-        block: OctarineBlockWithEntity,
+        blockEntityFactory: BlockEntityFactory<OctarineBlockEntity>,
+        blocks: List<OctarineBlockWithEntity>,
     ): BlockEntityType<OctarineBlockEntity> {
-        val type = blockEntity.addBlocks(block).build()
+        val type = QuiltBlockEntityTypeBuilder.create(blockEntityFactory).addBlocks(*blocks.toTypedArray()).build()
         identifiers[type] = identifierOf(name)
         return register(type)
     }

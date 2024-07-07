@@ -9,7 +9,7 @@ import dog.kaylen.octarine.core.OctarineBlock
 import dog.kaylen.octarine.core.item.OctarineItem
 import dog.kaylen.octarine.core.OctarineRegistry
 import dog.kaylen.octarine.content.world.block.OctironScrapItem
-import dog.kaylen.octarine.content.world.block.RawOctironItem
+import dog.kaylen.octarine.core.block.RawOctironItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
@@ -32,7 +32,7 @@ object OctarineItems : OctarineRegistry<OctarineItem, Item>(Registries.ITEM) {
         return element.identifier
     }
 
-    private fun registerBlockItem(
+    fun registerBlockItem(
         blockItem: OctarineBlock,
         settings: QuiltItemSettings,
         group: RegistryKey<ItemGroup>

@@ -21,7 +21,7 @@ object OctarineComponents : ChunkComponentInitializer {
     // stores
     private val chunkComponents = mutableMapOf<ComponentKey<out Component>, ComponentFactory<Chunk, out Component>>()
 
-    private fun <T : Component> registerChunkComponent(
+    fun <T : Component> registerChunkComponent(
         key: String,
         type: Class<T>,
         factory: ComponentFactory<Chunk, out Component>,
