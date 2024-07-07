@@ -5,13 +5,7 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.block.OctarineBlockWithEntity
 import net.minecraft.block.BlockWithEntity
 import net.minecraft.registry.Registries
-import net.minecraft.util.Identifier
 
-object OctarineBlockWithEntities : OctarineRegistry<OctarineBlockWithEntity, BlockWithEntity>(Registries.BLOCK) {
-    override fun identifierOfElement(element: OctarineBlockWithEntity): Identifier {
-        return element.identifier
-    }
-}
+object OctarineBlockWithEntities : OctarineRegistry<BlockWithEntity>(Registries.BLOCK)

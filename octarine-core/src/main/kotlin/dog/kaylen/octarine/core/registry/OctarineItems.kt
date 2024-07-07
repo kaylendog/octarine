@@ -5,40 +5,39 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.block.OctarineBlock
-import dog.kaylen.octarine.core.item.OctarineItem
 import dog.kaylen.octarine.core.block.OctironScrapItem
 import dog.kaylen.octarine.core.block.RawOctironItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.minecraft.block.Block
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemGroups
 import net.minecraft.registry.Registries
 import net.minecraft.registry.RegistryKey
-import net.minecraft.util.Identifier
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings
 
-object OctarineItems : OctarineRegistry<OctarineItem, Item>(Registries.ITEM) {
-    val RAW_OCTIRON = register(RawOctironItem)
-    val OCTIRON_SCRAP = register(OctironScrapItem)
+object OctarineItems : OctarineRegistry<Item>(Registries.ITEM) {
+    val RAW_OCTIRON = create("raw_octiron", RawOctironItem)
+    val OCTIRON_SCRAP = create("octiron_scrap", OctironScrapItem)
 
-    val OCTIRON_ORE_BLOCK = registerBlockItem(OctarineBlocks.OCTIRON_ORE, QuiltItemSettings(), ItemGroups.BUILDING_BLOCKS)
+    val OCTIRON_ORE_BLOCK = createBlockItem("octiron_ore", OctarineBlocks.OCTIRON_ORE, ItemGroups.BUILDING_BLOCKS) {}
     val DEEPSLATE_OCTIRON_ORE_BLOCK =
-        registerBlockItem(OctarineBlocks.DEEPSLATE_OCTIRON_ORE, QuiltItemSettings(), ItemGroups.BUILDING_BLOCKS)
+        createBlockItem("deepslate_octiron_ore", OctarineBlocks.DEEPSLATE_OCTIRON_ORE, ItemGroups.BUILDING_BLOCKS) {}
 
-    override fun identifierOfElement(element: OctarineItem): Identifier {
-        return element.identifier
-    }
-
-    fun registerBlockItem(
-        blockItem: OctarineBlock,
-        settings: QuiltItemSettings,
-        group: RegistryKey<ItemGroup>
+    fun createBlockItem(
+        name: String,
+        block: Block,
+        group: RegistryKey<ItemGroup>,
+        settingsBlock: QuiltItemSettings.() -> Unit
     ) {
+        val blockItem = BlockItem(
+            block,
+            QuiltItemSettings().apply(settingsBlock)
+        )
         ItemGroupEvents.modifyEntriesEvent(group).register {
             it.addItem(blockItem)
         }
-        this.store[blockItem.identifier] = BlockItem(blockItem, settings)
+        this.create(name, blockItem as Item)
     }
 }

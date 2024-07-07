@@ -6,7 +6,6 @@
 package dog.kaylen.octarine.brewing.block
 
 import dog.kaylen.octarine.brewing.registry.BrewingRegistries
-import dog.kaylen.octarine.core.block.OctarineBlockEntity
 import net.minecraft.block.BlockState
 import net.minecraft.util.math.BlockPos
 

@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory
 class Octarine : ModInitializer {
     override fun onInitialize(mod: ModContainer) {
         INSTANCE = this
-        OctarineRegistries.registerAll()
+        OctarineRegistries.initAll()
     }
 
     companion object {

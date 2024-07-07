@@ -5,21 +5,15 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.block.OctarineBlock
-import dog.kaylen.octarine.core.block.OctironOreBlock
 import dog.kaylen.octarine.core.block.DeepslateOctironOre
+import dog.kaylen.octarine.core.block.OctironOreBlock
 import net.minecraft.block.Block
 import net.minecraft.registry.Registries
-import net.minecraft.util.Identifier
 
 /**
  * The Octarine block registry.
  */
-object OctarineBlocks : OctarineRegistry<OctarineBlock, Block>(Registries.BLOCK) {
-    val OCTIRON_ORE = register(OctironOreBlock)
-    val DEEPSLATE_OCTIRON_ORE = register(DeepslateOctironOre)
-
-    override fun identifierOfElement(element: OctarineBlock): Identifier {
-        return element.identifier
-    }
+object OctarineBlocks : OctarineRegistry<Block>(Registries.BLOCK) {
+    val OCTIRON_ORE = create("octiron_ore", OctironOreBlock)
+    val DEEPSLATE_OCTIRON_ORE = create("deepslate_octiron_ore", DeepslateOctironOre)
 }
