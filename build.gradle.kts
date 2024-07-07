@@ -1,108 +1,48 @@
 plugins {
     java
-    kotlin("jvm") version "1.9.20"
-    id("fabric-loom") version "1.4-SNAPSHOT"
-    id("com.diffplug.spotless") version "6.22.0"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.quilt.loom)
+    alias(libs.plugins.spotless)
 }
 
-version = project.extra["mod_version"] as String
-group = project.extra["maven_group"] as String
+group = "dog.kaylen"
+version = "${rootProject.extra["mod_version"]}+${rootProject.libs.versions.minecraft.get()}"
 
-base {
-    archivesName.set(project.extra["archives_base_name"] as String)
-}
+dependencies {
+    minecraft(libs.minecraft)
+    mappings(variantOf(libs.quilt.mappings) { classifier("intermediary-v2") })
+    modImplementation(libs.quilt.loader)
 
-repositories {
-    maven("https://minecraft.guntram.de/maven/")
-    maven("https://maven.blamejared.com")
-    maven("https://maven.ladysnake.org/releases")
+    // bundle mods
+    implementation(project(":octarine-core", configuration = "namedElements"))
+    implementation(project(":octarine-brewing", configuration = "namedElements"))
+    implementation(project(":octarine-food", configuration = "namedElements"))
+    implementation(project(":octarine-witchery", configuration = "namedElements"))
+    implementation(project(":octarine-wizardry", configuration = "namedElements"))
+
+    include(project(":octarine-core"))
+    include(project(":octarine-brewing"))
+    include(project(":octarine-food"))
+    include(project(":octarine-witchery"))
+    include(project(":octarine-wizardry"))
 }
 
 loom {
-    runs {
-        register("datagen") {
-            server()
-            vmArg("-Dfabric-api.datagen")
-            vmArg("-Dfabric-api.datagen.output-dir=${file("src/main/generated")}")
-            vmArg("-Dfabric-api.datagen.modid=octarine")
-            runDir = "build/datagen"
-        }
+    mods {
+        create("octarine")
     }
-}
-
-sourceSets {
-    main {
-        resources {
-            srcDirs("src/main/generated")
-        }
-    }
-}
-
-dependencies {
-    // To change the versions see the gradle.properties file
-    minecraft("com.mojang", "minecraft", project.extra["minecraft_version"] as String)
-    mappings("net.fabricmc", "yarn", project.extra["yarn_mappings"] as String, null, "v2")
-    modImplementation("net.fabricmc", "fabric-loader", project.extra["loader_version"] as String)
-
-    // Fabric
-    modImplementation("net.fabricmc.fabric-api", "fabric-api", project.extra["fabric_version"] as String)
-    modImplementation("net.fabricmc", "fabric-language-kotlin", project.extra["fabric_kotlin_version"] as String)
-
-    // Cardinal Components
-    modImplementation(
-        "dev.onyxstudios.cardinal-components-api",
-        "cardinal-components-base",
-        project.extra["cardinal_components_version"] as String,
-    )
-    include("dev.onyxstudios.cardinal-components-api", "cardinal-components-base", project.extra["cardinal_components_version"] as String)
-    modImplementation(
-        "dev.onyxstudios.cardinal-components-api",
-        "cardinal-components-chunk",
-        project.extra["cardinal_components_version"] as String,
-    )
-    include("dev.onyxstudios.cardinal-components-api", "cardinal-components-chunk", project.extra["cardinal_components_version"] as String)
-
-    // Patchouli Docs
-    modImplementation("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")
-    include("vazkii.patchouli:Patchouli:${project.extra["patchouli_version"] as String}")
 }
 
 tasks.processResources {
-    filesMatching("fabric.mod.json") {
+    inputs.property("version", project.version)
+    inputs.property("group", project.group)
+    filesMatching("quilt.mod.json") {
         expand(
             mutableMapOf(
-                "minecraft_version" to project.extra["minecraft_version"] as String,
-                "loader_version" to project.extra["loader_version"] as String,
-                "mod_version" to project.extra["mod_version"] as String,
-                "fabric_version" to project.extra["fabric_version"] as String,
-                "fabric_kotlin_version" to project.extra["fabric_kotlin_version"] as String,
+                "version" to project.version,
+                "group" to project.group,
             ),
         )
-    }
-}
-
-tasks.compileJava {
-    options.encoding = "UTF-8"
-    sourceCompatibility = JavaVersion.VERSION_17.toString()
-    targetCompatibility = JavaVersion.VERSION_17.toString()
-    options.release.set(JavaVersion.VERSION_17.toString().toInt())
-}
-
-tasks.compileKotlin {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-}
-
-java {
-    withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
-tasks.jar {
-    from("license") {
-        rename { "${it}_${project.extra["archives_base_name"]}" }
     }
 }
 
@@ -121,8 +61,4 @@ spotless {
     kotlinGradle {
         ktlint()
     }
-//    json {
-//        target("src/**/*.json")
-//        prettier().nodeExecutable(File("${System.getenv("NVM_BIN")}/node"))
-//    }
 }

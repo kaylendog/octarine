@@ -1,0 +1,51 @@
+[versions]
+# plugins
+spotless = "6.25.0"
+kotlin = "2.0.0"
+quilt_loom = "1.7.3"
+
+# minecraft and quilt
+minecraft = "1.20.1"
+quilt_loader = "0.26.1-beta.1"
+quilt_mappings = "1.20.1+build.23"
+
+# quilt api
+quilted_fabric_api = "7.5.0+0.92.2-1.20.1"
+
+# mod dependencies
+cca = "5.2.2"
+lodestone = "1.20.1-1.6.1h"
+patchouli = "1.20.1-84-FABRIC"
+veil = "1.0.0.256"
+fabric-language-kotlin = "1.11.0+kotlin.2.0.0"
+
+[libraries]
+# build dependencies - used for convention plugin
+kotlin_gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+spotless_gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
+quilt_loom_gradlePlugin = { group = "org.quiltmc.loom", name = "org.quiltmc.loom.gradle.plugin", version.ref = "quilt_loom" }
+
+# minecraft and quilt
+minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
+quilt_mappings = { module = "org.quiltmc:quilt-mappings", version.ref = "quilt_mappings" }
+quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loader" }
+
+# quilt api
+quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted_fabric_api" }
+quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api-deprecated", version.ref = "quilted_fabric_api" }
+
+# mod dependencies
+cca_base = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-base", version.ref = "cca" }
+cca_chunk = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-chunk", version.ref = "cca" }
+lodestone = { module = "maven.modrinth:lodestonelib", version.ref = "lodestone" }
+patchouli = { module = "vazkii.patchouli:Patchouli", version.ref = "patchouli" }
+veil = { module = "foundry.veil:Veil-fabric-1.20.1", version.ref = "veil" }
+fabric-language-kotlin = {module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric-language-kotlin" }
+
+[bundles]
+quilted_fabric_api = ["quilted_fabric_api", "quilted_fabric_api_deprecated"]
+
+[plugins]
+kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+quilt_loom = { id = "org.quiltmc.loom", version.ref = "quilt_loom" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
