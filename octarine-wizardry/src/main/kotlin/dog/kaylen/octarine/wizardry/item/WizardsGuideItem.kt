@@ -5,7 +5,6 @@
  */
 package dog.kaylen.octarine.wizardry.item
 
-import dog.kaylen.octarine.core.item.OctarineItem
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.Registries

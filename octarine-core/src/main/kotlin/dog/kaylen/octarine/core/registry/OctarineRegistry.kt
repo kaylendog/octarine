@@ -5,7 +5,6 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.util.Identifiable
 import dog.kaylen.octarine.core.util.identifierOf
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
 import net.minecraft.registry.Registry
@@ -31,7 +30,7 @@ abstract class OctarineRegistry<T>(private val parent: Registry<in T>) {
     fun create(name: String, element: T): T {
         return element
     }
-    
+
     /**
      * Initialize this registry.
      */

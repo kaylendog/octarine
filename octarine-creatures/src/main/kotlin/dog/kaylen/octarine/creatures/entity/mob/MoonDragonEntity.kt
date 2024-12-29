@@ -1,13 +1,14 @@
 package dog.kaylen.octarine.creatures.entity.mob
 
-import creatures.registry.CreatureEntityTypes
-import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.boss.dragon.EnderDragonEntity
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.World
 
-class MoonDragonEntity(world: World) : EnderDragonEntity(CreatureEntityTypes.MOON_DRAGON, world) {
+class MoonDragonEntity(
+    variant: EntityType<out EnderDragonEntity>,
+    world: World
+) : EnderDragonEntity(variant, world) {
     override fun initDataTracker() {
         TODO("Not yet implemented")
     }

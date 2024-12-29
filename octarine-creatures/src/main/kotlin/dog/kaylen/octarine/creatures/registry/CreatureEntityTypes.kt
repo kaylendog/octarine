@@ -1,33 +1,32 @@
-package creatures.registry
+package dog.kaylen.octarine.creatures.registry
 
+import dog.kaylen.octarine.core.registry.OctarineEntityTypes.createMob
 import dog.kaylen.octarine.creatures.entity.mob.BalrogEntity
 import dog.kaylen.octarine.creatures.entity.mob.GrimhoundEntity
 import dog.kaylen.octarine.creatures.entity.mob.MoonDragonEntity
 import dog.kaylen.octarine.creatures.entity.mob.SwampDragonEntity
 import dog.kaylen.octarine.creatures.entity.passive.*
-import net.minecraft.entity.Entity
-import net.minecraft.entity.EntityType
-import org.quiltmc.qsl.entity.api.QuiltEntityTypeBuilder
+import net.minecraft.entity.EntityDimensions
+import net.minecraft.entity.SpawnGroup
 
 object CreatureEntityTypes {
     // mobs
-    val BALROG = create<BalrogEntity>("balrog") {}
-    var GRIMHOUND = create<GrimhoundEntity>("grimhound") {}
-    var MOON_DRAGON = create<MoonDragonEntity>("moon_dragon") {}
-    var SWAMP_DRAGON = create<SwampDragonEntity>("swamp_dragon") {}
+    val BALROG = createMob("balrog", ::BalrogEntity) {}
+    var GRIMHOUND = createMob("grimhound", ::GrimhoundEntity) {
+        setDimensions(EntityDimensions.fixed(0.85F, 0.6F))
+        spawnGroup(SpawnGroup.MONSTER)
+    }
+    var MOON_DRAGON = createMob("moon_dragon", ::MoonDragonEntity) {}
+    var SWAMP_DRAGON = createMob("swamp_dragon", ::SwampDragonEntity) {}
 
     // passive
-    val CENTAUR = create<CentaurEntity>("centaur") {}
-    val CHIMERA = create<ChimeraEntity>("chimera") {}
-    val CROWHARK = create<CrowharkEntity>("crowhark") {}
-    var DIRE_YAK = create<DireYakEntity>("dire_yak") {}
-    var DUCK_BILLED_PLATYPUS = create<DuckBilledPlatypusEntity>("duck_billed_platypus") {}
-    var GLOW_WORM = create<GlowWormEntity>("glow_worm") {}
-    var GOBLIN = create<GoblinEntity>("goblin") {}
-    var SALAMANDER = create<SalamanderEntity>("salamander") {}
-    var WOOLLY_GOAT = create<WoollyGoatEntity>("woolly_goat") {}
-
-    fun <T : Entity> create(name: String, block: QuiltEntityTypeBuilder<T>.() -> Unit): EntityType<T> {
-        return QuiltEntityTypeBuilder.create<T>().apply(block).build()
-    }
+    val CENTAUR = createMob("centaur", ::CentaurEntity) {}
+    val CHIMERA = createMob("chimera", ::ChimeraEntity) {}
+    val CROWHARK = createMob("crowhark", ::CrowharkEntity) {}
+    var DIRE_YAK = createMob("dire_yak", ::DireYakEntity) {}
+    var DUCK_BILLED_PLATYPUS = createMob("duck_billed_platypus", ::DuckBilledPlatypusEntity) {}
+    var GLOW_WORM = createMob("glow_worm", ::GlowWormEntity) {}
+    var GOBLIN = createMob("goblin", ::GoblinEntity) {}
+    var SALAMANDER = createMob("salamander", ::SalamanderEntity) {}
+    var WOOLLY_GOAT = createMob("woolly_goat", ::WoollyGoatEntity) {}
 }

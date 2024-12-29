@@ -1,15 +1,14 @@
 package dog.kaylen.octarine.creatures.entity.mob
 
-import creatures.registry.CreatureEntityTypes
-import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.boss.dragon.EnderDragonEntity
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.World
 
-class SwampDragonEntity(world: World) : EnderDragonEntity(
-    CreatureEntityTypes.SWAMP_DRAGON, world
-) {
+class SwampDragonEntity(
+    variant: EntityType<out EnderDragonEntity>,
+    world: World
+) : EnderDragonEntity(variant, world) {
     override fun initDataTracker() {
         TODO("Not yet implemented")
     }

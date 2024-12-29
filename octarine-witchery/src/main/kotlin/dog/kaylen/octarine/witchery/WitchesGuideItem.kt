@@ -5,8 +5,8 @@
  */
 package dog.kaylen.octarine.witchery
 
-import dog.kaylen.octarine.core.item.OctarineItem
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.Registries
 import net.minecraft.server.network.ServerPlayerEntity
@@ -18,7 +18,7 @@ import vazkii.patchouli.api.PatchouliAPI
 import vazkii.patchouli.common.base.PatchouliSounds
 import vazkii.patchouli.common.book.BookRegistry
 
-object WitchesGuideItem : OctarineItem("witches_guide", QuiltItemSettings()) {
+object WitchesGuideItem : Item(QuiltItemSettings()) {
     override fun use(world: World, user: PlayerEntity, hand: Hand): TypedActionResult<ItemStack> {
         val stack = user.getStackInHand(hand)
         // check user is player
