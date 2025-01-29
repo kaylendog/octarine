@@ -54,3 +54,6 @@ gradle-app.setting
 run/
 
 .kotlin
+
+# custom developer logging configuration
+logging.xml
