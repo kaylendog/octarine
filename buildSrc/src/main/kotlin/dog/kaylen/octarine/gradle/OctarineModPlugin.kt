@@ -31,8 +31,6 @@ class OctarineModPlugin : Plugin<Project> {
                 }
             }
 
-
-
             tasks.withType<ProcessResources> {
                 inputs.property("version", project.version)
                 inputs.property("group", project.group)

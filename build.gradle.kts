@@ -43,6 +43,7 @@ loom {
 tasks.processResources {
     inputs.property("version", project.version)
     inputs.property("group", project.group)
+
     filesMatching("fabric.mod.json") {
         expand(
             mutableMapOf(
