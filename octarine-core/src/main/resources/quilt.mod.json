@@ -21,6 +21,9 @@
           "adapter": "kotlin",
           "value": "dog.kaylen.octarine.core.client.OctarineClient"
         }
+      ],
+      "fabric-datagen": [
+        "dog.kaylen.octarine.core.OctarineDataGenerator"
       ]
     },
     "depends": [

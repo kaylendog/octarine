@@ -1,16 +1,16 @@
 [versions]
 # plugins
-spotless = "6.25.0"
-kotlin = "2.0.0"
-quilt_loom = "1.7.3"
+spotless = "7.0.2"
+kotlin = "2.1.0"
+quilt_loom = "1.8.5"
 
 # minecraft and quilt
 minecraft = "1.20.1"
-quilt_loader = "0.26.1-beta.1"
+quilt_loader = "0.28.0-beta.6"
 quilt_mappings = "1.20.1+build.23"
 
 # quilt api
-quilted_fabric_api = "7.5.0+0.92.2-1.20.1"
+quilted_fabric_api = "7.7.0+0.92.2-1.20.1"
 
 # mod dependencies
 cca = "5.2.2"

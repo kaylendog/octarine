@@ -28,6 +28,10 @@ dependencies {
     modImplementation(libs.cca.chunk)
 }
 
+fabricApi {
+    configureDataGeneration()
+}
+
 loom {
     splitEnvironmentSourceSets()
 
