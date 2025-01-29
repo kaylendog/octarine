@@ -32,6 +32,9 @@ dependencies {
 }
 
 loom {
+    runConfigs.configureEach {
+        ideConfigGenerated(true)
+    }
     mods {
         create("octarine")
     }
@@ -40,11 +43,15 @@ loom {
 tasks.processResources {
     inputs.property("version", project.version)
     inputs.property("group", project.group)
-    filesMatching("quilt.mod.json") {
+    filesMatching("fabric.mod.json") {
         expand(
             mutableMapOf(
                 "version" to project.version,
                 "group" to project.group,
+                "minecraft" to libs.versions.minecraft.get(),
+                "fabric_loader" to
+                    libs.versions.fabric.loader
+                        .get(),
             ),
         )
     }

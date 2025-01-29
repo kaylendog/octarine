@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "octarine",
+  "version": "${version}",
+  "name": "Octarine",
+  "description": "A magic mod based on Terry Pratchett's 'Discworld' novel series.",
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [],
+  "depends": {
+    "fabricloader": "${fabric_loader}",
+    "minecraft": "~${minecraft}",
+    "java": ">=17",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*",
+    "octarine-core": "${version}",
+    "octarine-brewing": "${version}",
+    "octarine-creatures": "${version}",
+    "octarine-food": "${version}",
+    "octarine-witchery": "${version}",
+    "octarine-wizardry": "${version}"
+  }
+}

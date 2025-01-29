@@ -1,11 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "octarine-creatures",
+  "id": "octarine-wizardry",
   "version": "${version}",
-  "name": "Octarine Creatures",
-  "description": "the creepy crawlies",
+  "name": "Octarine Wizardry",
+  "description": "Wizardry and stuff",
   "environment": "*",
-  "entrypoints": {},
+  "entrypoints": {
+    "main": [
+      {
+        "value": "dog.kaylen.octarine.wizardry.OctarineWizardryMod",
+        "adapter": "kotlin"
+      }
+    ]
+  },
   "mixins": [],
   "depends": {
     "fabricloader": "${fabric_loader}",

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schemaVersion": 1,
   "id": "octarine-core",
   "version": "${version}",
   "name": "Octarine Core",
@@ -14,7 +14,7 @@
     ],
     "client": [
       {
-        "value": "dog.kaylen.octarine.core.OctarineClientMod",
+        "value": "dog.kaylen.octarine.core.client.OctarineClientMod",
         "adapter": "kotlin"
       }
     ]
