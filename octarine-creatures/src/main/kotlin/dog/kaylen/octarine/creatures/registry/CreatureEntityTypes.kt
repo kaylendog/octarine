@@ -5,9 +5,9 @@ import dog.kaylen.octarine.creatures.entity.mob.GrimhoundEntity
 import dog.kaylen.octarine.creatures.entity.mob.MoonDragonEntity
 import dog.kaylen.octarine.creatures.entity.mob.SwampDragonEntity
 import dog.kaylen.octarine.creatures.entity.passive.*
+import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
-import org.quiltmc.qsl.entity.api.QuiltEntityTypeBuilder
 
 object CreatureEntityTypes {
     // mobs
@@ -27,7 +27,7 @@ object CreatureEntityTypes {
     var SALAMANDER = create<SalamanderEntity>("salamander") {}
     var WOOLLY_GOAT = create<WoollyGoatEntity>("woolly_goat") {}
 
-    fun <T : Entity> create(name: String, block: QuiltEntityTypeBuilder<T>.() -> Unit): EntityType<T> {
-        return QuiltEntityTypeBuilder.create<T>().apply(block).build()
+    fun <T : Entity> create(name: String, block: FabricEntityTypeBuilder<T>.() -> Unit): EntityType<T> {
+        return FabricEntityTypeBuilder.create<T>().apply(block).build()
     }
 }

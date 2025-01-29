@@ -5,13 +5,12 @@
  */
 package dog.kaylen.octarine.brewing.block
 
+import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.BlockState
 import net.minecraft.block.BlockWithEntity
-import net.minecraft.block.entity.BlockEntity
 import net.minecraft.util.math.BlockPos
-import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
 
-object StilBlock : BlockWithEntity(QuiltBlockSettings.create()) {
+object StilBlock : BlockWithEntity(FabricBlockSettings.create()) {
     override fun createBlockEntity(pos: BlockPos, state: BlockState): StilBlockEntity {
         return StilBlockEntity(pos, state)
     }

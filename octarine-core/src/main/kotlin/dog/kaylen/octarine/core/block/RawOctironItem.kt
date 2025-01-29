@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.core.block
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.minecraft.item.Item
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings
 
-object RawOctironItem : Item(QuiltItemSettings())
+object RawOctironItem : Item(FabricItemSettings())

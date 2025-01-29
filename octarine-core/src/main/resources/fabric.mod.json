@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "octarine-core",
+  "version": "${version}",
+  "name": "Octarine Core",
+  "description": "Core internals for Octarine",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "value": "dog.kaylen.octarine.core.OctarineMod",
+        "adapter": "kotlin"
+      }
+    ],
+    "client": [
+      {
+        "value": "dog.kaylen.octarine.core.OctarineClientMod",
+        "adapter": "kotlin"
+      }
+    ]
+  },
+  "mixins": ["octarine.mixins.json"],
+  "depends": {
+    "fabricloader": "${fabric_loader}",
+    "minecraft": "~${minecraft}",
+    "java": ">=17",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*"
+  }
+}

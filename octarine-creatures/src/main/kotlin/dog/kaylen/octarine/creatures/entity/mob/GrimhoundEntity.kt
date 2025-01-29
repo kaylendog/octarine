@@ -8,7 +8,8 @@ import net.minecraft.world.World
 class GrimhoundEntity(world: World) : WolfEntity(
     CreatureEntityTypes.GRIMHOUND, world
 ) {
-    override fun getEntityView(): EntityView {
+    // get entity view
+    override fun method_48926(): EntityView {
         TODO("Not yet implemented")
     }
 }

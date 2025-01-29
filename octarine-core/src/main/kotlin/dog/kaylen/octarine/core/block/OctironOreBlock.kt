@@ -5,19 +5,19 @@
  */
 package dog.kaylen.octarine.core.block
 
+import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.particle.DustParticleEffect
 import net.minecraft.util.math.BlockPos
-import net.minecraft.util.random.RandomGenerator
+import net.minecraft.util.math.random.Random
 import net.minecraft.world.World
 import org.joml.Vector3f
-import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
 
-object OctironOreBlock : Block(QuiltBlockSettings.create()) {
+object OctironOreBlock : Block(FabricBlockSettings.create()) {
     private const val PARTICLE_PROBABILITY = 0.1
 
-    override fun randomDisplayTick(state: BlockState, world: World, pos: BlockPos, random: RandomGenerator) {
+    override fun randomDisplayTick(state: BlockState, world: World, pos: BlockPos, random: Random) {
         // spawn particles with a probability of 0.1
         if (random.nextFloat() < PARTICLE_PROBABILITY) {
             return

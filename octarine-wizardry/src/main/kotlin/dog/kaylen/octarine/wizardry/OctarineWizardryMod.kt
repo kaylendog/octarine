@@ -1,13 +1,12 @@
 package dog.kaylen.octarine.wizardry
 
 import dog.kaylen.octarine.core.registry.OctarineRegistries
-import org.quiltmc.loader.api.ModContainer
-import org.quiltmc.qsl.base.api.entrypoint.ModInitializer
+import net.fabricmc.api.ModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 class OctarineWizardryMod : ModInitializer {
-    override fun onInitialize(mod: ModContainer) {
+    override fun onInitialize() {
         INSTANCE = this
         OctarineRegistries.initAll()
     }

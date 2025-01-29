@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "octarine-food",
+  "version": "${version}",
+  "name": "Octarine Food",
+  "description": "Food and stuff",
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [],
+  "depends": {
+    "fabricloader": "${fabric_loader}",
+    "minecraft": "~${minecraft}",
+    "java": ">=17",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*",
+    "octarine-core": "1.0.0"
+  }
+}

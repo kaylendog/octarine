@@ -9,6 +9,7 @@ import dog.kaylen.octarine.core.OctarineMod
 import dog.kaylen.octarine.core.api.NamespacedRegistry
 import dog.kaylen.octarine.core.block.OctironScrapItem
 import dog.kaylen.octarine.core.block.RawOctironItem
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.block.Block
 import net.minecraft.item.BlockItem
@@ -17,7 +18,6 @@ import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemGroups
 import net.minecraft.registry.Registries
 import net.minecraft.registry.RegistryKey
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings
 
 object OctarineItems : NamespacedRegistry<Item>(OctarineMod.MOD_ID, Registries.ITEM) {
     val RAW_OCTIRON = create("raw_octiron", RawOctironItem)
@@ -31,14 +31,14 @@ object OctarineItems : NamespacedRegistry<Item>(OctarineMod.MOD_ID, Registries.I
         name: String,
         block: Block,
         group: RegistryKey<ItemGroup>,
-        settingsBlock: QuiltItemSettings.() -> Unit
+        settingsBlock: FabricItemSettings.() -> Unit
     ) {
         val blockItem = BlockItem(
             block,
-            QuiltItemSettings().apply(settingsBlock)
+            FabricItemSettings().apply(settingsBlock)
         )
         ItemGroupEvents.modifyEntriesEvent(group).register {
-            it.addItem(blockItem)
+            it.add(blockItem)
         }
         this.create(name, blockItem as Item)
     }

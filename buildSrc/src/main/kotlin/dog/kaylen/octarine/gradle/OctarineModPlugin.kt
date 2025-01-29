@@ -31,14 +31,21 @@ class OctarineModPlugin : Plugin<Project> {
                 }
             }
 
-            tasks.withType<ProcessResources>() {
+
+
+            tasks.withType<ProcessResources> {
                 inputs.property("version", project.version)
                 inputs.property("group", project.group)
+
+                inputs.property("minecraft", "${libs.findVersion("minecraft").get()}")
+                inputs.property("fabric_loader", "${libs.findVersion("fabric_loader").get()}")
+
                 filesMatching("fabric.mod.json") {
                     expand(mutableMapOf(
                         "version" to project.version,
                         "group" to project.group,
-                        "flk_version" to "${libs.findVersion("fabric-language-kotlin").get()}"
+                        "minecraft" to "${libs.findVersion("minecraft").get()}",
+                        "fabric_loader" to "${libs.findVersion("fabric_loader").get()}"
                     ))
                 }
             }
