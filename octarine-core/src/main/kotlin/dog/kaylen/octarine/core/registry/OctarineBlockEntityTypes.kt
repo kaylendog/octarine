@@ -5,10 +5,13 @@
  */
 package dog.kaylen.octarine.core.registry
 
+import dog.kaylen.octarine.core.OctarineMod
+import dog.kaylen.octarine.core.api.NamespacedRegistry
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.registry.Registries
 
-object OctarineBlockEntityTypes : OctarineRegistry<BlockEntityType<BlockEntity>, >(
+object OctarineBlockEntityTypes : NamespacedRegistry<BlockEntityType<BlockEntity>>(
+    OctarineMod.MOD_ID,
     Registries.BLOCK_ENTITY_TYPE,
 )

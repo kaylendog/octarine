@@ -5,37 +5,17 @@
  */
 package dog.kaylen.octarine.core.registry
 
-import dog.kaylen.octarine.core.util.Identifiable
-import dog.kaylen.octarine.core.util.identifierOf
-import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
-import net.minecraft.registry.Registry
-import net.minecraft.registry.RegistryKey
-import net.minecraft.util.Identifier
+import dog.kaylen.octarine.core.OctarineMod
+import dog.kaylen.octarine.core.api.NamespacedRegistry
+import dog.kaylen.octarine.core.block.DeepslateOctironOre
+import dog.kaylen.octarine.core.block.OctironOreBlock
+import net.minecraft.block.Block
+import net.minecraft.registry.Registries
 
 /**
- * A wrapper around a [Registry] allowing the specified types.
+ * The Octarine block registry.
  */
-abstract class OctarineRegistry<T>(private val parent: Registry<in T>) {
-    private val internal = mutableMapOf<Identifier, T>()
-
-    /**
-     * Create a new registry for a specific class type.
-     */
-    constructor(key: String) : this(
-        FabricRegistryBuilder.createSimple<T>(RegistryKey.ofRegistry(identifierOf(key))).buildAndRegister(),
-    )
-
-    /**
-     * Create a new entry in this registry and return it.
-     */
-    fun create(name: String, element: T): T {
-        return element
-    }
-    
-    /**
-     * Initialize this registry.
-     */
-    fun init() {
-        internal.forEach { Registry.register(parent, it.key, it.value) }
-    }
+object OctarineRegistry : NamespacedRegistry<Block>(OctarineMod.MOD_ID, Registries.BLOCK) {
+    val OCTIRON_ORE = create("octiron_ore", OctironOreBlock)
+    val DEEPSLATE_OCTIRON_ORE = create("deepslate_octiron_ore", DeepslateOctironOre)
 }

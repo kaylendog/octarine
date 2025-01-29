@@ -5,7 +5,7 @@
  */
 package dog.kaylen.octarine.core.util
 
-import dog.kaylen.octarine.core.Octarine
+import dog.kaylen.octarine.core.OctarineMod
 import net.minecraft.util.Identifier
 import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
@@ -14,7 +14,7 @@ import net.minecraft.registry.RegistryKey
  * Create an identifier with the given key.
  */
 fun identifierOf(key: String): Identifier {
-    return Identifier(Octarine.MOD_ID, key)
+    return Identifier(OctarineMod.MOD_ID, key)
 }
 
 /**

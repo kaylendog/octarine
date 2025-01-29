@@ -1,7 +1,7 @@
 [versions]
 # plugins
 spotless = "7.0.2"
-kotlin = "2.1.0"
+kotlin = "2.0.0"
 quilt_loom = "1.8.5"
 
 # minecraft and quilt

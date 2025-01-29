@@ -13,12 +13,16 @@ dependencies {
     mappings(variantOf(libs.quilt.mappings) { classifier("intermediary-v2") })
     modImplementation(libs.quilt.loader)
 
+    // transitive common dependencies
+    modImplementation(rootProject.libs.fabric.language.kotlin)
+    modImplementation(rootProject.libs.quilted.fabric.api)
+
     // bundle mods
-    implementation(project(":octarine-core", configuration = "namedElements"))
-    implementation(project(":octarine-brewing", configuration = "namedElements"))
-    implementation(project(":octarine-food", configuration = "namedElements"))
-    implementation(project(":octarine-witchery", configuration = "namedElements"))
-    implementation(project(":octarine-wizardry", configuration = "namedElements"))
+    implementation(project(path = ":octarine-core", configuration = "namedElements"))
+    implementation(project(path = ":octarine-brewing", configuration = "namedElements"))
+    implementation(project(path = ":octarine-food", configuration = "namedElements"))
+    implementation(project(path = ":octarine-witchery", configuration = "namedElements"))
+    implementation(project(path = ":octarine-wizardry", configuration = "namedElements"))
 
     include(project(":octarine-core"))
     include(project(":octarine-brewing"))

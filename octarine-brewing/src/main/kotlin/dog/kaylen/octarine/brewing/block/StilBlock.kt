@@ -5,13 +5,13 @@
  */
 package dog.kaylen.octarine.brewing.block
 
-import dog.kaylen.octarine.brewing.block.StilBlockEntity
 import net.minecraft.block.BlockState
-import net.minecraft.block.Blocks
+import net.minecraft.block.BlockWithEntity
+import net.minecraft.block.entity.BlockEntity
 import net.minecraft.util.math.BlockPos
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings
 
-object StilBlock : OctarineBlockWithEntity("stil", QuiltBlockSettings.copy(Blocks.BREWING_STAND)) {
+object StilBlock : BlockWithEntity(QuiltBlockSettings.create()) {
     override fun createBlockEntity(pos: BlockPos, state: BlockState): StilBlockEntity {
         return StilBlockEntity(pos, state)
     }

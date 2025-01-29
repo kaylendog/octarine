@@ -5,12 +5,10 @@
  */
 package dog.kaylen.octarine.wizardry.registry
 
-import dog.kaylen.octarine.core.registry.OctarineRegistry
-import dog.kaylen.octarine.content.magic.Spell
+import dog.kaylen.octarine.core.api.NamespacedRegistry
+import dog.kaylen.octarine.wizardry.OctarineWizardryMod
+import dog.kaylen.octarine.wizardry.spell.Spell
 import net.minecraft.util.Identifier
 
-object OctarineSpells : OctarineRegistry<Spell, Spell>("spell") {
-    override fun identifierOfElement(element: Spell): Identifier {
-        return element.identifier
-    }
-}
+object WizardrySpells : NamespacedRegistry<Spell>(OctarineWizardryMod.MOD_ID, "spell")
+

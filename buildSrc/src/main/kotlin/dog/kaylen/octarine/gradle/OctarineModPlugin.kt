@@ -42,24 +42,6 @@ class OctarineModPlugin : Plugin<Project> {
                     ))
                 }
             }
-
-            // figure out why this isn't working
-//            extensions.getByType<SpotlessExtension>().apply {
-//                ratchetFrom("origin/main")
-//                encoding("UTF-8")
-//
-//                java {
-//                    googleJavaFormat().aosp().reflowLongStrings()
-//                    licenseHeaderFile(rootProject.file("LICENSE_HEADER"))
-//                }
-//                kotlin {
-//                    ktlint()
-//                    licenseHeaderFile(rootProject.file("LICENSE_HEADER"))
-//                }
-//                kotlinGradle {
-//                    ktlint()
-//                }
-//            }
         }
     }
 }

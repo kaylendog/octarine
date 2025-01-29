@@ -5,12 +5,13 @@
  */
 package dog.kaylen.octarine.brewing.block
 
-import dog.kaylen.octarine.brewing.registry.BrewingRegistries
+import dog.kaylen.octarine.brewing.registry.BrewingBlockEntityTypes
 import net.minecraft.block.BlockState
+import net.minecraft.block.entity.BlockEntity
 import net.minecraft.util.math.BlockPos
 
-class StilBlockEntity(pos: BlockPos, state: BlockState) : OctarineBlockEntity(
-    BrewingRegistries.BlockEntityTypes.STIL,
+class StilBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(
+    BrewingBlockEntityTypes.STIL,
     pos,
     state,
 ) {
