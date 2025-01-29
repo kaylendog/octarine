@@ -1,8 +1,5 @@
 plugins {
-    java
-    alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.fabric.loom)
-    alias(libs.plugins.spotless)
+    id("dog.kaylen.octarine.gradle")
 }
 
 group = "dog.kaylen"
@@ -13,7 +10,7 @@ dependencies {
     mappings(libs.yarn.mappings)
     modImplementation(libs.fabric.loader)
 
-    // transitive common dependencies
+    // dependencies
     modImplementation(rootProject.libs.fabric.language.kotlin)
     modImplementation(rootProject.libs.fabric.api)
 
@@ -37,40 +34,5 @@ loom {
     }
     mods {
         create("octarine")
-    }
-}
-
-tasks.processResources {
-    inputs.property("version", project.version)
-    inputs.property("group", project.group)
-
-    filesMatching("fabric.mod.json") {
-        expand(
-            mutableMapOf(
-                "version" to project.version,
-                "group" to project.group,
-                "minecraft" to libs.versions.minecraft.get(),
-                "fabric_loader" to
-                    libs.versions.fabric.loader
-                        .get(),
-            ),
-        )
-    }
-}
-
-spotless {
-    ratchetFrom("origin/main")
-    encoding("UTF-8")
-
-    java {
-        googleJavaFormat().aosp().reflowLongStrings()
-        licenseHeaderFile(project.file("LICENSE_HEADER"))
-    }
-    kotlin {
-        ktlint()
-        licenseHeaderFile(project.file("LICENSE_HEADER"))
-    }
-    kotlinGradle {
-        ktlint()
     }
 }

@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     `java-gradle-plugin`
     `kotlin-dsl`
@@ -13,21 +11,11 @@ repositories {
 }
 
 dependencies {
-    compileOnly(libs.kotlin.gradlePlugin)
-    compileOnly(libs.fabric.loom.gradlePlugin)
-    compileOnly(libs.spotless.gradlePlugin)
+    api(libs.kotlin.gradlePlugin)
+    api(libs.fabric.loom.gradlePlugin)
+    api(libs.spotless.gradlePlugin)
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
-tasks.withType<KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-}
 
 gradlePlugin {
     plugins {

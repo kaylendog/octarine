@@ -5,9 +5,8 @@ pluginManagement {
     }
 }
 
-rootProject.name = "octarine"
-
 include(
+    "octarine",
     "octarine-core",
     "octarine-brewing",
     "octarine-creatures",
