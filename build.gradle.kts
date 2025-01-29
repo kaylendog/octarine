@@ -1,7 +1,7 @@
 plugins {
     java
     alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.quilt.loom)
+    alias(libs.plugins.fabric.loom)
     alias(libs.plugins.spotless)
 }
 
@@ -10,12 +10,12 @@ version = "${rootProject.extra["mod_version"]}+${rootProject.libs.versions.minec
 
 dependencies {
     minecraft(libs.minecraft)
-    mappings(variantOf(libs.quilt.mappings) { classifier("intermediary-v2") })
-    modImplementation(libs.quilt.loader)
+    mappings(libs.yarn.mappings)
+    modImplementation(libs.fabric.loader)
 
     // transitive common dependencies
     modImplementation(rootProject.libs.fabric.language.kotlin)
-    modImplementation(rootProject.libs.quilted.fabric.api)
+    modImplementation(rootProject.libs.fabric.api)
 
     // bundle mods
     implementation(project(path = ":octarine-core", configuration = "namedElements"))

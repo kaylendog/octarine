@@ -1,51 +1,44 @@
 [versions]
 # plugins
 spotless = "7.0.2"
-kotlin = "2.0.0"
+kotlin = "2.1.10"
 quilt_loom = "1.8.5"
 
-# minecraft and quilt
+# minecraft and fabric
 minecraft = "1.20.1"
-quilt_loader = "0.28.0-beta.6"
-quilt_mappings = "1.20.1+build.23"
-
-# quilt api
-quilted_fabric_api = "7.7.0+0.92.2-1.20.1"
+fabric-loom = "1.9-SNAPSHOT"
+yarn-mappings = "1.20.1+build.10"
+fabric-loader = "0.16.10"
+fabric-language-kotlin = "1.13.1+kotlin.2.1.10"
 
 # mod dependencies
+fabric-api = "0.92.3+1.20.1"
 cca = "5.2.2"
 lodestone = "1.20.1-1.6.1h"
 patchouli = "1.20.1-84-FABRIC"
 veil = "1.0.0.256"
-fabric-language-kotlin = "1.11.0+kotlin.2.0.0"
 
 [libraries]
 # build dependencies - used for convention plugin
-kotlin_gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-spotless_gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
-quilt_loom_gradlePlugin = { group = "org.quiltmc.loom", name = "org.quiltmc.loom.gradle.plugin", version.ref = "quilt_loom" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+spotless-gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
+fabric-loom-gradlePlugin = { group = "fabric-loom", name = "fabric-loom.gradle.plugin", version.ref = "fabric-loom" }
 
-# minecraft and quilt
+# minecraft and fabric
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
-quilt_mappings = { module = "org.quiltmc:quilt-mappings", version.ref = "quilt_mappings" }
-quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loader" }
-
-# quilt api
-quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted_fabric_api" }
-quilted_fabric_api_deprecated = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api-deprecated", version.ref = "quilted_fabric_api" }
+yarn-mappings = { module = "net.fabricmc:yarn", version.ref = "yarn-mappings" }
+fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }
+fabric-language-kotlin = {module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric-language-kotlin" }
 
 # mod dependencies
+fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api" }
 cca_base = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-base", version.ref = "cca" }
 cca_chunk = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-chunk", version.ref = "cca" }
 lodestone = { module = "maven.modrinth:lodestonelib", version.ref = "lodestone" }
 patchouli = { module = "vazkii.patchouli:Patchouli", version.ref = "patchouli" }
 veil = { module = "foundry.veil:Veil-fabric-1.20.1", version.ref = "veil" }
-fabric-language-kotlin = {module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabric-language-kotlin" }
-
-[bundles]
-quilted_fabric_api = ["quilted_fabric_api", "quilted_fabric_api_deprecated"]
 
 [plugins]
-kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-quilt_loom = { id = "org.quiltmc.loom", version.ref = "quilt_loom" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+fabric-loom = { id = "fabric-loom", version.ref = "fabric-loom" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

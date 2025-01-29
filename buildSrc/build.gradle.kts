@@ -9,12 +9,12 @@ group = "dog.kaylen.octarine"
 
 repositories {
     mavenCentral()
-    maven("https://maven.quiltmc.org/repository/release")
+    maven("https://maven.fabricmc.net")
 }
 
 dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
-    compileOnly(libs.quilt.loom.gradlePlugin)
+    compileOnly(libs.fabric.loom.gradlePlugin)
     compileOnly(libs.spotless.gradlePlugin)
 }
 

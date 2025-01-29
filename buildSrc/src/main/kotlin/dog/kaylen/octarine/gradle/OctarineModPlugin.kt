@@ -9,7 +9,7 @@ class OctarineModPlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply("java")
             pluginManager.apply("org.jetbrains.kotlin.jvm")
-            pluginManager.apply("org.quiltmc.loom")
+            pluginManager.apply("fabric-loom")
             pluginManager.apply("com.diffplug.spotless")
 
             // TODO: figure out if we can create custom configuration for sub-modules
@@ -34,7 +34,7 @@ class OctarineModPlugin : Plugin<Project> {
             tasks.withType<ProcessResources>() {
                 inputs.property("version", project.version)
                 inputs.property("group", project.group)
-                filesMatching("quilt.mod.json") {
+                filesMatching("fabric.mod.json") {
                     expand(mutableMapOf(
                         "version" to project.version,
                         "group" to project.group,

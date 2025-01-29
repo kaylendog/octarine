@@ -5,11 +5,11 @@ plugins {
 dependencies {
     // minecraft
     minecraft(rootProject.libs.minecraft)
-    mappings(variantOf(rootProject.libs.quilt.mappings) { classifier("intermediary-v2") })
-    modImplementation(rootProject.libs.quilt.loader)
+    mappings(rootProject.libs.yarn.mappings)
+    modImplementation(rootProject.libs.fabric.loader)
 
     // quilted fabric api
-    modImplementation(rootProject.libs.quilted.fabric.api)
+    modImplementation(rootProject.libs.fabric.api)
 
     // octarine core
     implementation(project(":octarine-core", configuration = "namedElements"))
