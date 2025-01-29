@@ -9,6 +9,7 @@ dependencies {
     modImplementation(rootProject.libs.fabric.loader)
 
     // fabric api
+    modImplementation(rootProject.libs.fabric.language.kotlin)
     modImplementation(rootProject.libs.fabric.api)
 
     // octarine core

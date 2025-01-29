@@ -8,7 +8,8 @@ dependencies {
     mappings(rootProject.libs.yarn.mappings)
     modImplementation(rootProject.libs.fabric.loader)
 
-    // quilted fabric api
+    // fabric api
+    modImplementation(rootProject.libs.fabric.language.kotlin)
     modImplementation(rootProject.libs.fabric.api)
 
     // octarine core

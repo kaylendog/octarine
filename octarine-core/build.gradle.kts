@@ -11,11 +11,11 @@ dependencies {
     // kotlin
     modImplementation(rootProject.libs.fabric.language.kotlin)
 
-    // quilted fabric api
+    // fabric api
     modImplementation(rootProject.libs.fabric.api)
 
     // lodestone
-    modApi(rootProject.libs.lodestone)
+    // modApi(rootProject.libs.lodestone)
 
     // patchouli
     include(libs.patchouli)
