@@ -15,7 +15,7 @@ import net.minecraft.registry.Registries
 /**
  * The Octarine block registry.
  */
-object OctarineRegistry : NamespacedRegistry<Block>(OctarineMod.MOD_ID, Registries.BLOCK) {
+object OctarineBlocks : NamespacedRegistry<Block>(OctarineMod.MOD_ID, Registries.BLOCK) {
     val OCTIRON_ORE = create("octiron_ore", OctironOreBlock)
     val DEEPSLATE_OCTIRON_ORE = create("deepslate_octiron_ore", DeepslateOctironOre)
 }

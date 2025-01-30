@@ -3,7 +3,7 @@
  * This project is licensed under the GNU General Public License v3.0.
  * See the LICENSE file in the project root for more information.
  */
-package dog.kaylen.octarine.witchery
+package dog.kaylen.octarine.witchery.item.book
 
 import dog.kaylen.octarine.core.item.OctarineItem
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings

@@ -1,10 +1,24 @@
 {
-    "generator": {"biome_source": {
-        "biomes": [{
-            "biome": "octarine:dungeon_dimensions",
-            "parameters": {}
-        }],
-        "type": "multi_noise"
-    }},
+    "generator": {
+        "settings": "octarine:dungeon_dimensions",
+        "biome_source": {
+            "type": "minecraft:multi_noise",
+            "biomes": [
+                {
+                    "biome": "octarine:dungeon_dimensions",
+                    "parameters": {
+                        "temperature": 0,
+                        "humidity": 0,
+                        "continentalness": 0,
+                        "erosion": 0,
+                        "weirdness": 0,
+                        "depth": 0,
+                        "offset": 0
+                    }
+                }
+            ]
+        },
+        "type": "noise"
+    },
     "type": "octarine:dungeon_dimensions"
 }

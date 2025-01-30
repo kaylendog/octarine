@@ -34,7 +34,7 @@ abstract class NamespacedRegistry<T>(private val namespace: String, private val 
         internal[Identifier(namespace, key)] = element
         return element
     }
-    
+
     /**
      * Initialize this registry.
      */

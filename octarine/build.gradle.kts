@@ -17,12 +17,14 @@ dependencies {
     // bundle mods
     implementation(project(path = ":octarine-core", configuration = "namedElements"))
     implementation(project(path = ":octarine-brewing", configuration = "namedElements"))
+    implementation(project(path = ":octarine-creatures", configuration = "namedElements"))
     implementation(project(path = ":octarine-food", configuration = "namedElements"))
     implementation(project(path = ":octarine-witchery", configuration = "namedElements"))
     implementation(project(path = ":octarine-wizardry", configuration = "namedElements"))
 
     include(project(":octarine-core"))
     include(project(":octarine-brewing"))
+    include(project(":octarine-creatures"))
     include(project(":octarine-food"))
     include(project(":octarine-witchery"))
     include(project(":octarine-wizardry"))

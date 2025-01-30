@@ -1,23 +1,22 @@
-package dog.kaylen.octarine.brewing
+package dog.kaylen.octarine.witchery
 
-import dog.kaylen.octarine.brewing.registry.BrewingRegistries
-import dog.kaylen.octarine.core.registry.OctarineRegistries
+import dog.kaylen.octarine.witchery.registry.WitcheryRegistries
 import net.fabricmc.api.ModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class OctarineBrewingMod : ModInitializer {
+class OctarineWitcheryMod : ModInitializer {
     override fun onInitialize() {
         INSTANCE = this
-        BrewingRegistries.initAll()
+        WitcheryRegistries.initAll()
     }
 
     companion object {
         /** The singleton instance of the mod.  */
-        lateinit var INSTANCE: OctarineBrewingMod
+        lateinit var INSTANCE: OctarineWitcheryMod
 
         /** The mod ID **/
-        const val MOD_ID = "octarine_brewing"
+        const val MOD_ID = "octarine_witchery"
 
         /** The Octarine logger. */
         val LOGGER: Logger = LoggerFactory.getLogger(MOD_ID)

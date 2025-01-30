@@ -23,9 +23,9 @@ object OctarineItems : NamespacedRegistry<Item>(OctarineMod.MOD_ID, Registries.I
     val RAW_OCTIRON = create("raw_octiron", RawOctironItem)
     val OCTIRON_SCRAP = create("octiron_scrap", OctironScrapItem)
 
-    val OCTIRON_ORE_BLOCK = createBlockItem("octiron_ore", OctarineRegistry.OCTIRON_ORE, ItemGroups.BUILDING_BLOCKS) {}
+    val OCTIRON_ORE_BLOCK = createBlockItem("octiron_ore", OctarineBlocks.OCTIRON_ORE, ItemGroups.BUILDING_BLOCKS) {}
     val DEEPSLATE_OCTIRON_ORE_BLOCK =
-        createBlockItem("deepslate_octiron_ore", OctarineRegistry.DEEPSLATE_OCTIRON_ORE, ItemGroups.BUILDING_BLOCKS) {}
+        createBlockItem("deepslate_octiron_ore", OctarineBlocks.DEEPSLATE_OCTIRON_ORE, ItemGroups.BUILDING_BLOCKS) {}
 
     private fun createBlockItem(
         name: String,

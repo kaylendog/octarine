@@ -11,8 +11,8 @@ import dog.kaylen.octarine.core.api.RegistrySet
  * Utility object to mitigate runtime registry initialization issues.
  */
 object OctarineRegistries : RegistrySet() {
-    val BLOCKS = include(OctarineRegistry)
-    val BLOCK_ENTITY_TYPES = include(OctarineBlockEntityTypes)
-    val ITEMS = include(OctarineItems)
-    val RECIPE_TYPES = include(OctarineRecipeTypes)
+    val BLOCK = include(OctarineBlocks)
+    val BLOCK_ENTITY_TYPE = include(OctarineBlockEntityTypes)
+    val ITEM = include(OctarineItems)
+    val RECIPE_TYPE = include(OctarineRecipeTypes)
 }

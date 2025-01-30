@@ -1,6 +1,6 @@
 package dog.kaylen.octarine.wizardry
 
-import dog.kaylen.octarine.core.registry.OctarineRegistries
+import dog.kaylen.octarine.wizardry.registry.WizardryRegistries
 import net.fabricmc.api.ModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory
 class OctarineWizardryMod : ModInitializer {
     override fun onInitialize() {
         INSTANCE = this
-        OctarineRegistries.initAll()
+        WizardryRegistries.initAll()
     }
 
     companion object {

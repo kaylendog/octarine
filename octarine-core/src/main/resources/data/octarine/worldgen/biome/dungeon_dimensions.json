@@ -1,5 +1,5 @@
 {
-    "precipitation": "none",
+    "has_precipitation": false,
     "features": [],
     "effects": {
         "sky_color": 1185564,
@@ -7,13 +7,13 @@
         "particle": {
             "probability": 0.8,
             "options": {
-                "color": [
-                    0.18,
-                    0.235,
-                    0.29
-                ],
-                "scale": 0.5,
-                "type": "dust"
+                "type": "dust",
+                "value": {
+                    "r": 0.18,
+                    "g": 0.235,
+                    "b": 0.29,
+                    "scale": 0.5
+                }
             }
         },
         "water_fog_color": 1579809,
