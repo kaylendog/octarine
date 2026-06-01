@@ -12,7 +12,11 @@ import net.minecraft.item.Item
 /**
  * A wrapper around the Minecraft item type.
  */
-abstract class OctarineItem(private val key: String, settings: Settings) : Item(settings), Identifiable {
+abstract class OctarineItem(
+    private val key: String,
+    settings: Settings,
+) : Item(settings),
+    Identifiable {
     /**
      * This item's identifier.
      */

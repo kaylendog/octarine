@@ -8,7 +8,7 @@ import net.minecraft.registry.Registries
 
 object BrewingBlocks : NamespacedRegistry<Block>(
     OctarineBrewingMod.MOD_ID,
-    Registries.BLOCK
+    Registries.BLOCK,
 ) {
     val STIL = create("stil", StilBlock)
 }

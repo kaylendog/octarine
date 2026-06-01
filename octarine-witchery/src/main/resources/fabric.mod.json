@@ -1,25 +1,25 @@
 {
-  "schemaVersion": 1,
-  "id": "octarine-witchery",
-  "version": "${version}",
-  "name": "Octarine Witchery",
-  "description": "Witchery and stuff",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      {
-        "value": "dog.kaylen.octarine.witchery.OctarineWitcheryMod",
-        "adapter": "kotlin"
-      }
-    ]
-  },
-  "mixins": [],
-  "depends": {
-    "fabricloader": "${fabric_loader}",
-    "minecraft": "~${minecraft}",
-    "java": ">=17",
-    "fabric-api": "*",
-    "fabric-language-kotlin": "*",
-    "octarine-core": "${version}"
-  }
+	"schemaVersion": 1,
+	"id": "octarine-witchery",
+	"version": "${version}",
+	"name": "Octarine Witchery",
+	"description": "Witchery and stuff",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "dog.kaylen.octarine.witchery.OctarineWitcheryMod",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": "${fabric_loader}",
+		"minecraft": "~${minecraft}",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*",
+		"octarine-core": "${version}"
+	}
 }

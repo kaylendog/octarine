@@ -7,7 +7,7 @@ import net.minecraft.world.World
 
 class BalrogEntity(
     variant: EntityType<*>,
-    world: World
+    world: World,
 ) : Entity(variant, world) {
     override fun initDataTracker() {
         TODO("Not yet implemented")

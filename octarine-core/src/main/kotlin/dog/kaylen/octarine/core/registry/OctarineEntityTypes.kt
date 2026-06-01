@@ -7,5 +7,5 @@ import net.minecraft.registry.Registries
 
 object OctarineEntityTypes : NamespacedRegistry<EntityType<*>>(
     OctarineMod.MOD_ID,
-    Registries.ENTITY_TYPE
+    Registries.ENTITY_TYPE,
 )

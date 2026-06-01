@@ -7,9 +7,12 @@ import net.minecraft.entity.boss.dragon.EnderDragonEntity
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.World
 
-class SwampDragonEntity(world: World) : EnderDragonEntity(
-    CreatureEntityTypes.SWAMP_DRAGON, world
-) {
+class SwampDragonEntity(
+    world: World,
+) : EnderDragonEntity(
+        CreatureEntityTypes.SWAMP_DRAGON,
+        world,
+    ) {
     override fun initDataTracker() {
         TODO("Not yet implemented")
     }

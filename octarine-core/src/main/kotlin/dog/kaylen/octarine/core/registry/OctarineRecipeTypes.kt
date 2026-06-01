@@ -10,4 +10,7 @@ import dog.kaylen.octarine.core.api.NamespacedRegistry
 import net.minecraft.recipe.RecipeType
 import net.minecraft.registry.Registries
 
-object OctarineRecipeTypes : NamespacedRegistry<RecipeType<*>>(OctarineMod.MOD_ID, Registries.RECIPE_TYPE)
+object OctarineRecipeTypes : NamespacedRegistry<RecipeType<*>>(
+    OctarineMod.MOD_ID,
+    Registries.RECIPE_TYPE,
+)

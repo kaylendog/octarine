@@ -5,10 +5,12 @@ import net.minecraft.entity.passive.AxolotlEntity
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.World
 
-class SalamanderEntity(world: World) : AxolotlEntity(
-    CreatureEntityTypes.SALAMANDER,
-    world
-) {
+class SalamanderEntity(
+    world: World,
+) : AxolotlEntity(
+        CreatureEntityTypes.SALAMANDER,
+        world,
+    ) {
     override fun initDataTracker() {
         TODO("Not yet implemented")
     }

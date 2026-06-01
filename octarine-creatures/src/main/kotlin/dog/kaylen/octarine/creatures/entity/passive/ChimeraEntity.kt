@@ -5,7 +5,10 @@ import net.minecraft.entity.EntityType
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.World
 
-class ChimeraEntity(variant: EntityType<*>, world: World) : Entity(variant, world,) {
+class ChimeraEntity(
+    variant: EntityType<*>,
+    world: World,
+) : Entity(variant, world) {
     override fun initDataTracker() {
         TODO("Not yet implemented")
     }

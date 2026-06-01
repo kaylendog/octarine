@@ -19,14 +19,20 @@ import vazkii.patchouli.common.base.PatchouliSounds
 import vazkii.patchouli.common.book.BookRegistry
 
 object WizardsGuideItem : OctarineItem("wizards_guide", FabricItemSettings()) {
-    override fun use(world: World, user: PlayerEntity, hand: Hand): TypedActionResult<ItemStack> {
+    override fun use(
+        world: World,
+        user: PlayerEntity,
+        hand: Hand,
+    ): TypedActionResult<ItemStack> {
         val stack = user.getStackInHand(hand)
         // check user is player
         if (user !is ServerPlayerEntity) {
             return TypedActionResult.pass(user.getStackInHand(hand))
         }
         // open gui
-        val book = BookRegistry.INSTANCE.books[Registries.ITEM.getId(this)] ?: return TypedActionResult.fail(stack)
+        val book =
+            BookRegistry.INSTANCE.books[Registries.ITEM.getId(this)]
+                ?: return TypedActionResult.fail(stack)
         PatchouliAPI.get().openBookGUI(user, book.id)
         user.playSound(PatchouliSounds.BOOK_OPEN, 1F, ((0.7 + Math.random() * 0.4).toFloat()))
         // return success

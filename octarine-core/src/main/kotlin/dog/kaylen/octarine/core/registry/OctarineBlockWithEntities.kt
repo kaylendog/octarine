@@ -10,4 +10,7 @@ import dog.kaylen.octarine.core.api.NamespacedRegistry
 import net.minecraft.block.BlockWithEntity
 import net.minecraft.registry.Registries
 
-object OctarineBlockWithEntities : NamespacedRegistry<BlockWithEntity>(OctarineMod.MOD_ID, Registries.BLOCK)
+object OctarineBlockWithEntities : NamespacedRegistry<BlockWithEntity>(
+    OctarineMod.MOD_ID,
+    Registries.BLOCK,
+)

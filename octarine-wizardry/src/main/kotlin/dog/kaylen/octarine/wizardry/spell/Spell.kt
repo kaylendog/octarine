@@ -8,4 +8,6 @@ package dog.kaylen.octarine.wizardry.spell
 import dog.kaylen.octarine.core.util.Identifiable
 import net.minecraft.util.Identifier
 
-class Spell(override val identifier: Identifier) : Identifiable
+class Spell(
+    override val identifier: Identifier,
+) : Identifiable

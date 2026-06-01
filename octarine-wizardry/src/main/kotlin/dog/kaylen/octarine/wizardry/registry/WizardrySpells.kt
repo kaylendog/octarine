@@ -11,4 +11,3 @@ import dog.kaylen.octarine.wizardry.spell.Spell
 import net.minecraft.util.Identifier
 
 object WizardrySpells : NamespacedRegistry<Spell>(OctarineWizardryMod.MOD_ID, "spell")
-

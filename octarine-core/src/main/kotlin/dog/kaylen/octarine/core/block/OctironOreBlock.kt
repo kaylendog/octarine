@@ -17,7 +17,12 @@ import org.joml.Vector3f
 object OctironOreBlock : Block(FabricBlockSettings.create()) {
     private const val PARTICLE_PROBABILITY = 0.1
 
-    override fun randomDisplayTick(state: BlockState, world: World, pos: BlockPos, random: Random) {
+    override fun randomDisplayTick(
+        state: BlockState,
+        world: World,
+        pos: BlockPos,
+        random: Random,
+    ) {
         // spawn particles with a probability of 0.1
         if (random.nextFloat() < PARTICLE_PROBABILITY) {
             return

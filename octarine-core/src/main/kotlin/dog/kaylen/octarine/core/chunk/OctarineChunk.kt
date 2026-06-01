@@ -9,6 +9,4 @@ interface OctarineChunk {
         get() = OctarineComponents.THAUM.get(this)
 }
 
-fun Chunk.octarine(): OctarineChunk {
-    return this as OctarineChunk
-}
+fun Chunk.octarine(): OctarineChunk = this as OctarineChunk

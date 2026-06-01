@@ -8,4 +8,6 @@ package dog.kaylen.octarine.wizardry.rune
 import dog.kaylen.octarine.core.util.Identifiable
 import net.minecraft.util.Identifier
 
-class Rune(override val identifier: Identifier) : Identifiable
+class Rune(
+    override val identifier: Identifier,
+) : Identifiable

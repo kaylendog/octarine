@@ -10,5 +10,9 @@ object BrewingBlockEntityTypes : NamespacedRegistry<BlockEntityType<*>>(
     OctarineBrewingMod.MOD_ID,
     Registries.BLOCK_ENTITY_TYPE,
 ) {
-    val STIL = create("stil",  BlockEntityType.Builder.create(::StilBlockEntity, BrewingBlocks.STIL).build(null))
+    val STIL =
+        create(
+            "stil",
+            BlockEntityType.Builder.create(::StilBlockEntity, BrewingBlocks.STIL).build(null),
+        )
 }

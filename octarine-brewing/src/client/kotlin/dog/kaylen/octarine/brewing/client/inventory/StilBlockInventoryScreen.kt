@@ -8,4 +8,6 @@ package dog.kaylen.octarine.brewing.client.inventory
 import net.minecraft.client.gui.screen.ingame.InventoryScreen
 import net.minecraft.entity.player.PlayerEntity
 
-class StilBlockInventoryScreen(player: PlayerEntity) : InventoryScreen(player)
+class StilBlockInventoryScreen(
+    player: PlayerEntity,
+) : InventoryScreen(player)

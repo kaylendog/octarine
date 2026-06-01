@@ -7,7 +7,9 @@ import net.minecraft.entity.boss.dragon.EnderDragonEntity
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.world.World
 
-class MoonDragonEntity(world: World) : EnderDragonEntity(CreatureEntityTypes.MOON_DRAGON, world) {
+class MoonDragonEntity(
+    world: World,
+) : EnderDragonEntity(CreatureEntityTypes.MOON_DRAGON, world) {
     override fun initDataTracker() {
         TODO("Not yet implemented")
     }

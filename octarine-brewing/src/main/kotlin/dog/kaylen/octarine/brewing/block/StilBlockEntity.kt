@@ -10,10 +10,13 @@ import net.minecraft.block.BlockState
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.util.math.BlockPos
 
-class StilBlockEntity(pos: BlockPos, state: BlockState) : BlockEntity(
-    BrewingBlockEntityTypes.STIL,
-    pos,
-    state,
-) {
+class StilBlockEntity(
+    pos: BlockPos,
+    state: BlockState,
+) : BlockEntity(
+        BrewingBlockEntityTypes.STIL,
+        pos,
+        state,
+    ) {
     val inventory = StilBlockInventory()
 }

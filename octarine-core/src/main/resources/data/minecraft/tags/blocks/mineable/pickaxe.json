@@ -1,7 +1,4 @@
 {
-    "values": [
-        "octarine:octiron_ore",
-        "octarine:deepslate_octiron_ore"
-    ],
-    "replace": false
+	"values": ["octarine:octiron_ore", "octarine:deepslate_octiron_ore"],
+	"replace": false
 }

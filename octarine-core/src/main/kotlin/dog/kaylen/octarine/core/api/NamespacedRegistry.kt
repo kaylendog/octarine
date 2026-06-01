@@ -13,7 +13,10 @@ import net.minecraft.util.Identifier
 /**
  * A wrapper around a [Registry] allowing the specified types.
  */
-abstract class NamespacedRegistry<T>(private val namespace: String, private val parent: Registry<in T>) {
+abstract class NamespacedRegistry<T>(
+    private val namespace: String,
+    private val parent: Registry<in T>,
+) {
     private val internal = mutableMapOf<Identifier, T>()
 
     /**
@@ -21,16 +24,24 @@ abstract class NamespacedRegistry<T>(private val namespace: String, private val 
      */
     constructor(namespace: String, key: String) : this(
         namespace,
-        FabricRegistryBuilder.createSimple<T>(RegistryKey.ofRegistry(Identifier(
-            namespace,
-            key
-        ))).buildAndRegister(),
+        FabricRegistryBuilder
+            .createSimple<T>(
+                RegistryKey.ofRegistry(
+                    Identifier(
+                        namespace,
+                        key,
+                    ),
+                ),
+            ).buildAndRegister(),
     )
 
     /**
      * Create a new entry in this registry and return it.
      */
-    fun create(key: String, element: T): T {
+    fun create(
+        key: String,
+        element: T,
+    ): T {
         internal[Identifier(namespace, key)] = element
         return element
     }

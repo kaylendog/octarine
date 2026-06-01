@@ -13,7 +13,7 @@ dependencies {
     modImplementation(rootProject.libs.fabric.api)
 
     // octarine core
-    implementation(project(path =":octarine-core", configuration = "namedElements"))
+    implementation(project(path = ":octarine-core", configuration = "namedElements"))
 }
 
 loom {

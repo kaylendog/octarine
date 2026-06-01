@@ -18,7 +18,8 @@ object OctarineComponents : ChunkComponentInitializer {
     val THAUM = registerChunkComponent("thaum", ThaumComponent::class.java, ::ThaumComponent)
 
     // stores
-    private val chunkComponents = mutableMapOf<ComponentKey<out Component>, ComponentFactory<Chunk, out Component>>()
+    private val chunkComponents =
+        mutableMapOf<ComponentKey<out Component>, ComponentFactory<Chunk, out Component>>()
 
     private fun <T : Component> registerChunkComponent(
         key: String,

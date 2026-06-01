@@ -4,7 +4,15 @@ import dog.kaylen.octarine.creatures.entity.mob.BalrogEntity
 import dog.kaylen.octarine.creatures.entity.mob.GrimhoundEntity
 import dog.kaylen.octarine.creatures.entity.mob.MoonDragonEntity
 import dog.kaylen.octarine.creatures.entity.mob.SwampDragonEntity
-import dog.kaylen.octarine.creatures.entity.passive.*
+import dog.kaylen.octarine.creatures.entity.passive.CentaurEntity
+import dog.kaylen.octarine.creatures.entity.passive.ChimeraEntity
+import dog.kaylen.octarine.creatures.entity.passive.CrowharkEntity
+import dog.kaylen.octarine.creatures.entity.passive.DireYakEntity
+import dog.kaylen.octarine.creatures.entity.passive.DuckBilledPlatypusEntity
+import dog.kaylen.octarine.creatures.entity.passive.GlowWormEntity
+import dog.kaylen.octarine.creatures.entity.passive.GoblinEntity
+import dog.kaylen.octarine.creatures.entity.passive.SalamanderEntity
+import dog.kaylen.octarine.creatures.entity.passive.WoollyGoatEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
@@ -27,7 +35,8 @@ object CreatureEntityTypes {
     var SALAMANDER = create<SalamanderEntity>("salamander") {}
     var WOOLLY_GOAT = create<WoollyGoatEntity>("woolly_goat") {}
 
-    fun <T : Entity> create(name: String, block: FabricEntityTypeBuilder<T>.() -> Unit): EntityType<T> {
-        return FabricEntityTypeBuilder.create<T>().apply(block).build()
-    }
+    fun <T : Entity> create(
+        name: String,
+        block: FabricEntityTypeBuilder<T>.() -> Unit,
+    ): EntityType<T> = FabricEntityTypeBuilder.create<T>().apply(block).build()
 }

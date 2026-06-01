@@ -1,25 +1,25 @@
 {
-  "schemaVersion": 1,
-  "id": "octarine-brewing",
-  "version": "${version}",
-  "name": "Octarine Brewing",
-  "description": "Brewing and alcohol",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      {
-        "value": "dog.kaylen.octarine.brewing.OctarineBrewingMod",
-        "adapter": "kotlin"
-      }
-    ]
-  },
-  "mixins": [],
-  "depends": {
-    "fabricloader": "${fabric_loader}",
-    "minecraft": "~${minecraft}",
-    "java": ">=17",
-    "fabric-api": "*",
-    "fabric-language-kotlin": "*",
-    "octarine-core": "${version}"
-  }
+	"schemaVersion": 1,
+	"id": "octarine-brewing",
+	"version": "${version}",
+	"name": "Octarine Brewing",
+	"description": "Brewing and alcohol",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "dog.kaylen.octarine.brewing.OctarineBrewingMod",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": "${fabric_loader}",
+		"minecraft": "~${minecraft}",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*",
+		"octarine-core": "${version}"
+	}
 }

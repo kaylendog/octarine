@@ -14,7 +14,10 @@ import net.minecraft.world.chunk.WorldChunk
 import kotlin.math.pow
 import kotlin.random.Random
 
-class ThaumComponent(private val chunk: Chunk) : Component, ServerTickingComponent {
+class ThaumComponent(
+    private val chunk: Chunk,
+) : Component,
+    ServerTickingComponent {
     companion object {
         const val SPEED = 0.5F
         const val DAMPING = 0.1F
@@ -40,10 +43,26 @@ class ThaumComponent(private val chunk: Chunk) : Component, ServerTickingCompone
             return
         }
 
-        val north = this.chunk.world.chunkManager.getWorldChunk(this.chunk.pos.x, this.chunk.pos.z - 1)
-        val east = this.chunk.world.chunkManager.getWorldChunk(this.chunk.pos.x + 1, this.chunk.pos.z)
-        val south = this.chunk.world.chunkManager.getWorldChunk(this.chunk.pos.x, this.chunk.pos.z + 1)
-        val west = this.chunk.world.chunkManager.getWorldChunk(this.chunk.pos.x - 1, this.chunk.pos.z)
+        val north =
+            this.chunk.world.chunkManager.getWorldChunk(
+                this.chunk.pos.x,
+                this.chunk.pos.z - 1,
+            )
+        val east =
+            this.chunk.world.chunkManager.getWorldChunk(
+                this.chunk.pos.x + 1,
+                this.chunk.pos.z,
+            )
+        val south =
+            this.chunk.world.chunkManager.getWorldChunk(
+                this.chunk.pos.x,
+                this.chunk.pos.z + 1,
+            )
+        val west =
+            this.chunk.world.chunkManager.getWorldChunk(
+                this.chunk.pos.x - 1,
+                this.chunk.pos.z,
+            )
 
         // compute D2T
         val southNorthD2X = computeD2X(south, north)
@@ -51,11 +70,14 @@ class ThaumComponent(private val chunk: Chunk) : Component, ServerTickingCompone
 
         this.delta2 = SPEED.pow(2) * (southNorthD2X + eastWestD2X) - DAMPING * this.delta
         val avgDelta = (this.delta + (this.delta2 + delta2 / 20)) / 2 // slightly better approx
-        this.value += avgDelta / 20 + (Random.nextFloat() - 1/2) * NOISE_FACTOR
+        this.value += avgDelta / 20 + (Random.nextFloat() - 1 / 2) * NOISE_FACTOR
         this.delta += this.delta2 / 20
     }
 
-    fun computeD2X(x1: Chunk?, x3: Chunk?): Float {
+    fun computeD2X(
+        x1: Chunk?,
+        x3: Chunk?,
+    ): Float {
         val x1_v = x1?.octarine()?.thaum?.value ?: 0F
         val x3_v = x3?.octarine()?.thaum?.value ?: 0F
         return x1_v - 2 * this.value + x3_v

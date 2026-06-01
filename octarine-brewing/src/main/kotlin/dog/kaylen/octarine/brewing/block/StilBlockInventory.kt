@@ -26,7 +26,10 @@ class StilBlockInventory : Inventory {
         TODO("Not yet implemented")
     }
 
-    override fun removeStack(slot: Int, amount: Int): ItemStack {
+    override fun removeStack(
+        slot: Int,
+        amount: Int,
+    ): ItemStack {
         TODO("Not yet implemented")
     }
 
@@ -34,7 +37,10 @@ class StilBlockInventory : Inventory {
         TODO("Not yet implemented")
     }
 
-    override fun setStack(slot: Int, stack: ItemStack?) {
+    override fun setStack(
+        slot: Int,
+        stack: ItemStack?,
+    ) {
         TODO("Not yet implemented")
     }
 

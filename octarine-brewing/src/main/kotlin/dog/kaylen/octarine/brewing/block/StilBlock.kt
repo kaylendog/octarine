@@ -11,7 +11,8 @@ import net.minecraft.block.BlockWithEntity
 import net.minecraft.util.math.BlockPos
 
 object StilBlock : BlockWithEntity(FabricBlockSettings.create()) {
-    override fun createBlockEntity(pos: BlockPos, state: BlockState): StilBlockEntity {
-        return StilBlockEntity(pos, state)
-    }
+    override fun createBlockEntity(
+        pos: BlockPos,
+        state: BlockState,
+    ): StilBlockEntity = StilBlockEntity(pos, state)
 }
