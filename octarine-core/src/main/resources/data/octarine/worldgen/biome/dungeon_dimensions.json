@@ -1,30 +1,30 @@
 {
-	"has_precipitation": false,
-	"features": [],
-	"effects": {
-		"sky_color": 1185564,
-		"grass_color": 3030090,
-		"particle": {
-			"probability": 0.8,
-			"options": {
-				"type": "dust",
-				"value": {
-					"r": 0.18,
-					"g": 0.235,
-					"b": 0.29,
-					"scale": 0.5
-				}
-			}
-		},
-		"water_fog_color": 1579809,
-		"foliage_color": 3030090,
-		"fog_color": 1579809,
-		"water_color": 2699845
-	},
-	"temperature": 0,
-	"carvers": {},
-	"downfall": 0,
-	"spawn_costs": {},
-	"spawners": {},
-	"temperature_modifier": "frozen"
+    "has_precipitation": false,
+    "features": [],
+    "effects": {
+        "sky_color": 1185564,
+        "grass_color": 3030090,
+        "particle": {
+            "probability": 0.8,
+            "options": {
+                "type": "dust",
+                "value": {
+                    "r": 0.18,
+                    "g": 0.235,
+                    "b": 0.29,
+                    "scale": 0.5
+                }
+            }
+        },
+        "water_fog_color": 1579809,
+        "foliage_color": 3030090,
+        "fog_color": 1579809,
+        "water_color": 2699845
+    },
+    "temperature": 0,
+    "carvers": {},
+    "downfall": 0,
+    "spawn_costs": {},
+    "spawners": {},
+    "temperature_modifier": "frozen"
 }
