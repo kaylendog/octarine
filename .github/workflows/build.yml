@@ -1,7 +1,9 @@
-name: Build artifact
+name: Build
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
 
 permissions:
@@ -10,20 +12,20 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        run: ./gradlew build
+      - name: Upload bundled mod jar
+        uses: actions/upload-artifact@v4
         with:
           name: octarine
-          path: build/libs/*.jar
+          path: octarine/build/libs/*.jar
+          if-no-files-found: error

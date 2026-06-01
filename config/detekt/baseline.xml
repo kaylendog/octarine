@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>EmptyFunctionBlock:OctarineClientMod.kt:OctarineClientMod${}</ID>
+    <ID>EmptyFunctionBlock:OctarineDataGenerator.kt:OctarineDataGenerator${ }</ID>
+    <ID>InvalidPackageDeclaration:ChunkExt.kt:package dog.kaylen.octarine.extension</ID>
+    <ID>InvalidPackageDeclaration:OctarineChunkMixin.kt:package dog.kaylen.octarine.mixin</ID>
+    <ID>MagicNumber:ThaumComponent.kt:ThaumComponent$20</ID>
+    <ID>MagicNumber:WitchesGuideItem.kt:WitchesGuideItem$0.4</ID>
+    <ID>MagicNumber:WitchesGuideItem.kt:WitchesGuideItem$0.7</ID>
+    <ID>MagicNumber:WizardsGuideItem.kt:WizardsGuideItem$0.4</ID>
+    <ID>MagicNumber:WizardsGuideItem.kt:WizardsGuideItem$0.7</ID>
+    <ID>ReturnCount:WitchesGuideItem.kt:WitchesGuideItem$override fun use: TypedActionResult&lt;ItemStack&gt;</ID>
+    <ID>ReturnCount:WizardsGuideItem.kt:WizardsGuideItem$override fun use: TypedActionResult&lt;ItemStack&gt;</ID>
+    <ID>UnusedParameter:CreatureEntityTypes.kt:CreatureEntityTypes$name: String</ID>
+    <ID>VariableNaming:ThaumComponent.kt:ThaumComponent$val x1_v = x1?.octarine()?.thaum?.value ?: 0F</ID>
+    <ID>VariableNaming:ThaumComponent.kt:ThaumComponent$val x3_v = x3?.octarine()?.thaum?.value ?: 0F</ID>
+  </CurrentIssues>
+</SmellBaseline>

@@ -1,3 +1,4 @@
+import com.diffplug.gradle.spotless.SpotlessExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
@@ -11,6 +12,25 @@ class OctarineModPlugin : Plugin<Project> {
             pluginManager.apply("org.jetbrains.kotlin.jvm")
             pluginManager.apply("fabric-loom")
             pluginManager.apply("com.diffplug.spotless")
+
+            // Code style: ktlint for Kotlin sources + build scripts, prettier for JSON.
+            extensions.configure<SpotlessExtension>("spotless") {
+                val ktlintVersion = "1.8.0"
+                kotlin {
+                    target("src/**/*.kt")
+                    targetExclude("**/build/**")
+                    ktlint(ktlintVersion)
+                }
+                kotlinGradle {
+                    target("*.gradle.kts")
+                    ktlint(ktlintVersion)
+                }
+                json {
+                    target("src/**/*.json")
+                    targetExclude("**/build/**")
+                    prettier().configFile(rootProject.file(".prettierrc.json"))
+                }
+            }
 
             // TODO: figure out if we can create custom configuration for sub-modules
             // https://fabricmc.net/wiki/documentation:fabric_loom#depending_on_sub_projects

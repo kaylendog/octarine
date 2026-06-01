@@ -1,0 +1,59 @@
+name: Lint
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  spotless:
+    name: Spotless (ktlint + prettier)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      # Spotless formats JSON via prettier, which runs through npm.
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+      - name: Check formatting
+        run: ./gradlew spotlessCheck
+
+  detekt:
+    name: Detekt (static analysis)
+    runs-on: ubuntu-latest
+    env:
+      # Only the 2.0 alpha line supports Kotlin 2.3.x; run it via the CLI so it
+      # stays decoupled from the project's Gradle 8.x / Loom toolchain.
+      DETEKT_VERSION: 2.0.0-alpha.3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+      - name: Download detekt CLI
+        run: |
+          curl -sSL -o detekt-cli.jar \
+            "https://github.com/detekt/detekt/releases/download/v${DETEKT_VERSION}/detekt-cli-${DETEKT_VERSION}-all.jar"
+      - name: Run detekt
+        run: |
+          SRCS=$(find . -type d \( -path "*/src/main/kotlin" -o -path "*/src/client/kotlin" \) \
+            -not -path "*/build/*" -not -path "./buildSrc/*" | sed 's|^\./||' | paste -sd: -)
+          echo "Analyzing: $SRCS"
+          java -jar detekt-cli.jar \
+            --input "$SRCS" \
+            --language-version 2.3 \
+            --baseline config/detekt/baseline.xml
